@@ -26,7 +26,7 @@
   font-size: 1.4rem;
   font-weight: 500;
   line-height: normal;
-  margin-top: 4rem;
+  margin: 2.9rem 0 4.6rem 0;
   max-height: 4.9rem;
   max-width: 15rem;
   padding: 0.6rem 2rem;

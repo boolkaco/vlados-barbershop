@@ -1,11 +1,11 @@
 <template>
   <div class="home_view">
     <HeaderView />
-    <div class="hone_view__wrp">
+    <div class="home_view__wrp">
       <img v-bind:src="Logo" alt="">
-      <p>vlado's</p>
-      <p>barbershop</p>
-      <p>Professional barber services in Prague</p>
+      <p class="home_view__tittle">vlado's</p>
+      <p class="home_view__tittle-text">barbershop</p>
+      <p class="home_view__agite-text">Professional barber services in Prague</p>
       <Button />
       <img v-bind:src="overview" alt="">
       <div class="home_view__about-us">
@@ -40,19 +40,44 @@ import overview from '@/assets/barber-img.png';
   align-items: center;
 }
 
-.hone_view__wrp {
+.home_view__wrp {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 10.9rem;
 }
 
+.home_view__tittle {
+  font-size: 4.1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: $text-title-color;
+  margin: 1.3rem 0 0 0;
+}
+
+.home_view__tittle-text {
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: $text-title-color;
+  margin: -0.5rem 0 3.2rem 0;
+}
+
+.home_view__agite-text {
+  font-size: 2.6rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: $text-agite-color;
+  width: 44.7rem;
+  text-align: center;
+}
 
 .home_view__about-us {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3rem;
+  margin: 6.1rem 0 5.7rem 0;
+
 }
 
 .home__view_aout-us_main {
