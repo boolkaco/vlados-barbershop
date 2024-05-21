@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body,
+input,
+select,
+button,
+textarea {
+  letter-spacing: 0.005rem;
+}
+
+textarea,
+button,
+select,
+input,
+body,
+span,
+p {
+  font-size: 1.4rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
