@@ -7,7 +7,7 @@
       <p>barbershop</p>
       <p>Professional barber services in Prague</p>
       <Button />
-      <img v-bind:src="overview" alt>
+      <img v-bind:src="overview" alt="">
       <div class="home_view__about-us">
         <p class="home__view_aout-us_main">About Us</p>
         <div class="home_view__about-us_text">
@@ -26,8 +26,8 @@
 <script setup lang="ts">
 import Button from '../components/Button.vue';
 import HeaderView from './HeaderView.vue';
-import logo from '../assets/Logo.svg'
-import overview from '../assets/barber-img.png'
+import logo from '../assets/Logo.svg';
+import overview from '../assets/barber-img.png';
 
 </script>
 
