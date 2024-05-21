@@ -1,4 +1,4 @@
-import './assets/main.css'
+import './scss/app.scss'
 import { createPinia } from 'pinia'
 import { ViteSSG } from 'vite-ssg'
 import { i18n } from '../locale/i18n';
