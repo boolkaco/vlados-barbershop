@@ -2,7 +2,7 @@
   <div class="home_view">
     <HeaderView />
     <div class="hone_view__wrp">
-      <img v-bind:src="logo" alt="">
+      <img v-bind:src="Logo" alt="">
       <p>vlado's</p>
       <p>barbershop</p>
       <p>Professional barber services in Prague</p>
@@ -24,15 +24,15 @@
 </template>
 
 <script setup lang="ts">
-import Button from '../components/Button.vue';
+import Button from '@/components/Button.vue';
 import HeaderView from './HeaderView.vue';
-import logo from '../assets/Logo.svg';
-import overview from '../assets/barber-img.png';
+import Logo from '@/assets/Logo.svg';
+import overview from '@/assets/barber-img.png';
 
 </script>
 
 <style scoped lang="scss">  
-@import '../scss/variables.scss';
+@import '@/scss/variables.scss';
 
 .home_view {
   display: flex;

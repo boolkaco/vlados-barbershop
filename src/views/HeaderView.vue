@@ -28,15 +28,15 @@
 </template>
 
 <script setup lang="ts">
-import facebook from '../assets/icons/facebook-icon.svg'
-import instagram from '../assets/icons/instagram-icon.svg'
-import whatsapp from '../assets/icons/whatsapp-icon.svg'
-import Logo from '../assets/Logo.svg'
+import facebook from '@/assets/icons/facebook-icon.svg'
+import instagram from '@/assets/icons/instagram-icon.svg'
+import whatsapp from '@/assets/icons/whatsapp-icon.svg'
+import Logo from '@/assets/Logo.svg'
   
 </script>
 
 <style scoped lang="scss">
-@import '../scss/variables.scss';
+@import '@/scss/variables.scss';
 
 .home_vue {
   width: 140rem;

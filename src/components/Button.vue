@@ -14,7 +14,7 @@
 </script>
 
 <style scoped lang="scss">
-@import '../scss/variables.scss';
+@import '@/scss/variables.scss';
 
 .btn {
   background-color: $button-bg-color;
