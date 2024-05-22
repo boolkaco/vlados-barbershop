@@ -28,9 +28,9 @@
 </template>
 
 <script setup lang="ts">
-import facebook from '@/assets/icons/facebook-icon.svg'
-import instagram from '@/assets/icons/instagram-icon.svg'
-import whatsapp from '@/assets/icons/whatsapp-icon.svg'
+import facebook from '@/assets/icons/facebook-hover-icon.svg'
+import instagram from '@/assets/icons/instagram-hover-icon.svg'
+import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
 import Logo from '@/assets/Logo.svg'
   
 </script>
@@ -113,10 +113,6 @@ import Logo from '@/assets/Logo.svg'
   
 }
 
-option {
-  border: none;
-}
-
 .home_vue__social-item {
   display: flex;
   flex-direction: row;
@@ -124,5 +120,20 @@ option {
   align-items: center;
   width: 10rem;
 }
+
+.home_vue__social-img {
+  transition: all 100ms;
+  filter: grayscale(100%);
+    &:hover {
+      filter: grayscale(0%);
+      transition: all 100ms;
+    }
+
+}
+
+option {
+  border: none;
+}
+
 
 </style>
