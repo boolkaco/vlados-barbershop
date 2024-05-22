@@ -107,9 +107,33 @@
           </div>
         </div>
       </div>
+      <div class="home_view__follow-us">
+        qwe
+      </div>
       <div class="home_view__contacts">
         <div class="home_view__contacts-title">
           contacts
+        </div>
+        <div class="home_view__contacts-list">
+          <div class="home_view__contacts-item">
+            <div class="home_view__contacts-table_title">Adress</div>
+            <div class="home_view__contacts-table_value">U Nikolajky 3, Praha 5 Smíchov 150 00</div>
+          </div>
+          <div class="home_view__contacts-item">
+            <div class="home_view__contacts-table_title">Phone</div>
+            <div class="home_view__contacts-table_value">+420 774 271 121</div>
+          </div>
+          <div class="home_view__contacts-item">
+            <div class="home_view__contacts-table_title">Opening hours</div>
+            <div class="home_view__contacts-table_value">Thu-Sat 9:00-19:30</div>
+          </div>
+          <div class="home_view__contacts-item">
+            <div class="home_view__contacts-table_title">Email</div>
+            <div class="home_view__contacts-table_value">vladosbarbershop@gmail.com</div>
+          </div>
+        </div>
+        <div class="home_view__contacts-text">
+          Parking spots near the barbershop are always easy to find
         </div>
       </div>
     </div>
@@ -172,14 +196,17 @@ import imgVlad from '@/assets/barber-Vlad-img.png'
 
 
 
+
 .home_view__overview {
   transition: all 1000ms;
   position:unset;
+  filter: grayscale(100%);
     &:hover {
-      filter: grayscale(100%);
+      filter: grayscale(0);
       transition: all 1000ms;
     }
 }
+
 
 
 
@@ -218,6 +245,8 @@ import imgVlad from '@/assets/barber-Vlad-img.png'
 
 
 
+
+
 .home_view__servise-and-prise {
   display: flex;
   flex-direction: column;
@@ -235,7 +264,6 @@ import imgVlad from '@/assets/barber-Vlad-img.png'
   font-weight: 300;
   margin: 6rem 0 3.1rem 0;
 }
-
 
 .home_view__servise-and-prise__table {
   width: 100%;
@@ -276,6 +304,8 @@ import imgVlad from '@/assets/barber-Vlad-img.png'
 
 
 
+
+
 .home_view__our-team {
   display: flex;
   flex-direction: column;
@@ -310,8 +340,9 @@ import imgVlad from '@/assets/barber-Vlad-img.png'
   width: 57.1rem;
   height: 57.1rem;
   margin: 0 0 3.9rem 0;
+  filter: grayscale(100%);
     &:hover {
-      filter: grayscale(100%);
+      filter: grayscale(0);
       transition: all 1000ms;
     }
 }
@@ -345,24 +376,75 @@ import imgVlad from '@/assets/barber-Vlad-img.png'
 
 
 
+
+
+
+.home_view__follow-us {
+  background-color: $bg-follow-color;
+  width: 100%;
+  height: 56.9rem;
+  margin: 0 0 5.9rem 0;
+}
+
+
+
+
+
+
+
+
+
 .home_view__contacts {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  width: 100%;
 }
 
 .home_view__contacts-title {
   text-transform: uppercase;
   font-size: 5.1rem;
   font-weight: 300;
-
-  thead {
-    display: flex;
-    flex-direction: row;
-  }
-
+  margin-bottom: 6rem;
 }
+
+.home_view__contacts-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.home_view__contacts-item {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.home_view__contacts-table_title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: $table-title-color;
+  margin: 0 0 1.5rem 2rem;
+}
+
+.home_view__contacts-table_value {
+  border: 0.1rem solid $table-border-color;
+  border-radius: 4.3rem;
+  padding: 1.4rem 2rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.home_view__contacts-text {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 3.7rem 0;
+  color: $text-contacts-color;
+}
+
+
+
 
 </style>
