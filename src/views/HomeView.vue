@@ -11,11 +11,11 @@
       <div class="home_view__about-us">
         <p class="home__view_about-us_title">About Us</p>
         <div class="home_view__about-us_text">
-          <span class="home_view__about-us_text-item">Hey there! I'm Vlad, and welcome to Vlado's Barbershop! 
-            We've created this space with over ten years of experience in the barber industry. We truly believe  that a fantastic haircut goes hand in hand with top-tier service
+          <span class="home_view__about-us_text-item">Hey there! I'm Vlad, and welcome to Vlado's Barbershop!<br> 
+            We've created this space with over ten years of experience in the barber industry.<br> We truly believe that a fantastic haircut goes hand in hand with top-tier service
           </span>
           <span class="home_view__about-us_text-item">
-            Our crew blends classic techniques with the latest trends to ensure your cut or shave isn't just on point but also timeless. It's not just about looking good here; it's about the entire experience. Get ready for personalized advice to choose the perfect haircut, grooming tips, and a range of extra services to make your visit truly special.
+            Our crew blends classic techniques with the latest trends to ensure your cut or<br>shave isn't just on point but also timeless. It's not just about looking good here; it's<br>about the entire experience. Get ready for personalized advice to choose the<br>perfect haircut, grooming tips, and a range of extra services to make your visit<br>truly special.
           </span>
         </div>
       </div>
@@ -89,7 +89,7 @@
                 <div class="home_view__barber_position">Barber</div>
               </div>
               <div class="home_view__barber-button">
-                <ButtonWb class="qwerty" />
+                <ButtonWb />
               </div>
             </div>
           </div>
@@ -105,6 +105,11 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="home_view__contacts">
+        <div class="home_view__contacts-title">
+          contacts
         </div>
       </div>
     </div>
@@ -156,7 +161,7 @@ import imgVlad from '@/assets/barber-Vlad-img.png'
 }
 
 .home_view__agite-text {
-  font-size: 2.6rem;
+  font-size: 2.5rem;
   font-weight: 300;
   text-transform: uppercase;
   color: $text-agite-color;
@@ -184,11 +189,11 @@ import imgVlad from '@/assets/barber-Vlad-img.png'
   flex-direction: column;
   align-items: center;
   margin: 5.7rem 0 4.1rem 0;
-
 }
 
 .home__view_about-us_title {
   font-size: 5.1rem;
+  font-weight: 300;
   text-transform: uppercase;
   margin-bottom: 3.2rem;
 }
@@ -201,10 +206,13 @@ import imgVlad from '@/assets/barber-Vlad-img.png'
 }
 
 .home_view__about-us_text-item {
-  font-size: 1.8rem;
-  font-weight: 300;
+  font-size: 1.9rem;
+  line-height: 2.7rem;
+  font-weight: 400;
   margin-bottom: 2rem;
-   
+  padding-bottom: 1rem;
+  text-align: center; 
+  text-indent: 3%;
 }
 
 
@@ -233,31 +241,31 @@ import imgVlad from '@/assets/barber-Vlad-img.png'
   width: 100%;
   margin: 0 0 6.7rem 0;
   border-collapse: collapse;
+
+    th, td {
+      height: 6.4rem;
+      border-bottom: 0.1rem solid $table-border-color;
+    }
+
+    th {
+      font-size: 1.6rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      text-align: left;
+    }
+
+    td {
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $prise-color;
+      text-align: right;
+    }
 }
 
 .home_view__servise-and-prise__table-thead {
   text-align: right;
   border-bottom: 0.2rem solid $table-border-color;
-}
-
-th, td {
-  height: 6.4rem;
-  border-bottom: 0.1rem solid $table-border-color;
-}
-
-th {
-  font-size: 1.6rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  text-align: left;
-}
-
-td {
-  font-size: 1.6rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: $prise-color;
-  text-align: right;
 }
 
 .home_view__servise-and-prise__button {
@@ -316,9 +324,6 @@ td {
   justify-content: space-between;
 }
 
-.qwerty {
-  margin: 0;
-}
 
 .home_view__barber-name {
   display: flex;
@@ -335,6 +340,29 @@ td {
 .home_view__barber_position {
   font-size: 1.8rem;
   font-weight: 300;
+}
+
+
+
+
+.home_view__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.home_view__contacts-title {
+  text-transform: uppercase;
+  font-size: 5.1rem;
+  font-weight: 300;
+
+  thead {
+    display: flex;
+    flex-direction: row;
+  }
+
 }
 
 </style>

@@ -29,7 +29,7 @@
   margin: 2.9rem 0 4.6rem 0;
   max-height: 4.9rem;
   max-width: 15rem;
-  padding: 0.6rem 2rem;
+  padding: 0.4rem 0.8rem;
   text-align: center;
   text-decoration: none;
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
