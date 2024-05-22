@@ -21,7 +21,7 @@
       </div>
       <div class="home_view__servise-and-prise">
         <p class="home_view__servise-and-prise__title">
-          servises & prises
+          services & prices
         </p>
         <table class="home_view__servise-and-prise__table">
           <thead>
