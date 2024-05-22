@@ -76,6 +76,37 @@
         </table>
         <ButtonOt class="home_view__servise-and-prise__button"/>
       </div>
+      <div class="home_view__our-team">
+        <p class="home_view__our-team__title">
+          our team
+        </p>
+        <div class="home_view__barber-info">
+          <div class="home_view__barber-info_person">
+            <img v-bind:src="imgAlex" class="home_view__barber-image">
+            <div class="home_view__barber-block">
+              <div class="home_view__barber-name">
+                <div class="home_view__barber-first_name">Alex</div>
+                <div class="home_view__barber_position">Barber</div>
+              </div>
+              <div class="home_view__barber-button">
+                <ButtonWb class="qwerty" />
+              </div>
+            </div>
+          </div>
+          <div class="home_view__barber-info_person">
+            <img v-bind:src="imgVlad" class="home_view__barber-image">
+            <div class="home_view__barber-block">
+              <div class="home_view__barber-name">
+                <div class="home_view__barber-first_name">Vlad</div>
+                <div class="home_view__barber_position">Top-barber</div>
+              </div>
+              <div class="home_view__barber-button">
+                <ButtonWb />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -83,9 +114,12 @@
 <script setup lang="ts">
 import Button from '@/components/Button.vue';
 import ButtonOt from '@/components/ButtonOt.vue';
+import ButtonWb from '@/components/ButtonWb.vue';
 import HeaderView from './HeaderView.vue';
 import Logo from '@/assets/Logo.svg';
 import overview from '@/assets/barber-img.png';
+import imgAlex from '@/assets/barber-Alex-img.png'
+import imgVlad from '@/assets/barber-Vlad-img.png'
 
 </script>
 
@@ -132,6 +166,7 @@ import overview from '@/assets/barber-img.png';
 
 
 
+
 .home_view__overview {
   transition: all 1000ms;
   position:unset;
@@ -140,6 +175,7 @@ import overview from '@/assets/barber-img.png';
       transition: all 1000ms;
     }
 }
+
 
 
 
@@ -173,6 +209,7 @@ import overview from '@/assets/barber-img.png';
 
 
 
+
 .home_view__servise-and-prise {
   display: flex;
   flex-direction: column;
@@ -181,7 +218,7 @@ import overview from '@/assets/barber-img.png';
   width: 100%;
   border-top: solid 1px $color-gray-3;
   border-bottom: solid 1px $color-gray-3;
-  margin: 0 0 2rem 0;
+  margin: 0 0 5.6rem 0;
 }
 
 .home_view__servise-and-prise__title {
@@ -190,6 +227,7 @@ import overview from '@/assets/barber-img.png';
   font-weight: 300;
   margin: 6rem 0 3.1rem 0;
 }
+
 
 .home_view__servise-and-prise__table {
   width: 100%;
@@ -224,6 +262,79 @@ td {
 
 .home_view__servise-and-prise__button {
   margin-bottom: 7rem;
+}
+
+
+
+
+
+.home_view__our-team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home_view__our-team__title {
+  text-transform: uppercase;
+  font-size: 5.1rem;
+  font-weight: 300;
+  margin: 0 0 5.8rem 0;
+}
+
+.home_view__barber-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 6.6rem 0;
+}
+
+.home_view__barber-info_person {
+  margin: 0 1.05rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home_view__barber-image {
+  width: 57.1rem;
+  height: 57.1rem;
+  margin: 0 0 3.9rem 0;
+    &:hover {
+      filter: grayscale(100%);
+      transition: all 1000ms;
+    }
+}
+
+.home_view__barber-block {
+  width: 57.1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.qwerty {
+  margin: 0;
+}
+
+.home_view__barber-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home_view__barber-first_name {
+  font-size: 2.8rem;
+  font-weight: 400;
+}
+
+.home_view__barber_position {
+  font-size: 1.8rem;
+  font-weight: 300;
 }
 
 </style>
