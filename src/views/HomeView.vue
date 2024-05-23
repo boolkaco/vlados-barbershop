@@ -325,12 +325,6 @@ import phone from '@/assets/iPhone-img.svg'
     border-bottom: 0.2rem solid $table-border-color;
   }
 
-  .home_view__follow-us_image-item_phone {
-    position: relative;
-    top: 7.7rem;
-    right: 27rem;
-  }
-
   .home_view__servise-and-prise__button {
     margin-bottom: 7rem;
   }
@@ -447,7 +441,7 @@ import phone from '@/assets/iPhone-img.svg'
     background-color: #FFFFFF0A;
     height: 115.3rem;
     width: 36.2rem;
-    left: 8.5rem;
+    left: 17.5rem;
     display: flex;
     position: relative;
     align-items: center;
@@ -456,8 +450,10 @@ import phone from '@/assets/iPhone-img.svg'
 
   }
 
-  .home_view__follow-us_image-item {
-
+  .home_view__follow-us_image-item_phone {
+    position: relative;
+    top: 7.7rem;
+    right: 18rem;
   }
 
 
@@ -485,7 +481,7 @@ import phone from '@/assets/iPhone-img.svg'
   .home_view__contacts-list {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 140rem;
   }
 
