@@ -57,19 +57,10 @@ select {
   min-height: 3.2rem;
   border-radius: 6.8rem;
   border: 0.2rem solid $select-main-color;
+  background: url(../assets/select-arrow.svg) no-repeat center;
   background-color: $select-bg-color;
   color: $select-main-color;
-
-    &::after {
-    content: '▼';
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: $select-main-color;
-    font-size: 16px;
-}
+  appearance: none;
 }
 
 </style>
