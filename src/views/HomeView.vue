@@ -113,7 +113,10 @@
           <div class="home_view__follow-us_title-text">Follow us<br>on instagram</div>
           <ButtonOt />
         </div>
-        <div class="">qwe</div>
+        <div class="home_view__follow-us_image-block">
+          <img class="home_view__follow-us_image-item_text" v-bind:src="follow">
+        </div>
+        <img class="home_view__follow-us_image-item_phone" v-bind:src="phone"> 
       </div>
       <div class="home_view__contacts">
         <div class="home_view__contacts-title">
@@ -155,6 +158,8 @@ import overview from '@/assets/barber-nocolor-img.png';
 import overviewColor from '@/assets/barber-img.png';
 import imgAlex from '@/assets/barber-Alex-img.png'
 import imgVlad from '@/assets/barber-Vlad-img.png'
+import follow from '@/assets/follow-rotate-svg.svg'
+import phone from '@/assets/iPhone-img.svg'
 
 </script>
 
@@ -320,6 +325,12 @@ import imgVlad from '@/assets/barber-Vlad-img.png'
     border-bottom: 0.2rem solid $table-border-color;
   }
 
+  .home_view__follow-us_image-item_phone {
+    position: absolute;
+    top: 362.5rem;
+    left: 101rem;
+  }
+
   .home_view__servise-and-prise__button {
     margin-bottom: 7rem;
   }
@@ -361,13 +372,15 @@ import imgVlad from '@/assets/barber-Vlad-img.png'
   }
 
   .home_view__barber-image {
+    transition: all 700ms;
     width: 57.1rem;
     height: 57.1rem;
     margin: 0 0 3.9rem 0;
     filter: grayscale(100%);
+
       &:hover {
-        filter: grayscale(0);
-        transition: all 1000ms;
+        filter: grayscale(0); 
+        transition: all 700ms;
       }
   }
 
@@ -406,7 +419,7 @@ import imgVlad from '@/assets/barber-Vlad-img.png'
   .home_view__follow-us {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background-color: $bg-follow-color;
     width: 100%;
@@ -418,6 +431,7 @@ import imgVlad from '@/assets/barber-Vlad-img.png'
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 10.9rem 0 0;
   }
 
   .home_view__follow-us_title-text {
@@ -429,6 +443,22 @@ import imgVlad from '@/assets/barber-Vlad-img.png'
     margin: 0 0 3.3rem 0;
   }
 
+  .home_view__follow-us_image-block {
+    background-color: #FFFFFF0A;
+    height: 115.3rem;
+    width: 36.2rem;
+    left: 8.5rem;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: end;
+    transform: rotate(-26.1deg);
+
+  }
+
+  .home_view__follow-us_image-item {
+
+  }
 
 
 
