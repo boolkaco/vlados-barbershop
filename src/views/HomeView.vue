@@ -8,6 +8,7 @@
       <p class="home_view__agite-text">Professional barber services in Prague</p>
       <Button />
       <img class="home_view__overview" v-bind:src="overview" alt="">
+      <img class="home_view__overview-1" v-bind:src="overviewColor" alt="">
       <div class="home_view__about-us">
         <p class="home__view_about-us_title">About Us</p>
         <div class="home_view__about-us_text">
@@ -108,7 +109,11 @@
         </div>
       </div>
       <div class="home_view__follow-us">
-        qwe
+        <div class="home_view__follow-us_title">
+          <div class="home_view__follow-us_title-text">Follow us<br>on instagram</div>
+          <ButtonOt />
+        </div>
+        <div class="">qwe</div>
       </div>
       <div class="home_view__contacts">
         <div class="home_view__contacts-title">
@@ -146,7 +151,8 @@ import ButtonOt from '@/components/ButtonOt.vue';
 import ButtonWb from '@/components/ButtonWb.vue';
 import HeaderView from './HeaderView.vue';
 import Logo from '@/assets/logo.svg';
-import overview from '@/assets/barber-img.png';
+import overview from '@/assets/barber-nocolor-img.png';
+import overviewColor from '@/assets/barber-img.png';
 import imgAlex from '@/assets/barber-Alex-img.png'
 import imgVlad from '@/assets/barber-Vlad-img.png'
 
@@ -154,297 +160,332 @@ import imgVlad from '@/assets/barber-Vlad-img.png'
 
 <style scoped lang="scss">  
 @import '@/scss/variables.scss';
+@media screen and (min-width: 70rem) {
+  .home_view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.home_view {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .home_view__wrp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10.9rem;
+  }
 
-.home_view__wrp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10.9rem;
-}
+  .home_view__tittle {
+    font-size: 4.1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $text-title-color;
+    margin: 1.3rem 0 0 0;
+  }
 
-.home_view__tittle {
-  font-size: 4.1rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  color: $text-title-color;
-  margin: 1.3rem 0 0 0;
-}
+  .home_view__tittle-text {
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $text-title-color;
+    margin: -0.5rem 0 3.2rem 0;
+  }
 
-.home_view__tittle-text {
-  font-size: 1.2rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  color: $text-title-color;
-  margin: -0.5rem 0 3.2rem 0;
-}
-
-.home_view__agite-text {
-  font-size: 2.5rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  color: $text-agite-color;
-  width: 44.7rem;
-  text-align: center;
-}
-
-
+  .home_view__agite-text {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $text-agite-color;
+    width: 44.7rem;
+    text-align: center;
+  }
 
 
 
-.home_view__overview {
-  transition: all 1000ms;
-  position:unset;
-  filter: grayscale(100%);
+
+
+
+
+  .home_view__overview {
+    transition: all 500ms;
+    position: absolute;
+    width: 140rem;
+    height: 64.9rem;   
+    top: 56.6rem;
     &:hover {
-      filter: grayscale(0);
-      transition: all 1000ms;
-    }
-}
+      transition: all 500ms;
+      }
+  }
 
-
-
-
-
-.home_view__about-us {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 5.7rem 0 4.1rem 0;
-}
-
-.home__view_about-us_title {
-  font-size: 5.1rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  margin-bottom: 3.2rem;
-}
-
-.home_view__about-us_text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 70rem;
-}
-
-.home_view__about-us_text-item {
-  font-size: 1.9rem;
-  line-height: 2.7rem;
-  font-weight: 400;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  text-align: center; 
-  text-indent: 3%;
-}
-
-
-
-
-
-
-.home_view__servise-and-prise {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  border-top: solid 1px $color-gray-3;
-  border-bottom: solid 1px $color-gray-3;
-  margin: 0 0 5.6rem 0;
-}
-
-.home_view__servise-and-prise__title {
-  text-transform: uppercase;
-  font-size: 5.1rem;
-  font-weight: 300;
-  margin: 6rem 0 3.1rem 0;
-}
-
-.home_view__servise-and-prise__table {
-  width: 100%;
-  margin: 0 0 6.7rem 0;
-  border-collapse: collapse;
-
-    th, td {
-      height: 6.4rem;
-      border-bottom: 0.1rem solid $table-border-color;
-    }
-
-    th {
-      font-size: 1.6rem;
-      font-weight: 400;
-      text-transform: uppercase;
-      text-align: left;
-    }
-
-    td {
-      font-size: 1.6rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: $prise-color;
-      text-align: right;
-    }
-}
-
-.home_view__servise-and-prise__table-thead {
-  text-align: right;
-  border-bottom: 0.2rem solid $table-border-color;
-}
-
-.home_view__servise-and-prise__button {
-  margin-bottom: 7rem;
-}
-
-
-
-
-
-
-
-.home_view__our-team {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.home_view__our-team__title {
-  text-transform: uppercase;
-  font-size: 5.1rem;
-  font-weight: 300;
-  margin: 0 0 5.8rem 0;
-}
-
-.home_view__barber-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 0 0 6.6rem 0;
-}
-
-.home_view__barber-info_person {
-  margin: 0 1.05rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.home_view__barber-image {
-  width: 57.1rem;
-  height: 57.1rem;
-  margin: 0 0 3.9rem 0;
-  filter: grayscale(100%);
+  .home_view__overview-1 {
+    transition: all 500ms;
+    position: absolute;
+    width: 140rem;
+    height: 64.9rem;   
+    top: 56.6rem;
+    filter: opacity(0);
     &:hover {
-      filter: grayscale(0);
-      transition: all 1000ms;
-    }
+      filter: opacity(100%);
+      transition: all 500ms;
+      }
+  }
+
+
+
+
+
+
+
+  .home_view__about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 71.6rem 0 4.1rem 0;
+  }
+
+  .home__view_about-us_title {
+    font-size: 5.1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 3.2rem;
+  }
+
+  .home_view__about-us_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70rem;
+  }
+
+  .home_view__about-us_text-item {
+    font-size: 1.9rem;
+    line-height: 2.7rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    text-align: center; 
+    text-indent: 3%;
+  }
+
+
+
+
+
+
+  .home_view__servise-and-prise {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-top: solid 1px $color-gray-3;
+    border-bottom: solid 1px $color-gray-3;
+    margin: 0 0 5.6rem 0;
+  }
+
+  .home_view__servise-and-prise__title {
+    text-transform: uppercase;
+    font-size: 5.1rem;
+    font-weight: 300;
+    margin: 6rem 0 3.1rem 0;
+  }
+
+  .home_view__servise-and-prise__table {
+    width: 100%;
+    margin: 0 0 6.7rem 0;
+    border-collapse: collapse;
+
+      th, td {
+        height: 6.4rem;
+        border-bottom: 0.1rem solid $table-border-color;
+      }
+
+      th {
+        font-size: 1.6rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: left;
+      }
+
+      td {
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $prise-color;
+        text-align: right;
+      }
+  }
+
+  .home_view__servise-and-prise__table-thead {
+    text-align: right;
+    border-bottom: 0.2rem solid $table-border-color;
+  }
+
+  .home_view__servise-and-prise__button {
+    margin-bottom: 7rem;
+  }
+
+
+
+
+
+
+
+  .home_view__our-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home_view__our-team__title {
+    text-transform: uppercase;
+    font-size: 5.1rem;
+    font-weight: 300;
+    margin: 0 0 5.8rem 0;
+  }
+
+  .home_view__barber-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 6.6rem 0;
+  }
+
+  .home_view__barber-info_person {
+    margin: 0 1.05rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home_view__barber-image {
+    width: 57.1rem;
+    height: 57.1rem;
+    margin: 0 0 3.9rem 0;
+    filter: grayscale(100%);
+      &:hover {
+        filter: grayscale(0);
+        transition: all 1000ms;
+      }
+  }
+
+  .home_view__barber-block {
+    width: 57.1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+  .home_view__barber-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home_view__barber-first_name {
+    font-size: 2.8rem;
+    font-weight: 400;
+  }
+
+  .home_view__barber_position {
+    font-size: 1.8rem;
+    font-weight: 300;
+  }
+
+
+
+
+
+
+
+  .home_view__follow-us {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $bg-follow-color;
+    width: 100%;
+    height: 56.9rem;
+    margin: 0 0 5.9rem 0;
+  }
+
+  .home_view__follow-us_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home_view__follow-us_title-text {
+    font-size: 4.2rem;
+    font-weight: 400;
+    color: $follow-us-title-color;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 3.3rem 0;
+  }
+
+
+
+
+
+
+
+
+  .home_view__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .home_view__contacts-title {
+    text-transform: uppercase;
+    font-size: 5.1rem;
+    font-weight: 300;
+    margin-bottom: 6rem;
+  }
+
+  .home_view__contacts-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 140rem;
+  }
+
+  .home_view__contacts-item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .home_view__contacts-table_title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $table-title-color;
+    margin: 0 0 1.5rem 2rem;
+  }
+
+  .home_view__contacts-table_value {
+    border: 0.1rem solid $table-border-color;
+    border-radius: 4.3rem;
+    padding: 1.4rem 2rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+
+  .home_view__contacts-text {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin: 3.7rem 0;
+    color: $text-contacts-color;
+  }
 }
-
-.home_view__barber-block {
-  width: 57.1rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-
-.home_view__barber-name {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.home_view__barber-first_name {
-  font-size: 2.8rem;
-  font-weight: 400;
-}
-
-.home_view__barber_position {
-  font-size: 1.8rem;
-  font-weight: 300;
-}
-
-
-
-
-
-
-
-.home_view__follow-us {
-  background-color: $bg-follow-color;
-  width: 100%;
-  height: 56.9rem;
-  margin: 0 0 5.9rem 0;
-}
-
-
-
-
-
-
-
-
-
-.home_view__contacts {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.home_view__contacts-title {
-  text-transform: uppercase;
-  font-size: 5.1rem;
-  font-weight: 300;
-  margin-bottom: 6rem;
-}
-
-.home_view__contacts-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.home_view__contacts-item {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-}
-
-.home_view__contacts-table_title {
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: $table-title-color;
-  margin: 0 0 1.5rem 2rem;
-}
-
-.home_view__contacts-table_value {
-  border: 0.1rem solid $table-border-color;
-  border-radius: 4.3rem;
-  padding: 1.4rem 2rem;
-  font-size: 1.8rem;
-  font-weight: 400;
-}
-
-.home_view__contacts-text {
-  font-size: 1.8rem;
-  font-weight: 400;
-  margin: 3.7rem 0;
-  color: $text-contacts-color;
-}
-
-
-
 
 </style>

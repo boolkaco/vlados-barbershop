@@ -26,12 +26,12 @@
   font-weight: 500;
   line-height: normal;
   height: 3.9rem;
-  min-width: 12.3rem;
+  width: 12.3rem;
   padding:  0;
   text-align: center;
   text-decoration: none;
   transition: all 300ms ;
-  width: 100%;
+
 
   &:disabled {
     pointer-events: none;
