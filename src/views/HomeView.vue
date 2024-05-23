@@ -326,9 +326,9 @@ import phone from '@/assets/iPhone-img.svg'
   }
 
   .home_view__follow-us_image-item_phone {
-    position: absolute;
-    top: 362.5rem;
-    left: 101rem;
+    position: relative;
+    top: 7.7rem;
+    right: 27rem;
   }
 
   .home_view__servise-and-prise__button {
