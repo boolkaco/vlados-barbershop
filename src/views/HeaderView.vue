@@ -48,6 +48,7 @@ import Logo from '@/assets/logo.svg'
   align-items: center;
   text-transform: uppercase;
   position: fixed;
+  z-index: 1;
   background-color: $color-white;
 }
 
