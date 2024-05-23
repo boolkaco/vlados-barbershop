@@ -145,7 +145,7 @@ import Button from '@/components/Button.vue';
 import ButtonOt from '@/components/ButtonOt.vue';
 import ButtonWb from '@/components/ButtonWb.vue';
 import HeaderView from './HeaderView.vue';
-import Logo from '@/assets/Logo.svg';
+import Logo from '@/assets/logo.svg';
 import overview from '@/assets/barber-img.png';
 import imgAlex from '@/assets/barber-Alex-img.png'
 import imgVlad from '@/assets/barber-Vlad-img.png'

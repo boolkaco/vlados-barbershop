@@ -31,7 +31,7 @@
 import facebook from '@/assets/icons/facebook-hover-icon.svg'
 import instagram from '@/assets/icons/instagram-hover-icon.svg'
 import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
-import Logo from '@/assets/Logo.svg'
+import Logo from '@/assets/logo.svg'
   
 </script>
 
