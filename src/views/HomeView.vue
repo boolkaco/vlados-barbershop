@@ -476,7 +476,6 @@ import footerArrow from '@/assets/footer-arrow.svg'
     align-items: center;
     justify-content: end;
     transform: rotate(-26.1deg);
-
   }
 
   .home_view__follow-us_image-item_phone {
