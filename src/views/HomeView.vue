@@ -144,6 +144,27 @@
           Parking spots near the barbershop are always easy to find
         </div>
       </div>
+      <div class="home_view-map_and_footer">
+        <img class="home_view__map-img" v-bind:src="map">
+        <div class="home_view-map_and_footer-item">
+          <img class="home_view-map_and_footer-icon" v-bind:src="facebook" alt=""/>
+          <img class="home_view-map_and_footer-icon" v-bind:src="whatsapp" alt=""/>
+          <img class="home_view-map_and_footer-icon" v-bind:src="instagram" alt=""/>
+        </div>
+        <div class="home_view-map_and_footer-menu">
+          <div class="home_view-map_and_footer-menu_item">ABOUT US</div>
+          <div class="home_view-map_and_footer-menu_item">SERVICES & PRICES</div>
+          <div class="home_view-map_and_footer-menu_item">OUR TEAM</div>
+          <div class="home_view-map_and_footer-menu_item">CONTACTS</div>
+        </div>
+        <div class="home_view-map_and_footer-logo">
+          <img class="home_view-map_and_footer-logo-item_arrow" v-bind:src="footerArrow">
+          <img class="home_view-map_and_footer-logo-item_logo" v-bind:src="footerLogo">
+        </div>
+        <div class="home_view-map_and_footer-footer">
+          <p class="home_view-map_and_footer-text">@ ALL RIGHTS RESERVED 2024</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -160,6 +181,13 @@ import imgAlex from '@/assets/barber-Alex-img.png'
 import imgVlad from '@/assets/barber-Vlad-img.png'
 import follow from '@/assets/follow-rotate-svg.svg'
 import phone from '@/assets/iPhone-img.svg'
+import map from '../assets/map-image.svg'
+import facebook from '@/assets/icons/facebook-hover-icon.svg'
+import instagram from '@/assets/icons/instagram-hover-icon.svg'
+import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
+import footerLogo from '@/assets/footer-logo.svg'
+import footerArrow from '@/assets/footer-arrow.svg'
+
 
 </script>
 
@@ -340,6 +368,7 @@ import phone from '@/assets/iPhone-img.svg'
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 1;
   }
 
   .home_view__our-team__title {
@@ -469,6 +498,7 @@ import phone from '@/assets/iPhone-img.svg'
     justify-content: center;
     width: 100%;
     object-fit: cover;
+    margin: 0 0 3.7rem 0;
   }
 
   .home_view__contacts-title {
@@ -509,9 +539,102 @@ import phone from '@/assets/iPhone-img.svg'
   .home_view__contacts-text {
     font-size: 1.8rem;
     font-weight: 400;
-    margin: 3.7rem 0;
+    margin: 3.7rem 0 0 0;
     color: $text-contacts-color;
   }
+
+
+
+
+
+
+  .home_view-map_and_footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home_view-map_and_footer-img {
+    height: 50.2rem;
+    width: 100%;
+  }
+  
+  .home_view-map_and_footer-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 4rem 0 3.3rem 0 ;
+  }
+
+  .home_view-map_and_footer-icon {
+    transition: all 100ms;
+    margin: 0 0.8rem;
+    filter: grayscale(100%);
+
+      &:hover {
+        filter: grayscale(0%);
+        transition: all 100ms;
+      }
+  }
+
+  .home_view-map_and_footer-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-transform: uppercase;
+    margin: 0 0 4.3rem 0;
+  }
+
+  .home_view-map_and_footer-menu_item {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin: 0 1.7rem;
+
+      &:hover {
+        color: $link-footer-color;
+        cursor: pointer;
+      }
+  }
+
+  .home_view-map_and_footer-logo-item_arrow {
+    position: relative;
+    right: 51rem;
+  }
+
+  .home_view-map_and_footer-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;;
+    width: 100%;
+    margin: 0 0 3.4rem 0;
+  }
+
+  .home_view-map_and_footer-logo-item_logo {
+    position: relative;
+    right: 4.7rem;
+  }
+
+  .home_view-map_and_footer-footer {
+    border-top: 1px solid $footer-border-color;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .home_view-map_and_footer-text {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: $footer-text-color;
+    margin: 3.2rem 0 10.4rem 0;
+
+  }
+
 }
+
 
 </style>
