@@ -5,6 +5,7 @@ import { i18n } from '../locale/i18n';
 import App from './App.vue'
 import { router } from './router'
 import type { RouteRecordRaw } from 'vue-router'
+  
 
 
 export const createApp = ViteSSG( 

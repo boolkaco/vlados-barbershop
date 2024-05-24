@@ -145,7 +145,8 @@
         </div>
       </div>
       <div class="home_view-map_and_footer">
-        <img class="home_view__map-img" v-bind:src="map">
+        <!-- <img class="home_view__map-img" v-bind:src="mapImg"> -->
+        <MapGoogle class="home-view__google-map"/>
         <div class="home_view-map_and_footer-item">
           <img class="home_view-map_and_footer-icon" v-bind:src="facebook" alt=""/>
           <img class="home_view-map_and_footer-icon" v-bind:src="whatsapp" alt=""/>
@@ -181,12 +182,15 @@ import imgAlex from '@/assets/barber-Alex-img.png'
 import imgVlad from '@/assets/barber-Vlad-img.png'
 import follow from '@/assets/follow-rotate-svg.svg'
 import phone from '@/assets/iPhone-img.svg'
-import map from '../assets/map-image.svg'
+import mapImg from '../assets/map-image.svg'
 import facebook from '@/assets/icons/facebook-hover-icon.svg'
 import instagram from '@/assets/icons/instagram-hover-icon.svg'
 import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
 import footerLogo from '@/assets/footer-logo.svg'
 import footerArrow from '@/assets/footer-arrow.svg'
+import MapGoogle from '@/components/Map.vue'
+
+
 
 const scrollToTop = (): void => {
   window.scrollTo({
@@ -561,14 +565,20 @@ const scrollToTop = (): void => {
     align-items: center;
   }
 
-  .home_view__map-img {
-    transition: all 400ms;
+  // .home_view__map-img {
+  //   transition: all 400ms;
+  //   height: 50.2rem;
+  //   width: 100%;
+  //   position: relative;
+  //   filter: opacity(100%);
+  //   &:hover {
+  //       filter: opacity(0); 
+  //     }
+  // }
+
+  .home-view__google-map {
+    width: 140rem;
     height: 50.2rem;
-    width: 100%;
-    filter: opacity(100%);
-    &:hover {
-        filter: opacity(0); 
-      }
   }
   
   .home_view-map_and_footer-item {
