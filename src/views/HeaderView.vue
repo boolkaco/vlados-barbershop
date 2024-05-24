@@ -123,11 +123,10 @@ import Logo from '@/assets/logo.svg'
 }
 
 .header_view__social-img {
-  transition: all 100ms;
+  transition: all 300ms;
   filter: grayscale(100%);
     &:hover {
       filter: grayscale(0%);
-      transition: all 100ms;
     }
 
 }

@@ -158,7 +158,7 @@
           <div class="home_view-map_and_footer-menu_item">CONTACTS</div>
         </div>
         <div class="home_view-map_and_footer-logo">
-          <img class="home_view-map_and_footer-logo-item_arrow" v-bind:src="footerArrow">
+          <img @click="scrollToTop" class="home_view-map_and_footer-logo-item_arrow" v-bind:src="footerArrow">
           <img class="home_view-map_and_footer-logo-item_logo" v-bind:src="footerLogo">
         </div>
         <div class="home_view-map_and_footer-footer">
@@ -187,6 +187,13 @@ import instagram from '@/assets/icons/instagram-hover-icon.svg'
 import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
 import footerLogo from '@/assets/footer-logo.svg'
 import footerArrow from '@/assets/footer-arrow.svg'
+
+const scrollToTop = (): void => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
 
 
 </script>
@@ -554,9 +561,14 @@ import footerArrow from '@/assets/footer-arrow.svg'
     align-items: center;
   }
 
-  .home_view-map_and_footer-img {
+  .home_view__map-img {
+    transition: all 400ms;
     height: 50.2rem;
     width: 100%;
+    filter: opacity(100%);
+    &:hover {
+        filter: opacity(0); 
+      }
   }
   
   .home_view-map_and_footer-item {
@@ -569,13 +581,12 @@ import footerArrow from '@/assets/footer-arrow.svg'
   }
 
   .home_view-map_and_footer-icon {
-    transition: all 100ms;
+    transition: all 300ms;
     margin: 0 0.8rem;
     filter: grayscale(100%);
 
       &:hover {
         filter: grayscale(0%);
-        transition: all 100ms;
       }
   }
 
@@ -602,6 +613,10 @@ import footerArrow from '@/assets/footer-arrow.svg'
   .home_view-map_and_footer-logo-item_arrow {
     position: relative;
     right: 51rem;
+    transition: all .5s;
+      &:hover {
+        transform: scale(1.25); 
+      }
   }
 
   .home_view-map_and_footer-logo {
