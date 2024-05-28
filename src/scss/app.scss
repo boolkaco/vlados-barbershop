@@ -9,19 +9,14 @@
   
 }
 
-html {
-  font-size: 10px;
-  display: flex;
-  justify-content: center;  
-  align-items: center;
-}
 
+html,
 body,
 input,
 select,
 button,
 textarea {
-  letter-spacing: 0.004rem;
+  letter-spacing: 0.04px;
 }
 
 textarea,
@@ -31,12 +26,10 @@ input,
 body,
 span,
 p {
-  font-size: 1.3rem;
+  font-size: 13px;
 }
 
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
-  max-width: 1400px;
 }

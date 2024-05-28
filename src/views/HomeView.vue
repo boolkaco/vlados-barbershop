@@ -1,23 +1,30 @@
 <template>
   <div class="home_view">
     <HeaderView />
+    <!-- <img v-if="isShow" class="home_view__overview" v-bind:src="mobileBg" alt=""> -->
     <div class="home_view__wrp">
-      <img v-bind:src="Logo" alt="">
-      <p class="home_view__tittle">vlado's</p>
-      <p class="home_view__tittle-text">barbershop</p>
+      <img class="logo" v-bind:src="Logo" alt="">
+      <img v-if="!isShow" class="home_view__title" v-bind:src="logoTitle" alt="">
+      <!-- <img v-if="isShow" class="home_view__title" v-bind:src="logoTitleWhite" alt=""> -->
       <p class="home_view__agite-text">Professional barber services in Prague</p>
-      <Button />
-      <img class="home_view__overview" v-bind:src="overview" alt="">
-      <img class="home_view__overview-1" v-bind:src="overviewColor" alt="">
+      <Button v-if="!isShow"/>
+      <!-- <ButtonMob v-if="isShow"/> -->
+      <!-- <img v-if="isShow" class="home_view__text_img" v-bind:src="haircutTextImg" alt=""> -->
+      <img v-if="!isShow" class="home_view__overview" v-bind:src="overview" alt="">
+      <img v-if="!isShow" class="home_view__overview-1" v-bind:src="overviewColor" alt="">
       <div class="home_view__about-us">
         <p class="home__view_about-us_title">About Us</p>
+        <!-- <img class="home_view__overview_mobile" v-if="isShow" v-bind:src="overviewColor"> -->
         <div class="home_view__about-us_text">
-          <span class="home_view__about-us_text-item">Hey there! I'm Vlad, and welcome to Vlado's Barbershop!<br> 
+          <span v-if="!isShow" class="home_view__about-us_text-item">Hey there! I'm Vlad, and welcome to Vlado's Barbershop!<br> 
             We've created this space with over ten years of experience in the barber industry.<br> We truly believe that a fantastic haircut goes hand in hand with top-tier service
           </span>
-          <span class="home_view__about-us_text-item">
+          <span v-if="!isShow" class="home_view__about-us_text-item">
             Our crew blends classic techniques with the latest trends to ensure your cut or<br>shave isn't just on point but also timeless. It's not just about looking good here; it's<br>about the entire experience. Get ready for personalized advice to choose the<br>perfect haircut, grooming tips, and a range of extra services to make your visit<br>truly special.
           </span>
+          <!-- <span class="home_view__about-us_text-item" v-if="isShow">
+            At Vlado's Barber Shop, we believe a great haircut is the cornerstone of style. Nestled in the heart of the city, our shop combines traditional techniques with modern flair, ensuring every cut and shave not only reflects your personal style but also stands the test of time. Here, grooming is not just about appearance—it's about the experience.
+          </span> -->
         </div>
       </div>
       <div class="home_view__servise-and-prise">
@@ -26,7 +33,7 @@
         </p>
         <table class="home_view__servise-and-prise__table">
           <thead>
-            <tr class="qwe">
+            <tr>
               <th class="home_view__servise-and-prise__table-thead"></th>
               <th class="home_view__servise-and-prise__table-thead">barber</th>
               <th class="home_view__servise-and-prise__table-thead">top-barber</th>
@@ -34,42 +41,42 @@
           </thead>
           <tbody>
             <tr>
-              <th>Classic haircut</th>
+              <th class="table__thead">Classic haircut</th>
               <td>650 Kč</td>
               <td>850 Kč </td>
             </tr>
             <tr>
-              <th>Classic haircut + beard trim</th>
+              <th class="table__thead">Classic haircut + beard trim</th>
               <td>990 Kč</td>
               <td>1200 Kč </td>
             </tr>
             <tr>
-              <th>Full service - haircut + beard trim + facial skin care</th>
+              <th class="table__thead">Full service - haircut + beard trim + facial skin care</th>
               <td>1390 Kč</td>
               <td>1590 Kč </td>
             </tr>
             <tr>
-              <th>Children's haircut (6-12 y.o.)</th>
+              <th class="table__thead">Children's haircut (6-12 y.o.)</th>
               <td>390 Kč</td>
               <td>590 Kč</td>
             </tr>
             <tr>
-              <th>Clipper cut</th>
+              <th class="table__thead">Clipper cut</th>
               <td>390 Kč</td>
               <td>590 Kč</td>
             </tr>
             <tr>
-              <th>Beard trim</th>
+              <th class="table__thead">Beard trim</th>
               <td>390 Kč</td>
               <td>490 Kč</td>
             </tr>
             <tr>
-              <th>Grooming + beard toning</th>
+              <th class="table__thead">Grooming + beard toning</th>
               <td>890 Kč</td>
               <td>990 Kč</td>
             </tr>
             <tr>
-              <th>Wax hair removal</th>
+              <th class="table__thead">Wax hair removal</th>
               <td>100 Kč</td>
               <td>100 Kč</td>
             </tr>
@@ -145,7 +152,6 @@
         </div>
       </div>
       <div class="home_view-map_and_footer">
-        <!-- <img class="home_view__map-img" v-bind:src="mapImg"> -->
         <MapGoogle class="home-view__google-map"/>
         <div class="home_view-map_and_footer-item">
           <img class="home_view-map_and_footer-icon" v-bind:src="facebook" alt=""/>
@@ -153,10 +159,10 @@
           <img class="home_view-map_and_footer-icon" v-bind:src="instagram" alt=""/>
         </div>
         <div class="home_view-map_and_footer-menu">
-          <div class="home_view-map_and_footer-menu_item">ABOUT US</div>
-          <div class="home_view-map_and_footer-menu_item">SERVICES & PRICES</div>
-          <div class="home_view-map_and_footer-menu_item">OUR TEAM</div>
-          <div class="home_view-map_and_footer-menu_item">CONTACTS</div>
+          <div @click="scrollToAboutUs" class="home_view-map_and_footer-menu_item">ABOUT US</div>
+          <div @click="scrollToServises" class="home_view-map_and_footer-menu_item">SERVICES & PRICES</div>
+          <div @click="scrollToTeam" class="home_view-map_and_footer-menu_item">OUR TEAM</div>
+          <div @click="scrollToContacts" class="home_view-map_and_footer-menu_item">CONTACTS</div>
         </div>
         <div class="home_view-map_and_footer-logo">
           <img @click="scrollToTop" class="home_view-map_and_footer-logo-item_arrow" v-bind:src="footerArrow">
@@ -171,9 +177,11 @@
 </template>
 
 <script setup lang="ts">
+import logoTitle from '@/assets/icons/vlados-title-icon.svg'
 import Button from '@/components/Button.vue';
 import ButtonOt from '@/components/ButtonOt.vue';
 import ButtonWb from '@/components/ButtonWb.vue';
+// import ButtonMob from '@/components/ButtonMob.vue'
 import HeaderView from './HeaderView.vue';
 import Logo from '@/assets/logo.svg';
 import overview from '@/assets/barber-nocolor-img.png';
@@ -182,13 +190,32 @@ import imgAlex from '@/assets/barber-Alex-img.png'
 import imgVlad from '@/assets/barber-Vlad-img.png'
 import follow from '@/assets/follow-rotate-svg.svg'
 import phone from '@/assets/iPhone-img.svg'
-import mapImg from '../assets/map-image.svg'
 import facebook from '@/assets/icons/facebook-hover-icon.svg'
 import instagram from '@/assets/icons/instagram-hover-icon.svg'
 import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
 import footerLogo from '@/assets/footer-logo.svg'
 import footerArrow from '@/assets/footer-arrow.svg'
 import MapGoogle from '@/components/Map.vue'
+// import logoTitleWhite from '@/assets/logoTitleWhite.svg'
+// import haircutTextImg from '@/assets/haircut-text-img.svg'
+// import mobileBg from '@/assets/mobile-main-bg-img.png'
+// import { ref, onMounted, onBeforeUnmount } from 'vue';
+
+// const isShow = ref(window.innerWidth <= 767);
+
+// const handleResize = async () => {
+
+//   await new Promise(resolve => setTimeout(resolve, 50));
+//   isShow.value = window.innerWidth <= 767;
+// };
+
+// onMounted(() => {
+//   window.addEventListener('resize', handleResize);
+// });
+
+// onBeforeUnmount(() => {
+//   window.removeEventListener('resize', handleResize);
+// });
 
 
 
@@ -199,15 +226,44 @@ const scrollToTop = (): void => {
   });
 };
 
+const scrollToAboutUs = (): void => {
+  window.scrollTo({
+    top: 1000,
+    behavior: 'smooth',
+  });
+};
+
+const scrollToServises = (): void => {
+  window.scrollTo({
+    top: 1640,
+    behavior: 'smooth',
+  });
+};
+
+const scrollToTeam = (): void => {
+  window.scrollTo({
+    top: 2540,
+    behavior: 'smooth',
+  });
+};
+
+const scrollToContacts = (): void => {
+  window.scrollTo({
+    top: 4000,
+    behavior: 'smooth',
+  });
+};
+
 
 </script>
 
 <style scoped lang="scss">  
 @import '@/scss/variables.scss';
-@media screen and (min-width: 70rem) {
+@media screen and (min-width: 1025px) {
   .home_view {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 
@@ -215,31 +271,35 @@ const scrollToTop = (): void => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10.9rem;
+    margin-top: 107px;
   }
 
-  .home_view__tittle {
-    font-size: 4.1rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    color: $text-title-color;
-    margin: 1.3rem 0 0 0;
+  .logo {
+    width: 175px;
+    height: 160px;
+    margin: 0 60px 0 0;
   }
 
-  .home_view__tittle-text {
-    font-size: 1.2rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    color: $text-title-color;
-    margin: -0.5rem 0 3.2rem 0;
+  .home_view-title_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
+
+  .home_view__title {
+    width: 278px;
+    height: 60px;
+    margin: 13px 0 32px 0;
+  }
+
 
   .home_view__agite-text {
-    font-size: 2.5rem;
+    font-size: 25px;
     font-weight: 300;
-    text-transform: uppercase;
+    text-transform: uppercase; 
     color: $text-agite-color;
-    width: 44.7rem;
+    width: 447px;
     text-align: center;
   }
 
@@ -252,9 +312,9 @@ const scrollToTop = (): void => {
   .home_view__overview {
     transition: all 500ms;
     position: absolute;
-    width: 140rem;
-    height: 64.9rem;   
-    top: 56.6rem;
+    width: 100%;
+    height: 649px;   
+    top: 566px;
     &:hover {
       transition: all 500ms;
       }
@@ -263,9 +323,9 @@ const scrollToTop = (): void => {
   .home_view__overview-1 {
     transition: all 500ms;
     position: absolute;
-    width: 140rem;
-    height: 64.9rem;   
-    top: 56.6rem;
+    width: 100%;
+    height: 649px;   
+    top: 566px;
     filter: opacity(0);
     &:hover {
       filter: opacity(100%);
@@ -283,29 +343,29 @@ const scrollToTop = (): void => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 71.6rem 0 4.1rem 0;
+    margin: 716px 0 41px 0;
   }
 
   .home__view_about-us_title {
-    font-size: 5.1rem;
+    font-size: 51px;
     font-weight: 300;
     text-transform: uppercase;
-    margin-bottom: 3.2rem;
+    margin-bottom: 32px;
   }
 
   .home_view__about-us_text {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70rem;
+    width: 700px;
   }
 
   .home_view__about-us_text-item {
-    font-size: 1.9rem;
-    line-height: 2.7rem;
+    font-size: 19px;
+    line-height: 27px;
     font-weight: 400;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
     text-align: center; 
     text-indent: 3%;
   }
@@ -323,35 +383,34 @@ const scrollToTop = (): void => {
     width: 100%;
     border-top: solid 1px $color-gray-3;
     border-bottom: solid 1px $color-gray-3;
-    margin: 0 0 5.6rem 0;
+    margin: 0 0 56px 0;
   }
 
   .home_view__servise-and-prise__title {
     text-transform: uppercase;
-    font-size: 5.1rem;
+    font-size: 51px;
     font-weight: 300;
-    margin: 6rem 0 3.1rem 0;
+    margin: 60px 0 31px 0;
   }
 
   .home_view__servise-and-prise__table {
-    width: 100%;
-    margin: 0 0 6.7rem 0;
+    width: 1400px;
+    margin: 0 0 67px 0;
     border-collapse: collapse;
 
       th, td {
-        height: 6.4rem;
-        border-bottom: 0.1rem solid $table-border-color;
+        height: 64px;
+        border-bottom: 01px solid $table-border-color;
       }
 
       th {
-        font-size: 1.6rem;
+        font-size: 16px;
         font-weight: 400;
         text-transform: uppercase;
-        text-align: left;
       }
 
       td {
-        font-size: 1.6rem;
+        font-size: 16px;
         font-weight: 600;
         text-transform: uppercase;
         color: $prise-color;
@@ -360,12 +419,16 @@ const scrollToTop = (): void => {
   }
 
   .home_view__servise-and-prise__table-thead {
+    border-bottom: 2px solid $table-border-color;
     text-align: right;
-    border-bottom: 0.2rem solid $table-border-color;
+  }
+
+  .table__thead {
+    text-align: left;
   }
 
   .home_view__servise-and-prise__button {
-    margin-bottom: 7rem;
+    margin-bottom: 70px;
   }
 
 
@@ -384,9 +447,9 @@ const scrollToTop = (): void => {
 
   .home_view__our-team__title {
     text-transform: uppercase;
-    font-size: 5.1rem;
+    font-size: 51px;
     font-weight: 300;
-    margin: 0 0 5.8rem 0;
+    margin: 0 0 58px 0;
   }
 
   .home_view__barber-info {
@@ -394,11 +457,11 @@ const scrollToTop = (): void => {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 0 0 6.6rem 0;
+    margin: 0 0 66px 0;
   }
 
   .home_view__barber-info_person {
-    margin: 0 1.05rem;
+    margin: 0 10.5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -407,9 +470,9 @@ const scrollToTop = (): void => {
 
   .home_view__barber-image {
     transition: all 700ms;
-    width: 57.1rem;
-    height: 57.1rem;
-    margin: 0 0 3.9rem 0;
+    width: 571px;
+    height: 571px;
+    margin: 0 0 39px 0;
     filter: grayscale(100%);
 
       &:hover {
@@ -419,7 +482,7 @@ const scrollToTop = (): void => {
   }
 
   .home_view__barber-block {
-    width: 57.1rem;
+    width: 571px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -435,12 +498,12 @@ const scrollToTop = (): void => {
   }
 
   .home_view__barber-first_name {
-    font-size: 2.8rem;
+    font-size: 28px;
     font-weight: 400;
   }
 
   .home_view__barber_position {
-    font-size: 1.8rem;
+    font-size: 18px;
     font-weight: 300;
   }
 
@@ -457,31 +520,31 @@ const scrollToTop = (): void => {
     align-items: center;
     background-color: $bg-follow-color;
     width: 100%;
-    height: 56.9rem;
-    margin: 0 0 5.9rem 0;
+    height: 569px;
+    margin: 0 0 59px 0;
   }
 
   .home_view__follow-us_title {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 10.9rem 0 0;
+    margin: 0 109px 0 0;
   }
 
   .home_view__follow-us_title-text {
-    font-size: 4.2rem;
+    font-size: 42px;
     font-weight: 400;
     color: $follow-us-title-color;
     text-transform: uppercase;
     text-align: center;
-    margin: 0 0 3.3rem 0;
+    margin: 0 0 33px 0;
   }
 
   .home_view__follow-us_image-block {
     background-color: #FFFFFF0A;
-    height: 115.3rem;
-    width: 36.2rem;
-    left: 17.5rem;
+    height: 1153px;
+    width: 362px;
+    left: 175px;
     display: flex;
     position: relative;
     align-items: center;
@@ -489,10 +552,26 @@ const scrollToTop = (): void => {
     transform: rotate(-26.1deg);
   }
 
+  .home_view__follow-us_image-item_text {
+    animation-name: spin;
+    animation-duration: 15000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+      @keyframes spin { 
+        from { 
+            transform: rotate(0deg); 
+        } to { 
+            transform: rotate(360deg); 
+        }
+    }
+  }
+
+
   .home_view__follow-us_image-item_phone {
     position: relative;
-    top: 7.7rem;
-    right: 18rem;
+    top: 78px;
+    right: 180px;
   }
 
 
@@ -508,21 +587,21 @@ const scrollToTop = (): void => {
     justify-content: center;
     width: 100%;
     object-fit: cover;
-    margin: 0 0 3.7rem 0;
+    margin: 0 0 37px 0;
   }
 
   .home_view__contacts-title {
     text-transform: uppercase;
-    font-size: 5.1rem;
+    font-size: 51px;
     font-weight: 300;
-    margin-bottom: 6rem;
+    margin-bottom: 60px;
   }
 
   .home_view__contacts-list {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 140rem;
+    width: 1400px;
   }
 
   .home_view__contacts-item {
@@ -532,26 +611,27 @@ const scrollToTop = (): void => {
   }
 
   .home_view__contacts-table_title {
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 500;
     color: $table-title-color;
-    margin: 0 0 1.5rem 2rem;
+    margin: 0 0 15px 2px;
   }
 
   .home_view__contacts-table_value {
     border: 0.1rem solid $table-border-color;
-    border-radius: 4.3rem;
-    padding: 1.4rem 2rem;
-    font-size: 1.8rem;
+    border-radius: 43px;
+    padding: 14px 20px;
+    font-size: 18px;
     font-weight: 400;
   }
 
   .home_view__contacts-text {
-    font-size: 1.8rem;
+    font-size: 18px;
     font-weight: 400;
-    margin: 3.7rem 0 0 0;
+    margin: 37px 0 0 0;
     color: $text-contacts-color;
   }
+
 
 
 
@@ -563,22 +643,12 @@ const scrollToTop = (): void => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 
-  // .home_view__map-img {
-  //   transition: all 400ms;
-  //   height: 50.2rem;
-  //   width: 100%;
-  //   position: relative;
-  //   filter: opacity(100%);
-  //   &:hover {
-  //       filter: opacity(0); 
-  //     }
-  // }
-
   .home-view__google-map {
-    width: 140rem;
-    height: 50.2rem;
+    width: 100%;
+    height: 502px;
   }
   
   .home_view-map_and_footer-item {
@@ -587,12 +657,12 @@ const scrollToTop = (): void => {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 4rem 0 3.3rem 0 ;
+    margin: 40px 0 33px 0 ;
   }
 
   .home_view-map_and_footer-icon {
     transition: all 300ms;
-    margin: 0 0.8rem;
+    margin: 0 8px;
     filter: grayscale(100%);
 
       &:hover {
@@ -606,13 +676,13 @@ const scrollToTop = (): void => {
     align-items: center;
     justify-content: space-around;
     text-transform: uppercase;
-    margin: 0 0 4.3rem 0;
+    margin: 0 0 43px 0;
   }
 
   .home_view-map_and_footer-menu_item {
-    font-size: 1.8rem;
+    font-size: 18px;
     font-weight: 400;
-    margin: 0 1.7rem;
+    margin: 0 17px;
 
       &:hover {
         color: $link-footer-color;
@@ -622,7 +692,7 @@ const scrollToTop = (): void => {
 
   .home_view-map_and_footer-logo-item_arrow {
     position: relative;
-    right: 51rem;
+    right: 510px;
     transition: all .5s;
       &:hover {
         transform: scale(1.25); 
@@ -635,12 +705,12 @@ const scrollToTop = (): void => {
     justify-content: center;
     align-items: center;;
     width: 100%;
-    margin: 0 0 3.4rem 0;
+    margin: 0 0 34px 0;
   }
 
   .home_view-map_and_footer-logo-item_logo {
     position: relative;
-    right: 4.7rem;
+    right: 47px;
   }
 
   .home_view-map_and_footer-footer {
@@ -651,10 +721,10 @@ const scrollToTop = (): void => {
   }
 
   .home_view-map_and_footer-text {
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 400;
     color: $footer-text-color;
-    margin: 3.2rem 0 10.4rem 0;
+    margin: 32px 0 104px 0;
 
   }
 

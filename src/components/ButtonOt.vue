@@ -14,34 +14,33 @@
 @import '@/scss/variables.scss';
 
 .btn {
-  background-color: $button-hover-color;
-  border-radius: 3.1rem;
-  border: 0.1rem solid  $button-hover-color;
-  color: $button-bg-color;
+  background-color: $color-orange; 
+  border: 1px solid $color-orange;
+  border-radius: 31px;
+  color: $color-white;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 18px;
   font-weight: 500;
   line-height: normal;
-  height: 3.9rem;
-  width: 12.3rem;
-  padding:  0;
+  height: 49px;
+  min-width: 133px;
+  padding: 4px 8px;
   text-align: center;
   text-decoration: none;
-  transition: all 300ms ;
-
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  width: 100%;
 
   &:disabled {
     pointer-events: none;
   }
 
   &:hover {
-    color: $button-text-color;
-    background-color: $button-bg-color;
-    border: 0.1rem solid $button-border-color;
-    transform: translateY(-0px);
+    color: $color-black;
+    background-color: $color-white;
+    border: 1px solid $color-gray-1;
   }
 
   &:active {

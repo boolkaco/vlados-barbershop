@@ -1,6 +1,6 @@
 {
-  "Hello World": {
-    "name-one": "Vite",
-    "name-two": "Vue"
+  "names": {
+    "name": "Vlad",
+    "barber-name": "Alex"
   }
 }

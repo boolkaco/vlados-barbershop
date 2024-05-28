@@ -12,8 +12,6 @@
 </script>
 
 <style scoped lang="scss">
-@import '@/scss/variables.scss';
-
 
 
 

@@ -14,18 +14,20 @@
 @import '@/scss/variables.scss';
 
 .btn {
-  background-color: $button-bg-color;
-  border: 0.1rem solid $button-border-color;
-  border-radius: 3.1rem;
-  color: $button-text-color;
+	background-color: $color-white;
+  border: 1px solid $color-gray-1;
+  border-radius: 31px;
+  color: $color-black;
   cursor: pointer;
-  display: inline-block;
-  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
   font-weight: 500;
   line-height: normal;
-  max-height: 4.9rem;
-  max-width: 15rem;
-  padding: 0.9rem 1.5rem;
+  height: 49px;
+  min-width: 133px;
+  padding: 4px 8px;
   text-align: center;
   text-decoration: none;
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
@@ -36,10 +38,10 @@
   }
 
   &:hover {
-    color: #fff;
+    color: $color-white;
     background-color: $color-orange;
-    border: $color-orange;
-    transform: translateY(-0px);
+    border: 1px solid $color-orange;
+    // transform: translateY(-0px);
   }
 
   &:active {

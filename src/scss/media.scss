@@ -1,16 +1,54 @@
-@media all and (max-width: 70rem) {
-  .header_view {
-    width: 70rem;
-    max-height: 8.9rem;
-    padding: 1rem 4rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-transform: uppercase;
-    position: fixed;
-    background-color: $color-white;
-  }
+// @import './variables';
+
+// @media (max-width: 767px) {
+  
+
+//   .header_view {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     align-items: center;
+//   }
+  
+//   .header_view-wrp_mobile {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     align-items: center;
+//     text-transform: uppercase;
+//     background-color: $header-bg-color;
+//     height: 55px;
+//     // z-index: 10;
+//   }
+
+//   .header_view__logo_mobile {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     align-items: center;
+//     width: 111px;
+//     height: 101px;
+//   }
+
+//   .header_view__logo-image_mobile {
+//     width: 40px;
+//     height: 37px;
+//     margin: 0 0 0 15px;
+//   }
+
+
+//   .header_view__logo-title_mobile {
+//     width: 94px;
+//     height: 22.5px;
+//   }
+
+//   .header_view__menu-icon_mobile {
+//     width: 24px;
+//     height: 12px;
+//     margin:0 22px 0 0;
+//   }
 
 
 
@@ -20,60 +58,196 @@
 
 
 
+//   .home_view {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//   }
 
-
-
-  .home_view {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .home_view__wrp {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10.9rem;
-  }
-
-  .home_view__tittle {
-    font-size: 4.1rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    color: $text-title-color;
-    margin: 1.3rem 0 0 0;
-  }
-
-  .home_view__tittle-text {
-    font-size: 1.2rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    color: $text-title-color;
-    margin: -0.5rem 0 3.2rem 0;
-  }
-
-  .home_view__agite-text {
-    font-size: 2.5rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    color: $text-agite-color;
-    width: 44.7rem;
-    text-align: center;
-  }
+//   .home_view__wrp {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     z-index: 9;
+//     width: 100%;
+//   }   
 
 
 
 
 
-  .home_view__overview {
-    transition: all 1000ms;
-    position:unset;
-    width: 100%;
-    height: 100%;
-    filter: grayscale(100%);
-      &:hover {
-        filter: grayscale(0);
-        transition: all 1000ms;
-      }
-  }
-}
+
+
+//   .home_view__tittle {
+//     font-size: 11px;
+//     font-weight: 300;
+//     text-transform: uppercase;
+//     color: $text-title-color;
+//     margin: 13px 0 0 0;
+    
+//   }
+
+//   .home_view__tittle-text {
+//     font-size: 12px;
+//     font-weight: 300;
+//     text-transform: uppercase;
+//     color: $text-title-color;
+//     margin: -5px 0 32px 0;
+//   }
+
+//   .home_view__agite-text {
+//     font-size: 25px;
+//     font-weight: 300;
+//     text-transform: uppercase;
+//     color: $text-agite-color;
+//     width: 100%;
+//     text-align: center;
+//   }
+
+
+
+
+
+
+
+//   .home_view__overview {
+//     filter: brightness(40%);
+//     top: 0;
+//     position: absolute;
+//     height: 65.3rem;
+//     width: 37.5rem;
+//   }
+
+
+
+
+
+
+//   .logo {
+//     width: 111px;
+//     height: 101px;
+//     margin: 85px 0 35px 0;
+//   }
+
+
+
+
+
+
+//   .home_view__title {
+//     width: 145px;
+//     height: 35px;
+//   }
+
+//   .home_view__agite-text {
+//     font-size: 23px;
+//     font-weight: 300;
+//     color: $text-agile-color;
+//     width: 80%;
+//     height: 72px;
+//     margin: 42px 0 0 0;
+//   }
+  
+//   .home_view__text_img {
+//     margin: 75px 0 99px 0;
+//     width: 100%;
+//     height: 42px;
+//   }
+
+
+
+
+
+
+
+//   .home_view__about-us {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     margin: 0 0 50px 0;
+//   }
+
+//   .home__view_about-us_title {
+//     font-size: 36px;
+//     font-weight: 300;
+//     text-transform: uppercase;
+//     margin-bottom: 33px;
+//   }
+
+//   .home_view__overview_mobile {
+//     width: 90%;
+//     height: 223px;
+//     margin: 0 0 35px 0;
+//   }
+
+//   .home_view__about-us_text {
+//     display: flex;
+//     justify-content: center;
+//     width: 335px;
+//     height: 216px;
+//   }
+
+//   .home_view__about-us_text-item {
+//     font-size: 17px;
+//     font-weight: 400;
+//     line-height: 24px;
+//   }
+
+
+
+
+
+
+
+
+
+//   .home_view__servise-and-prise{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     width: 70%;
+//   }
+
+
+
+
+
+
+
+
+
+//   .home_view__our-team {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;;
+//     width: 60%;
+//   }
+
+//   .home_view__barber-image {
+//     width: 90%;
+//   }
+
+
+
+
+
+
+
+
+//   .home_view__follow-us {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;;
+//     width: 60%;
+//   }
+  
+  
+// }
+
+// @media (min-width: 768px) and (max-width: 1024px)
