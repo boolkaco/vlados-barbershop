@@ -359,7 +359,7 @@ const scrollToContacts = (): void => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 716px 0 61px 0;
+    margin: 716px 0 31px 0;
   }
 
   .home__view_about-us_title {
@@ -374,7 +374,6 @@ const scrollToContacts = (): void => {
     flex-direction: column;
     align-items: center;
     width: 700px;
-    height: 243px;
     padding: 0 20px;
   }
 

@@ -34,16 +34,15 @@ import instagram from '@/assets/icons/instagram-hover-icon.svg'
 import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
 import Logo from '@/assets/logo.svg'
 import logoTitle from '@/assets/icons/vlados-title-icon.svg'
-import { useI18n } from 'vue-i18n'
-import { ref } from 'vue';
+// import { ref } from 'vue';
+// import { useI18n } from 'vue-i18n'
 
+// const { locale } = useI18n();
+// const selectedLanguage = ref(locale.value);
 
-const { locale } = useI18n();
-const selectedLanguage = ref(locale.value);
-
-function changeLanguage() {
-  locale.value = selectedLanguage.value;
-}
+// function changeLanguage() {
+//   locale.value = selectedLanguage.value;
+// }
     
   
 
