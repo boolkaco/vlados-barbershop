@@ -13,8 +13,8 @@
       </div>
       <div class="header_view__social">
         <select v-model="selectedLanguage" @change="changeLanguage" class="header_view__social-select">
-          <option value="cz">cz</option>
           <option value="en">en</option>
+          <option value="cz">cz</option>
           <option value="ua">ua</option>
           <option value="ru">ru</option>
         </select>
