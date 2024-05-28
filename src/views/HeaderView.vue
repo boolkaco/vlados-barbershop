@@ -19,9 +19,9 @@
           <option>ru</option>
         </select>
         <div class="header_view__social-item">
-          <img class="header_view__social-img" v-bind:src="facebook" alt=""/>
-          <img class="header_view__social-img" v-bind:src="whatsapp" alt=""/>
-          <img class="header_view__social-img" v-bind:src="instagram" alt=""/>
+          <img class="header_view__social-img" @click="redirectToFacebook" v-bind:src="facebook" />
+          <img class="header_view__social-img" @click="redirectToWhatsapp" v-bind:src="whatsapp" />
+          <img class="header_view__social-img" @click="redirectToInstagram" v-bind:src="instagram" />
         </div>
       </div>
     </div>
@@ -61,6 +61,19 @@ import logoTitle from '@/assets/icons/vlados-title-icon.svg'
 // onBeforeUnmount(() => {
 //   window.removeEventListener('resize', handleResize);
 // });
+
+function redirectToFacebook() {
+  window.open('https://www.facebook.com/profile.php?id=61558335386973', '_blank', 'noopener,noreferrer');
+}
+
+function redirectToWhatsapp() {
+  window.open('#', '_blank', 'noopener,noreferrer');
+}
+
+function redirectToInstagram() {
+  window.open('https://www.instagram.com/vlados_barbershop?igsh=MXRkdjkzcjExbWJ4Mw==', '_blank', 'noopener,noreferrer');
+}
+
 
 
 
@@ -111,7 +124,7 @@ const scrollToContacts = (): void => {
   .header_view-wrp {
     width: 100%;
     height: 89px;
-    padding: 0 40px;
+    padding: 0 35px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -139,14 +152,16 @@ const scrollToContacts = (): void => {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 504px;
+    max-width: 504px;
+    margin: 0 0 0 145.5px
   }
 
   .header_view__link-item {
-    margin: 0 350x;
-    padding: 1px 50x;
+    margin: 0 15px;
+    padding: 1px 5x;
     text-transform: uppercase;
     font-size: 14px;
+    line-height: 16px;
     
       &:hover {
         color: $link-hover-color;
@@ -161,14 +176,14 @@ const scrollToContacts = (): void => {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 180px;
+    margin: 0 21px 0 0;
   }
 
   .header_view__social-select {
     border: none;
     text-transform: uppercase;
     font-size: 17px;
-    
+    margin: 0 53px 0 0;
   }
 
   .header_view__social-item {
@@ -176,14 +191,17 @@ const scrollToContacts = (): void => {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100px;
   }
 
   .header_view__social-img {
+    margin: 0 16px 0 0;
     transition: all 300ms;
     filter: grayscale(100%);
       &:hover {
         filter: grayscale(0%);
+      }
+      &:active {
+        filter: grayscale(100%);
       }
 
   }

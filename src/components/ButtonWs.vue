@@ -19,20 +19,20 @@
 .btn {
   background-image: none; 
 	background: transparent;
-	float: left;
 	background-color: transparent;
-  border: 0.1rem solid $button-border-color;
-  border-radius: 3.1rem;
-  color: $button-bg-color;
+  border: 1px solid $button-border-color;
+  border-radius: 31px;
+  color: $button-text-color;
   cursor: pointer;
-  display: inline-block;
-  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
   font-weight: 500;
   line-height: normal;
-  margin: 2.9rem 0 4.6rem 0;
-  height: 4.9rem;
-  width: 15rem;
-  padding: 0.8rem 1.8rem;
+  margin: 37px 0 46px 0;
+  max-height: 49px;
+  max-width: 150px;
+  padding: 4px 8px;
   text-align: center;
   text-decoration: none;
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
@@ -45,26 +45,36 @@
   &:hover {
     color: #fff;
     background-color: $color-orange;
-    border: $color-orange;
-    transform: translateY(-0px);
+    border: 1px solid $color-orange;
+    // transform: translateY(-0px);
   }
 
   &:active {
     box-shadow: none;
     transform: translateY(0);
+    background-color: $color-white;
+    color: $button-text-color;
+    border: 1px solid $button-border-color;
   }
 }
 
 select {
-  width: 3.2rem;
-  height: 3.2rem;
-  border-radius: 6.8rem;
-  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 68px;
+  border: 2px solid $select-main-color;
   background: url(../assets/select-arrow.svg) no-repeat center;
   background-color: $select-bg-color;
   color: $select-main-color;
   appearance: none;
-  margin-left: 0.6rem;
+  margin: 0 0 0 6.6px;
+}
+
+option {
+  display: none;
 }
 
 </style>

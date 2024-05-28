@@ -1,30 +1,22 @@
 <template>
   <div class="home_view">
     <HeaderView />
-    <!-- <img v-if="isShow" class="home_view__overview" v-bind:src="mobileBg" alt=""> -->
     <div class="home_view__wrp">
       <img class="logo" v-bind:src="Logo" alt="">
-      <img v-if="!isShow" class="home_view__title" v-bind:src="logoTitle" alt="">
-      <!-- <img v-if="isShow" class="home_view__title" v-bind:src="logoTitleWhite" alt=""> -->
+      <img class="home_view__title" v-bind:src="logoTitle" alt="">
       <p class="home_view__agite-text">Professional barber services in Prague</p>
-      <Button v-if="!isShow"/>
-      <!-- <ButtonMob v-if="isShow"/> -->
-      <!-- <img v-if="isShow" class="home_view__text_img" v-bind:src="haircutTextImg" alt=""> -->
-      <img v-if="!isShow" class="home_view__overview" v-bind:src="overview" alt="">
-      <img v-if="!isShow" class="home_view__overview-1" v-bind:src="overviewColor" alt="">
+      <ButtonWs />
+      <img class="home_view__overview" v-bind:src="overview" alt="">
+      <img class="home_view__overview-1" v-bind:src="overviewColor" alt="">
       <div class="home_view__about-us">
         <p class="home__view_about-us_title">About Us</p>
-        <!-- <img class="home_view__overview_mobile" v-if="isShow" v-bind:src="overviewColor"> -->
         <div class="home_view__about-us_text">
-          <span v-if="!isShow" class="home_view__about-us_text-item">Hey there! I'm Vlad, and welcome to Vlado's Barbershop!<br> 
+          <span class="home_view__about-us_text-item">Hey there! I'm Vlad, and welcome to Vlado's Barbershop!<br> 
             We've created this space with over ten years of experience in the barber industry.<br> We truly believe that a fantastic haircut goes hand in hand with top-tier service
           </span>
-          <span v-if="!isShow" class="home_view__about-us_text-item">
+          <span class="home_view__about-us_text-item">
             Our crew blends classic techniques with the latest trends to ensure your cut or<br>shave isn't just on point but also timeless. It's not just about looking good here; it's<br>about the entire experience. Get ready for personalized advice to choose the<br>perfect haircut, grooming tips, and a range of extra services to make your visit<br>truly special.
           </span>
-          <!-- <span class="home_view__about-us_text-item" v-if="isShow">
-            At Vlado's Barber Shop, we believe a great haircut is the cornerstone of style. Nestled in the heart of the city, our shop combines traditional techniques with modern flair, ensuring every cut and shave not only reflects your personal style but also stands the test of time. Here, grooming is not just about appearance—it's about the experience.
-          </span> -->
         </div>
       </div>
       <div class="home_view__servise-and-prise">
@@ -82,7 +74,12 @@
             </tr>
           </tbody>
         </table>
-        <ButtonOt class="home_view__servise-and-prise__button"/>
+        <button 
+          class="btn_ot home_view__btn-sp" 
+          @click="openBook"
+        >
+          Book Online
+        </button>
       </div>
       <div class="home_view__our-team">
         <p class="home_view__our-team__title">
@@ -97,7 +94,12 @@
                 <div class="home_view__barber_position">Barber</div>
               </div>
               <div class="home_view__barber-button">
-                <ButtonWb />
+                <button 
+                  class="btn_wb home_view__btn-team"
+                  @click="openBook"
+                >
+                  Book Online
+                </button>
               </div>
             </div>
           </div>
@@ -109,7 +111,12 @@
                 <div class="home_view__barber_position">Top-barber</div>
               </div>
               <div class="home_view__barber-button">
-                <ButtonWb />
+                <button 
+                  class="btn_wb home_view__btn-team"
+                  @click="openBook"
+                >
+                  Book Online
+                </button>
               </div>
             </div>
           </div>
@@ -118,10 +125,15 @@
       <div class="home_view__follow-us">
         <div class="home_view__follow-us_title">
           <div class="home_view__follow-us_title-text">Follow us<br>on instagram</div>
-          <ButtonOt />
+          <button 
+            class="btn_ot home_view__btn-fu" 
+            @click="openBook"
+          >
+            Book Online
+          </button>
         </div>
         <div class="home_view__follow-us_image-block">
-          <img class="home_view__follow-us_image-item_text" v-bind:src="follow">
+          <img href="#" class="home_view__follow-us_image-item_text" v-bind:src="follow">
         </div>
         <img class="home_view__follow-us_image-item_phone" v-bind:src="phone"> 
       </div>
@@ -144,7 +156,7 @@
           </div>
           <div class="home_view__contacts-item">
             <div class="home_view__contacts-table_title">Email</div>
-            <div class="home_view__contacts-table_value">vladosbarbershop@gmail.com</div>
+            <div class="home_view__contacts-table_value" href="#">vladosbarbershop@gmail.com</div>
           </div>
         </div>
         <div class="home_view__contacts-text">
@@ -154,9 +166,9 @@
       <div class="home_view-map_and_footer">
         <MapGoogle class="home-view__google-map"/>
         <div class="home_view-map_and_footer-item">
-          <img class="home_view-map_and_footer-icon" v-bind:src="facebook" alt=""/>
-          <img class="home_view-map_and_footer-icon" v-bind:src="whatsapp" alt=""/>
-          <img class="home_view-map_and_footer-icon" v-bind:src="instagram" alt=""/>
+          <img @click="redirectToFacebook" class="home_view-map_and_footer-icon" v-bind:src="facebook" href="#"/>
+          <img @click="redirectToWhatsapp" class="home_view-map_and_footer-icon" v-bind:src="whatsapp" href="#"/>
+          <img @click="redirectToInstagram" class="home_view-map_and_footer-icon" v-bind:src="instagram" href="#"/>
         </div>
         <div class="home_view-map_and_footer-menu">
           <div @click="scrollToAboutUs" class="home_view-map_and_footer-menu_item">ABOUT US</div>
@@ -165,8 +177,15 @@
           <div @click="scrollToContacts" class="home_view-map_and_footer-menu_item">CONTACTS</div>
         </div>
         <div class="home_view-map_and_footer-logo">
-          <img @click="scrollToTop" class="home_view-map_and_footer-logo-item_arrow" v-bind:src="footerArrow">
-          <img class="home_view-map_and_footer-logo-item_logo" v-bind:src="footerLogo">
+          <img 
+            @click="scrollToTop" 
+            class="home_view-map_and_footer-logo-item_arrow" 
+            v-bind:src="footerArrow"
+          >
+          <img 
+            class="home_view-map_and_footer-logo-item_logo" 
+            v-bind:src="footerLogo"
+          >
         </div>
         <div class="home_view-map_and_footer-footer">
           <p class="home_view-map_and_footer-text">@ ALL RIGHTS RESERVED 2024</p>
@@ -178,10 +197,7 @@
 
 <script setup lang="ts">
 import logoTitle from '@/assets/icons/vlados-title-icon.svg'
-import Button from '@/components/Button.vue';
-import ButtonOt from '@/components/ButtonOt.vue';
-import ButtonWb from '@/components/ButtonWb.vue';
-// import ButtonMob from '@/components/ButtonMob.vue'
+import ButtonWs from '@/components/ButtonWs.vue';
 import HeaderView from './HeaderView.vue';
 import Logo from '@/assets/logo.svg';
 import overview from '@/assets/barber-nocolor-img.png';
@@ -196,27 +212,24 @@ import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
 import footerLogo from '@/assets/footer-logo.svg'
 import footerArrow from '@/assets/footer-arrow.svg'
 import MapGoogle from '@/components/Map.vue'
-// import logoTitleWhite from '@/assets/logoTitleWhite.svg'
-// import haircutTextImg from '@/assets/haircut-text-img.svg'
-// import mobileBg from '@/assets/mobile-main-bg-img.png'
-// import { ref, onMounted, onBeforeUnmount } from 'vue';
 
-// const isShow = ref(window.innerWidth <= 767);
 
-// const handleResize = async () => {
+function openBook() {
+  window.open('https://n807969.alteg.io/', '_blank', 'noopener,noreferrer');
+}
 
-//   await new Promise(resolve => setTimeout(resolve, 50));
-//   isShow.value = window.innerWidth <= 767;
-// };
 
-// onMounted(() => {
-//   window.addEventListener('resize', handleResize);
-// });
+function redirectToFacebook() {
+  window.open('https://www.facebook.com/profile.php?id=61558335386973', '_blank', 'noopener,noreferrer');
+}
 
-// onBeforeUnmount(() => {
-//   window.removeEventListener('resize', handleResize);
-// });
+function redirectToWhatsapp() {
+  window.open('#', '_blank', 'noopener,noreferrer');
+}
 
+function redirectToInstagram() {
+  window.open('https://www.instagram.com/vlados_barbershop?igsh=MXRkdjkzcjExbWJ4Mw==', '_blank', 'noopener,noreferrer');
+}
 
 
 const scrollToTop = (): void => {
@@ -271,7 +284,9 @@ const scrollToContacts = (): void => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 107px;
+    margin: 107px 0 0 0;
+    width: 100%;
+    
   }
 
   .logo {
@@ -427,7 +442,8 @@ const scrollToContacts = (): void => {
     text-align: left;
   }
 
-  .home_view__servise-and-prise__button {
+  .home_view__btn-sp {
+    width: 135px;
     margin-bottom: 70px;
   }
 
@@ -507,6 +523,10 @@ const scrollToContacts = (): void => {
     font-weight: 300;
   }
 
+  .home_view__btn-team {
+    width: 135px;
+  }
+
 
 
 
@@ -538,6 +558,10 @@ const scrollToContacts = (): void => {
     text-transform: uppercase;
     text-align: center;
     margin: 0 0 33px 0;
+  }
+
+  .home_view__btn-fu {
+    width: 135px;
   }
 
   .home_view__follow-us_image-block {
@@ -667,6 +691,10 @@ const scrollToContacts = (): void => {
 
       &:hover {
         filter: grayscale(0%);
+      }
+
+      &:active {
+        filter: grayscale(100%);
       }
   }
 
