@@ -25,13 +25,6 @@
         </div>
       </div>
     </div>
-    <!-- <div v-else class="header_view-wrp_mobile">
-      <div @click="scrollToTop" class="header_view__logo_mobile" type="Button">
-        <img class="header_view__logo-image_mobile" v-bind:src="Logo" alt="">
-        <img class="header_view__logo-title_mobile" v-bind:src="logoTitle" alt="">
-        <img class="header_view__menu-icon_mobile" v-bind:src="menuIcon" alt="">
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -41,26 +34,7 @@ import instagram from '@/assets/icons/instagram-hover-icon.svg'
 import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
 import Logo from '@/assets/logo.svg'
 import logoTitle from '@/assets/icons/vlados-title-icon.svg'
-// import menuIcon from '@/assets/icons/adaptive-menu-icon.svg'
-// import { ref, onMounted, onBeforeUnmount } from 'vue';
 
-
-
-// const isShow = ref(window.innerWidth <= 767);
-
-// const handleResize = async () => {
-
-//   await new Promise(resolve => setTimeout(resolve, 50));
-//   isShow.value = window.innerWidth <= 767;
-// };
-
-// onMounted(() => {
-//   window.addEventListener('resize', handleResize);
-// });
-
-// onBeforeUnmount(() => {
-//   window.removeEventListener('resize', handleResize);
-// });
 
 function redirectToFacebook() {
   window.open('https://www.facebook.com/profile.php?id=61558335386973', '_blank', 'noopener,noreferrer');
