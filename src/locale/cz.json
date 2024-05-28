@@ -1,0 +1,109 @@
+{
+  "buttonTitle": "Objednat se ",
+  "navigation": {
+    "about": "O nás",
+    "services": "služby a ceny",
+    "team": "náš tým",
+    "contacts": "kontakty"
+  },
+  "mainSection": {
+    "agiteText": "Profesionální barber služby v Praze"
+  },
+  "aboutUs": {
+    "title": "o nás",
+    "textFirstPart": {
+      "paragraphOne": "Ahoj! Jsem Vlad a vítám vás ve Vlado’s Barbershop! ",
+      "paragraphTwo": "Tento prostor jsem vytvořil s více než desetiletými zkušenostmi v barber oboru. Jsem přesvědčený, že skvělý účes není možný bez špičkového servisu. Náš tým kombinuje klasické techniky s nejnovějšími trendy, aby váš střih nebo vousy byly nejen dokonalé, ale také nadčasové."
+    },
+    "textSecondPart": {
+      "paragraphOne": "U nás nejde jen o to, abyste vypadali dobře, ale o celkový zážitek. Připravte se na poradenství při výběru dokonalého účesu, tipy pro péči a úpravu, a řadu dalších služeb, díky kterým bude vaše návštěva opravdu výjimečná."
+    }
+  },
+  "servicesAndPrices": {
+    "title": "služby a ceny",
+    "barberPricetitle": "barber",
+    "topBarberPricetitle": "top-barber",
+    "firstHaircutPrice": {
+      "title": "Barber střih",
+      "barberPrice": "650 Kč",
+      "topBarberPrice":"850 Kč"
+    },
+    "secondHaircutPrice": {
+      "title": "Barber střih + úprava vousů",
+      "barberPrice": "990 Kč",
+      "topBarberPrice": "1200 Kč"
+    },
+    "thirdHaircutPrice": {
+      "title": "Full service - barber střih + úprava vousů + barvení vousů",
+      "barberPrice": "1390 Kč",
+      "topBarberPrice": "1590 Kč"
+    },
+    "fourthHaircutPrice": {
+      "title": "Chlapecký střih 6-12 let",
+      "barberPrice": "390 Kč",
+      "topBarberPrice":"590 Kč"
+    },
+    "fifthHaircutPrice": {
+      "title": "Střih strojkem",
+      "barberPrice": "390 Kč",
+      "topBarberPrice":"590 Kč"
+    },
+    "sixthHaircutPrice": {
+      "title": "Úprava vousu",
+      "barberPrice": "390 Kč",
+      "topBarberPrice":"490 Kč"
+    },
+    "seventhHaircutPrice": {
+      "title": "Úprava vousu +barvení vousů",
+      "barberPrice": "890 Kč",
+      "topBarberPrice":"990 Kč"
+    },
+    "eighthHaircutPrice": {
+      "title": "Odstranění chloupků voskem",
+      "barberPrice": "100 Kč",
+      "topBarberPrice":"100 Kč"
+    }
+  },
+  "ourTeam": {
+    "title": "náš tým",
+    "barbers": {
+      "topBarber": {
+        "barberName": "Vlad",
+        "barberPosition": "Top-barber"
+      },
+      "firstBarber": {
+        "barberName": "Alex",
+        "barberPosition": "Barber"
+      }
+    }
+  },
+  "FollowUs": {
+    "title": {
+      "paragraphOne": "Sledujte nás",
+      "paragraphTwo": "na Instagramu"
+    },
+    "buttonTitle": "SLEDOVAT"
+  },
+  "contacts": {
+    "title": "kontakty",
+    "adress": {
+      "title": "Adresa",
+      "adress": "U Nikolajky 3, Praha 5 Smíchov 150 00"
+    },
+    "phone": {
+      "title": "Telefon",
+      "phone": "+420 774 271 121"
+    },
+    "openingHours": {
+      "title": "Otevírací doba",
+      "hours": "Thu-Sat 9:00-19:30"
+    },
+    "email": {
+      "title": "Email",
+      "email": "vladosbarbershop@gmail.coms"
+    },
+    "ShopParkingText": "Parking spots near the barbershop are always easy to find"
+  },
+  "footerText": "@ ALL RIGHTS RESERVED 2024"
+  
+}

@@ -4,73 +4,73 @@
     <div class="home_view__wrp">
       <img class="logo" v-bind:src="Logo" alt="">
       <img class="home_view__title" v-bind:src="logoTitle" alt="">
-      <p class="home_view__agite-text">Professional barber services in Prague</p>
+      <p class="home_view__agite-text">{{ $t('mainSection.agiteText') }}</p>
       <ButtonWs />
       <img class="home_view__overview" v-bind:src="overview" alt="">
       <img class="home_view__overview-1" v-bind:src="overviewColor" alt="">
       <div class="home_view__about-us">
-        <p class="home__view_about-us_title">About Us</p>
+        <p class="home__view_about-us_title">{{ $t('aboutUs.title') }}</p>
         <div class="home_view__about-us_text">
-          <span class="home_view__about-us_text-item">Hey there! I'm Vlad, and welcome to Vlado's Barbershop!<br> 
-            We've created this space with over ten years of experience in the barber industry.<br> We truly believe that a fantastic haircut goes hand in hand with top-tier service
+          <span class="home_view__about-us_text-item">
+            {{ $t('aboutUs.textFirstPart.paragraphOne') }}<br>{{ $t('aboutUs.textFirstPart.paragraphTwo') }}
           </span>
           <span class="home_view__about-us_text-item">
-            Our crew blends classic techniques with the latest trends to ensure your cut or<br>shave isn't just on point but also timeless. It's not just about looking good here; it's<br>about the entire experience. Get ready for personalized advice to choose the<br>perfect haircut, grooming tips, and a range of extra services to make your visit<br>truly special.
+            {{ $t('aboutUs.textSecondPart.paragraphOne') }}
           </span>
         </div>
       </div>
       <div class="home_view__servise-and-prise">
         <p class="home_view__servise-and-prise__title">
-          services & prices
+          {{ $t('servicesAndPrices.title') }}
         </p>
         <table class="home_view__servise-and-prise__table">
           <thead>
             <tr>
               <th class="home_view__servise-and-prise__table-thead"></th>
-              <th class="home_view__servise-and-prise__table-thead">barber</th>
-              <th class="home_view__servise-and-prise__table-thead">top-barber</th>
+              <th class="home_view__servise-and-prise__table-thead">{{ $t('servicesAndPrices.barberPricetitle') }}</th>
+              <th class="home_view__servise-and-prise__table-thead">{{ $t('servicesAndPrices.topBarberPricetitle') }}</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th class="table__thead">Classic haircut</th>
-              <td>650 Kč</td>
-              <td>850 Kč </td>
+              <th class="table__thead">{{ $t('servicesAndPrices.firstHaircutPrice.title') }}</th>
+              <td>{{ $t('servicesAndPrices.firstHaircutPrice.barberPrice') }}</td>
+              <td>{{ $t('servicesAndPrices.firstHaircutPrice.topBarberPrice') }}</td>
             </tr>
             <tr>
-              <th class="table__thead">Classic haircut + beard trim</th>
-              <td>990 Kč</td>
-              <td>1200 Kč </td>
+              <th class="table__thead">{{ $t('servicesAndPrices.secondHaircutPrice.title') }}</th>
+              <td>{{ $t('servicesAndPrices.secondHaircutPrice.barberPrice') }}</td>
+              <td>{{ $t('servicesAndPrices.secondHaircutPrice.topBarberPrice') }}</td>
             </tr>
             <tr>
-              <th class="table__thead">Full service - haircut + beard trim + facial skin care</th>
-              <td>1390 Kč</td>
-              <td>1590 Kč </td>
+              <th class="table__thead">{{ $t('servicesAndPrices.thirdHaircutPrice.title') }}</th>
+              <td>{{ $t('servicesAndPrices.thirdHaircutPrice.barberPrice') }}</td>
+              <td>{{ $t('servicesAndPrices.thirdHaircutPrice.topBarberPrice') }}</td>
             </tr>
             <tr>
-              <th class="table__thead">Children's haircut (6-12 y.o.)</th>
-              <td>390 Kč</td>
-              <td>590 Kč</td>
+              <th class="table__thead">{{ $t('servicesAndPrices.fourthHaircutPrice.title') }}</th>
+              <td>{{ $t('servicesAndPrices.fourthHaircutPrice.barberPrice') }}</td>
+              <td>{{ $t('servicesAndPrices.fourthHaircutPrice.topBarberPrice') }}</td>
             </tr>
             <tr>
-              <th class="table__thead">Clipper cut</th>
-              <td>390 Kč</td>
-              <td>590 Kč</td>
+              <th class="table__thead">{{ $t('servicesAndPrices.fifthHaircutPrice.title') }}</th>
+              <td>{{ $t('servicesAndPrices.fifthHaircutPrice.barberPrice') }}</td>
+              <td>{{ $t('servicesAndPrices.fifthHaircutPrice.topBarberPrice') }}</td>
             </tr>
             <tr>
-              <th class="table__thead">Beard trim</th>
-              <td>390 Kč</td>
-              <td>490 Kč</td>
+              <th class="table__thead">{{ $t('servicesAndPrices.sixthHaircutPrice.title') }}</th>
+              <td>{{ $t('servicesAndPrices.sixthHaircutPrice.barberPrice') }}</td>
+              <td>{{ $t('servicesAndPrices.sixthHaircutPrice.topBarberPrice') }}</td>
             </tr>
             <tr>
-              <th class="table__thead">Grooming + beard toning</th>
-              <td>890 Kč</td>
-              <td>990 Kč</td>
+              <th class="table__thead">{{ $t('servicesAndPrices.seventhHaircutPrice.title') }}</th>
+              <td>{{ $t('servicesAndPrices.seventhHaircutPrice.barberPrice') }}</td>
+              <td>{{ $t('servicesAndPrices.seventhHaircutPrice.topBarberPrice') }}</td>
             </tr>
             <tr>
-              <th class="table__thead">Wax hair removal</th>
-              <td>100 Kč</td>
-              <td>100 Kč</td>
+              <th class="table__thead">{{ $t('servicesAndPrices.eighthHaircutPrice.title') }}</th>
+              <td>{{ $t('servicesAndPrices.eighthHaircutPrice.barberPrice') }}</td>
+              <td>{{ $t('servicesAndPrices.eighthHaircutPrice.topBarberPrice') }}</td>
             </tr>
           </tbody>
         </table>
@@ -78,27 +78,27 @@
           class="btn_ot home_view__btn-sp" 
           @click="openBook"
         >
-          Book Online
+        {{ $t('buttonTitle') }}
         </button>
       </div>
       <div class="home_view__our-team">
         <p class="home_view__our-team__title">
-          our team
+          {{ $t('ourTeam.title') }}
         </p>
         <div class="home_view__barber-info">
           <div class="home_view__barber-info_person">
             <img v-bind:src="imgAlex" class="home_view__barber-image">
             <div class="home_view__barber-block">
               <div class="home_view__barber-name">
-                <div class="home_view__barber-first_name">Alex</div>
-                <div class="home_view__barber_position">Barber</div>
+                <div class="home_view__barber-first_name">{{ $t('ourTeam.barbers.firstBarber.barberName') }}</div>
+                <div class="home_view__barber_position">{{ $t('ourTeam.barbers.firstBarber.barberPosition') }}</div>
               </div>
               <div class="home_view__barber-button">
                 <button 
                   class="btn_wb home_view__btn-team"
                   @click="openBook"
                 >
-                  Book Online
+                {{ $t('buttonTitle') }}
                 </button>
               </div>
             </div>
@@ -107,15 +107,15 @@
             <img v-bind:src="imgVlad" class="home_view__barber-image">
             <div class="home_view__barber-block">
               <div class="home_view__barber-name">
-                <div class="home_view__barber-first_name">Vlad</div>
-                <div class="home_view__barber_position">Top-barber</div>
+                <div class="home_view__barber-first_name">{{ $t('ourTeam.barbers.topBarber.barberName') }}</div>
+                <div class="home_view__barber_position">{{ $t('ourTeam.barbers.topBarber.barberPosition') }}</div>
               </div>
               <div class="home_view__barber-button">
                 <button 
                   class="btn_wb home_view__btn-team"
                   @click="openBook"
                 >
-                  Book Online
+                {{ $t('buttonTitle') }}
                 </button>
               </div>
             </div>
@@ -124,12 +124,12 @@
       </div>
       <div class="home_view__follow-us">
         <div class="home_view__follow-us_title">
-          <div class="home_view__follow-us_title-text">Follow us<br>on instagram</div>
+          <div class="home_view__follow-us_title-text">{{ $t('FollowUs.title.paragraphOne') }}<br>{{ $t('FollowUs.title.paragraphTwo') }}</div>
           <button 
             class="btn_ot home_view__btn-fu" 
             @click="openBook"
           >
-            Book Online
+          {{ $t('FollowUs.buttonTitle') }}
           </button>
         </div>
         <div class="home_view__follow-us_image-block">
@@ -139,28 +139,28 @@
       </div>
       <div class="home_view__contacts">
         <div class="home_view__contacts-title">
-          contacts
+          {{ $t('contacts.title') }}
         </div>
         <div class="home_view__contacts-list">
           <div class="home_view__contacts-item">
-            <div class="home_view__contacts-table_title">Adress</div>
-            <div class="home_view__contacts-table_value">U Nikolajky 3, Praha 5 Smíchov 150 00</div>
+            <div class="home_view__contacts-table_title">{{ $t('contacts.adress.title') }}</div>
+            <div class="home_view__contacts-table_value">{{ $t('contacts.adress.adress') }}</div>
           </div>
           <div class="home_view__contacts-item">
-            <div class="home_view__contacts-table_title">Phone</div>
-            <div class="home_view__contacts-table_value">+420 774 271 121</div>
+            <div class="home_view__contacts-table_title">{{ $t('contacts.phone.title') }}</div>
+            <div class="home_view__contacts-table_value">{{ $t('contacts.phone.phone') }}</div>
           </div>
           <div class="home_view__contacts-item">
-            <div class="home_view__contacts-table_title">Opening hours</div>
-            <div class="home_view__contacts-table_value">Thu-Sat 9:00-19:30</div>
+            <div class="home_view__contacts-table_title">{{ $t('contacts.openingHours.title') }}</div>
+            <div class="home_view__contacts-table_value">{{ $t('contacts.openingHours.hours') }}</div>
           </div>
           <div class="home_view__contacts-item">
-            <div class="home_view__contacts-table_title">Email</div>
-            <div class="home_view__contacts-table_value" href="#">vladosbarbershop@gmail.com</div>
+            <div class="home_view__contacts-table_title">{{ $t('contacts.email.title') }}</div>
+            <div class="home_view__contacts-table_value" href="#">{{ $t('contacts.email.email') }}</div>
           </div>
         </div>
         <div class="home_view__contacts-text">
-          Parking spots near the barbershop are always easy to find
+          {{ $t('contacts.ShopParkingText') }}
         </div>
       </div>
       <div class="home_view-map_and_footer">
@@ -171,10 +171,10 @@
           <img @click="redirectToInstagram" class="home_view-map_and_footer-icon" v-bind:src="instagram" href="#"/>
         </div>
         <div class="home_view-map_and_footer-menu">
-          <div @click="scrollToAboutUs" class="home_view-map_and_footer-menu_item">ABOUT US</div>
-          <div @click="scrollToServises" class="home_view-map_and_footer-menu_item">SERVICES & PRICES</div>
-          <div @click="scrollToTeam" class="home_view-map_and_footer-menu_item">OUR TEAM</div>
-          <div @click="scrollToContacts" class="home_view-map_and_footer-menu_item">CONTACTS</div>
+          <div @click="scrollToAboutUs" class="home_view-map_and_footer-menu_item">{{ $t('navigation.about') }}</div>
+          <div @click="scrollToServises" class="home_view-map_and_footer-menu_item">{{ $t('navigation.services') }}</div>
+          <div @click="scrollToTeam" class="home_view-map_and_footer-menu_item">{{ $t('navigation.team') }}</div>
+          <div @click="scrollToContacts" class="home_view-map_and_footer-menu_item">{{ $t('navigation.contacts') }}</div>
         </div>
         <div class="home_view-map_and_footer-logo">
           <img 
@@ -188,7 +188,7 @@
           >
         </div>
         <div class="home_view-map_and_footer-footer">
-          <p class="home_view-map_and_footer-text">@ ALL RIGHTS RESERVED 2024</p>
+          <p class="home_view-map_and_footer-text">{{ $t('footerText') }}</p>
         </div>
       </div>
     </div>
@@ -212,6 +212,7 @@ import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
 import footerLogo from '@/assets/footer-logo.svg'
 import footerArrow from '@/assets/footer-arrow.svg'
 import MapGoogle from '@/components/Map.vue'
+
 
 
 function openBook() {
@@ -358,7 +359,7 @@ const scrollToContacts = (): void => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 716px 0 41px 0;
+    margin: 716px 0 61px 0;
   }
 
   .home__view_about-us_title {
@@ -373,14 +374,15 @@ const scrollToContacts = (): void => {
     flex-direction: column;
     align-items: center;
     width: 700px;
+    height: 243px;
+    padding: 0 20px;
   }
 
   .home_view__about-us_text-item {
-    font-size: 19px;
+    font-size: 18px;
     line-height: 27px;
     font-weight: 400;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
     text-align: center; 
     text-indent: 3%;
   }
@@ -638,7 +640,7 @@ const scrollToContacts = (): void => {
     font-size: 16px;
     font-weight: 500;
     color: $table-title-color;
-    margin: 0 0 15px 2px;
+    margin: 0 0 15px 20px;
   }
 
   .home_view__contacts-table_value {

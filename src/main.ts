@@ -1,19 +1,13 @@
 import './scss/app.scss';
 import { createPinia } from 'pinia';
 import { ViteSSG } from 'vite-ssg';
-import { createI18n } from 'vue-i18n'
-// import { i18n } from '../locale/i18n';
+import { i18n } from './locale';
 import App from './App.vue';
 import { router } from './router';
 import type { RouteRecordRaw } from 'vue-router';
- 
 
 
-// const i18n = createI18n({
-//   locale: 'en', 
-//   fallbackLocale: 'en', 
-//   messages
-// });
+
 
 export const createApp = ViteSSG( 
   App, 
@@ -21,13 +15,9 @@ export const createApp = ViteSSG(
   ({app, router  , initialState}) => {
     const pinia = createPinia();  
     app.use(pinia);
-    // app.use(createI18n);
-    // app.use(i18n);
-    //set values  during build time
+    app.use(i18n);
     if(import.meta.env.SSR) initialState.pinia = pinia.state.value;
     else pinia.state.value = initialState.pinia || {};
-
-    // all this run during run time
     router.beforeEach((to, from, next) => {
       next();
     });
@@ -38,7 +28,6 @@ export async function includedRoutes(
   paths: String, 
   routes: RouteRecordRaw[]
 ) {
-  //runs during build time
   return Promise.all(routes.map(async (route) => {
     return route.path
   }));

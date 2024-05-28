@@ -1,0 +1,109 @@
+{
+  "buttonTitle": "Записатися",
+  "navigation": {
+    "about": "про нас",
+    "services": "Послуги та цiни",
+    "team": "наша команда",
+    "contacts": "Контакти"
+  },
+  "mainSection": {
+    "agiteText": "Професійні барбер послуги в Празі"
+  },
+  "aboutUs": {
+    "title": "про нас",
+    "textFirstPart": {
+      "paragraphOne": "На зв'язку Влад!  Ласкаво просимо до Vlados Barbershop!",
+      "paragraphTwo": "При створенні нашого барбер-простору, ми керувалися десятирічним  досвідом в сфері стрижок для чоловіків. Ми переконані, що гарна стрижка стрижка неможлива без висококласного сервісу. Наша команда поєднує у своїй роботі традиційні та прогресивні  перукарські техніки, що дає можливість гарантувати, що кожна стрижка та гоління не лише підкреслять ваш персональний стиль, а й пройдуть випробування часом. "
+    },
+    "textSecondPart": {
+      "paragraphOne": "У нашому барбершопі ви отримаєте індивідуальну консультацію з вибору зачіски та догляду за зовнішністю, а також цілий спектр послуг, щоб наша взаємодія стала для вас позитивним та незабутнім досвідом."
+    }
+  },
+  "servicesAndPrices": {
+    "title": "Послуги та цiни",
+    "barberPricetitle": "Барбер",
+    "topBarberPricetitle": "Топ барбер",
+    "firstHaircutPrice": {
+      "title": "Класична стрижка",
+      "barberPrice": "650 Kč",
+      "topBarberPrice":"850 Kč"
+    },
+    "secondHaircutPrice": {
+      "title": "Класична стрижка + стрижка бороди",
+      "barberPrice": "990 Kč",
+      "topBarberPrice": "1200 Kč"
+    },
+    "thirdHaircutPrice": {
+      "title": "Full service - стрижка + стрижка бороди + догляд за шкірою обличчя",
+      "barberPrice": "1390 Kč",
+      "topBarberPrice": "1590 Kč"
+    },
+    "fourthHaircutPrice": {
+      "title": "Дитяча стрижка 6-12 років",
+      "barberPrice": "390 Kč",
+      "topBarberPrice":"590 Kč"
+    },
+    "fifthHaircutPrice": {
+      "title": "Стрижка машинкою",
+      "barberPrice": "390 Kč",
+      "topBarberPrice":"590 Kč"
+    },
+    "sixthHaircutPrice": {
+      "title": "Стрижка бороди",
+      "barberPrice": "390 Kč",
+      "topBarberPrice":"490 Kč"
+    },
+    "seventhHaircutPrice": {
+      "title": "Стрижка + фарбування бороди",
+      "barberPrice": "890 Kč",
+      "topBarberPrice":"990 Kč"
+    },
+    "eighthHaircutPrice": {
+      "title": "Видалення волосся воском",
+      "barberPrice": "100 Kč",
+      "topBarberPrice":"100 Kč"
+    }
+  },
+  "ourTeam": {
+    "title": "наша команда",
+    "barbers": {
+      "topBarber": {
+        "barberName": "Влад",
+        "barberPosition": "Топ барбер"
+      },
+      "firstBarber": {
+        "barberName": "Алекс",
+        "barberPosition": "Барбер"
+      }
+    }
+  },
+  "FollowUs": {
+    "title": {
+      "paragraphOne": "Слідкуйте за",
+      "paragraphTwo": "нами в Instagram"
+    },
+    "buttonTitle": "Пiдписатися"
+  },
+  "contacts": {
+    "title": "контакти",
+    "adress": {
+      "title": "Адреса",
+      "adress": "U Nikolajky 3, Praha 5 Smíchov 150 00"
+    },
+    "phone": {
+      "title": "Телефон",
+      "phone": "+420 774 271 121"
+    },
+    "openingHours": {
+      "title": "Графік роботи",
+      "hours": "Thu-Sat 9:00-19:30"
+    },
+    "email": {
+      "title": "Email",
+      "email": "vladosbarbershop@gmail.coms"
+    },
+    "ShopParkingText": "Поряд барбершопу завжди є вільні місця для паркування."
+  },
+  "footerText": "@ ВСІ ПРАВА ЗАХИЩЕНІ 2024"
+  
+}

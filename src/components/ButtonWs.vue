@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="btn">
-      Book Online
+      {{ $t('buttonTitle') }}
       <select>
         <option></option>
       </select>

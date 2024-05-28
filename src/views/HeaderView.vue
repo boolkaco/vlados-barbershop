@@ -6,17 +6,17 @@
         <img class="header_view__logo-title" v-bind:src="logoTitle" alt="">
       </div>
       <div class="header_view__link">
-        <div @click="scrollToAboutUs" class="header_view__link-item">about us</div>
-        <div @click="scrollToServises" class="header_view__link-item">servises and prises</div>
-        <div @click="scrollToTeam" class="header_view__link-item">our team</div>
-        <div @click="scrollToContacts" class="header_view__link-item">contacts</div>
+        <div @click="scrollToAboutUs" class="header_view__link-item">{{ $t('navigation.about') }}</div>
+        <div @click="scrollToServises" class="header_view__link-item">{{ $t('navigation.services') }}</div>
+        <div @click="scrollToTeam" class="header_view__link-item">{{ $t('navigation.team') }}</div>
+        <div @click="scrollToContacts" class="header_view__link-item">{{ $t('navigation.contacts') }}</div>
       </div>
       <div class="header_view__social">
-        <select class="header_view__social-select">
-          <option>cz</option>
-          <option>en</option>
-          <option>ua</option>
-          <option>ru</option>
+        <select v-model="selectedLanguage" @change="changeLanguage" class="header_view__social-select">
+          <option value="cz">cz</option>
+          <option value="en">en</option>
+          <option value="ua">ua</option>
+          <option value="ru">ru</option>
         </select>
         <div class="header_view__social-item">
           <img class="header_view__social-img" @click="redirectToFacebook" v-bind:src="facebook" />
@@ -34,6 +34,18 @@ import instagram from '@/assets/icons/instagram-hover-icon.svg'
 import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
 import Logo from '@/assets/logo.svg'
 import logoTitle from '@/assets/icons/vlados-title-icon.svg'
+import { useI18n } from 'vue-i18n'
+import { ref } from 'vue';
+
+
+const { locale } = useI18n();
+const selectedLanguage = ref(locale.value);
+
+function changeLanguage() {
+  locale.value = selectedLanguage.value;
+}
+    
+  
 
 
 function redirectToFacebook() {

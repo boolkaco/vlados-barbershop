@@ -1,0 +1,109 @@
+{
+  "buttonTitle": "Book Online",
+  "navigation": {
+    "about": "about us",
+    "services": "services and prises",
+    "team": "our team",
+    "contacts": "contacts"
+  },
+  "mainSection": {
+    "agiteText": "Professional barber services in Prague"
+  },
+  "aboutUs": {
+    "title": "About Us",
+    "textFirstPart": {
+      "paragraphOne": "Hey there! I'm Vlad, and welcome to Vlado's Barbershop!",
+      "paragraphTwo": "We've created this space with over ten years of experience in the barber industry. We truly believe  that a fantastic haircut goes hand in hand with top-tier service."
+    },
+    "textSecondPart": {
+      "paragraphOne": "Our crew blends classic techniques with the latest trends to ensure your cut or shave isn't just on point but also timeless. It's not just about looking good here; it's about the entire experience. Get ready for personalized advice to choose the perfect haircut, grooming tips, and a range of extra services to make your visit truly special."
+    }
+  },
+  "servicesAndPrices": {
+    "title": "services & prices",
+    "barberPricetitle": "barber",
+    "topBarberPricetitle": "top-barber",
+    "firstHaircutPrice": {
+      "title": "Classic haircut ",
+      "barberPrice": "650 Kč",
+      "topBarberPrice":"850 Kč"
+    },
+    "secondHaircutPrice": {
+      "title": "Classic haircut + beard trim",
+      "barberPrice": "990 Kč",
+      "topBarberPrice": "1200 Kč"
+    },
+    "thirdHaircutPrice": {
+      "title": "Full service - haircut + beard trim + facial skin care",
+      "barberPrice": "1390 Kč",
+      "topBarberPrice": "1590 Kč"
+    },
+    "fourthHaircutPrice": {
+      "title": "Children's haircut (6-12 y.o.)",
+      "barberPrice": "390 Kč",
+      "topBarberPrice":"590 Kč"
+    },
+    "fifthHaircutPrice": {
+      "title": "Clipper cut",
+      "barberPrice": "390 Kč",
+      "topBarberPrice":"590 Kč"
+    },
+    "sixthHaircutPrice": {
+      "title": "Beard trim",
+      "barberPrice": "390 Kč",
+      "topBarberPrice":"490 Kč"
+    },
+    "seventhHaircutPrice": {
+      "title": "Grooming + beard toning",
+      "barberPrice": "890 Kč",
+      "topBarberPrice":"990 Kč"
+    },
+    "eighthHaircutPrice": {
+      "title": "Wax hair removal",
+      "barberPrice": "100 Kč",
+      "topBarberPrice":"100 Kč"
+    }
+  },
+  "ourTeam": {
+    "title": "our team",
+    "barbers": {
+      "topBarber": {
+        "barberName": "Vlad",
+        "barberPosition": "Top-barber"
+      },
+      "firstBarber": {
+        "barberName": "Alex",
+        "barberPosition": "Barber"
+      }
+    }
+  },
+  "FollowUs": {
+    "title": {
+      "paragraphOne": "Follow us",
+      "paragraphTwo": "on instagram"
+    },
+    "buttonTitle": "Follow"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "adress": {
+      "title": "Adress",
+      "adress": "U Nikolajky 3, Praha 5 Smíchov 150 00"
+    },
+    "phone": {
+      "title": "Phone",
+      "phone": "+420 774 271 121"
+    },
+    "openingHours": {
+      "title": "Opening hours",
+      "hours": "Thu-Sat 9:00-19:30"
+    },
+    "email": {
+      "title": "Email",
+      "email": "vladosbarbershop@gmail.coms"
+    },
+    "ShopParkingText": "Parking spots near the barbershop are always easy to find"
+  },
+  "footerText": "@ ALL RIGHTS RESERVED 2024"
+  
+}
