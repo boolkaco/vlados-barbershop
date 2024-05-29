@@ -62,8 +62,8 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  min-width: 32px;
-  min-height: 32px;
+  width: 32px;
+  height: 32px;
   border-radius: 68px;
   border: 2px solid $select-main-color;
   background: url(../assets/select-arrow.svg) no-repeat center;

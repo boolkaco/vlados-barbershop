@@ -127,7 +127,7 @@
           <div class="home_view__follow-us_title-text">{{ $t('FollowUs.title.paragraphOne') }}<br>{{ $t('FollowUs.title.paragraphTwo') }}</div>
           <button 
             class="btn_ot home_view__btn-fu" 
-            @click="openBook"
+            @click="redirectToInstagram"
           >
           {{ $t('FollowUs.buttonTitle') }}
           </button>
