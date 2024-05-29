@@ -8,7 +8,6 @@ import type { RouteRecordRaw } from 'vue-router';
 
 
 
-
 export const createApp = ViteSSG( 
   App, 
   { routes: router }, 
