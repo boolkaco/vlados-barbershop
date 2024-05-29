@@ -68,12 +68,12 @@
     "title": "наша команда",
     "barbers": {
       "topBarber": {
-        "barberName": "Алекс",
-        "barberPosition": "Барбер"
-      },
-      "firstBarber": {
         "barberName": "Влад",
         "barberPosition": "Топ барбер"
+      },
+      "firstBarber": {
+        "barberName": "Алекс",
+        "barberPosition": "Барбер"
       }
     }
   },
