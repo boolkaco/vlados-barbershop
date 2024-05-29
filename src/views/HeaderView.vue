@@ -12,7 +12,7 @@
         <div @click="scrollToContacts" class="header_view__link-item">{{ $t('navigation.contacts') }}</div>
       </div>
       <div class="header_view__social">
-        <select v-model="selectedLanguage" @change="changeLanguage" class="header_view__social-select">
+        <select class="header_view__social-select">
           <option value="en">en</option>
           <option value="cz">cz</option>
           <option value="ua">ua</option>

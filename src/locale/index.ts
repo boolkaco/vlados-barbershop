@@ -1,4 +1,4 @@
-import { createI18n } from 'vue-i18n'
+import  { createI18n }  from 'vue-i18n'
 import en from './en.json'
 import ua from './ua.json'
 import cz from './cz.json'
@@ -15,7 +15,6 @@ const messages = {
 export const i18n = createI18n({
   locale: 'en', 
   fallbackLocale: 'en', 
-  messages: { en: en},
-  legacy: false
+  messages: { en: ru }
 });
 
