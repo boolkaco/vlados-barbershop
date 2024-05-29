@@ -328,7 +328,7 @@ const scrollToContacts = (): void => {
   .home_view__overview {
     transition: all 500ms;
     position: absolute;
-    width: 100vw;
+    width: 1400px;
     height: 649px;   
     top: 566px;
     &:hover {
@@ -339,7 +339,7 @@ const scrollToContacts = (): void => {
   .home_view__overview-1 {
     transition: all 500ms;
     position: absolute;
-    width: 100vw;
+    width: 1400px;
     height: 649px;   
     top: 566px;
     filter: opacity(0);
@@ -648,6 +648,13 @@ const scrollToContacts = (): void => {
     padding: 14px 20px;
     font-size: 18px;
     font-weight: 400;
+
+      &:hover {
+        border: 0.1rem solid $color-orange;
+        background-color: $color-orange;
+        color: $color-white;
+        cursor: pointer;
+      }
   }
 
   .home_view__contacts-text {
@@ -672,7 +679,7 @@ const scrollToContacts = (): void => {
   }
 
   .home-view__google-map {
-    width: 100vw;
+    width: 1400px;
     height: 502px;
   }
   

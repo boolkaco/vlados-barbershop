@@ -2,9 +2,7 @@
   <div>
     <div class="btn">
       {{ $t('buttonTitle') }}
-      <select>
-        <option></option>
-      </select>
+      <div class="arrow"></div>
     </div>
   </div>
 </template>
@@ -28,7 +26,7 @@
   align-items: center;
   font-size: 14px;
   font-weight: 500;
-  line-height: normal;
+  line-height: 16.9px;
   margin: 37px 0 46px 0;
   max-height: 49px;
   max-width: 150px;
@@ -50,6 +48,7 @@
   }
 
   &:active {
+
     box-shadow: none;
     transform: translateY(0);
     background-color: $color-white;
@@ -58,23 +57,28 @@
   }
 }
 
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  width: 32px;
-  height: 32px;
-  border-radius: 68px;
-  border: 2px solid $select-main-color;
-  background: url(../assets/select-arrow.svg) no-repeat center;
-  background-color: $select-bg-color;
-  color: $select-main-color;
-  appearance: none;
+.arrow {
   margin: 0 0 0 6.6px;
+  position: relative;
+  width: 33px;
+  height: 33px;
+  background-color: $button-select-color;
+  border: 2px solid $button-vector-color;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+}
+.arrow:after {
+  position: absolute;
+  top: 9px;;
+  left: 11px;
+  content: '';
+  display: block;
+  width: 9.5px;
+  height: 9.5px;
+  border-left: 3px solid $button-vector-color;
+  border-bottom: 3px solid $button-vector-color;
+  transform: rotate(45deg);
 }
 
-option {
-  display: none;
-}
 
 </style>
