@@ -13,11 +13,10 @@
       </div>
       <div class="header_view__social">
         <div class="header_view__styled-wrp">
-          <select class="header_view__styled-select" v-model="selectedLanguage" @change="changeLanguage">
-            <option value="en">en</option>
-            <option value="cz">cz</option>
-            <option value="ua">ua</option>
-            <option value="ru">ru</option>
+          <select class="header_view__styled-select" v-model="selectedOption" @change="changeLanguage">
+            <option v-for="option in options" :key="option.value" :value="option.value">
+              {{ option.value }}
+            </option>
           </select>
         </div>
         <div class="header_view__social-item">
@@ -36,14 +35,28 @@ import instagram from '@/assets/icons/instagram-hover-icon.svg'
 import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
 import Logo from '@/assets/logo.svg'
 import logoTitle from '@/assets/icons/vlados-title-icon.svg'
-import { ref } from 'vue';
-import { useI18n } from 'vue-i18n'
+import { ref, computed } from 'vue';
+import { useI18n  } from 'vue-i18n'
 
+
+interface Option {
+  value: string;
+  text: string;
+}
+
+const options = ref<Option[]>([
+  { value: 'en', text: 'en' },
+  { value: 'cz', text: 'cz' },
+  { value: 'ua', text: 'ua' },
+  { value: 'ru', text: 'ru' },
+]);
+
+const selectedOption = ref<string>(options.value[0].value);
 const { locale } = useI18n();
 const selectedLanguage = ref(locale.value);
 
 function changeLanguage() {
-  locale.value = selectedLanguage.value;
+  locale.value = (selectedLanguage.value, selectedOption.value);
 }
     
   
@@ -101,6 +114,11 @@ const scrollToContacts = (): void => {
 @import '@/scss/variables.scss';
 
 @media screen and (min-width: 1025px) {
+  select {
+    &::content {
+      padding: 10px;
+    }
+  }
   .header_view {
     width: 100%;
     display: flex;
