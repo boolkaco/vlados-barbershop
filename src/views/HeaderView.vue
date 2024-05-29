@@ -12,7 +12,7 @@
         <div @click="scrollToContacts" class="header_view__link-item">{{ $t('navigation.contacts') }}</div>
       </div>
       <div class="header_view__social">
-        <select class="header_view__social-select">
+        <select v-model="selectedLanguage" @change="changeLanguage" class="header_view__social-select">
           <option value="en">en</option>
           <option value="cz">cz</option>
           <option value="ua">ua</option>
@@ -34,15 +34,15 @@ import instagram from '@/assets/icons/instagram-hover-icon.svg'
 import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
 import Logo from '@/assets/logo.svg'
 import logoTitle from '@/assets/icons/vlados-title-icon.svg'
-// import { ref } from 'vue';
-// import { useI18n } from 'vue-i18n'
+import { ref } from 'vue';
+import { useI18n } from 'vue-i18n'
 
-// const { locale } = useI18n();
-// const selectedLanguage = ref(locale.value);
+const { locale } = useI18n();
+const selectedLanguage = ref(locale.value);
 
-// function changeLanguage() {
-//   locale.value = selectedLanguage.value;
-// }
+function changeLanguage() {
+  locale.value = selectedLanguage.value;
+}
     
   
 
