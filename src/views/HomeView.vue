@@ -5,7 +5,7 @@
       <img class="logo" v-bind:src="Logo" alt="">
       <img class="home_view__title" v-bind:src="logoTitle" alt="">
       <p class="home_view__agite-text">{{ $t('mainSection.agiteText') }}</p>
-      <ButtonWs />
+      <ButtonWs @click="openBook"/>
       <img class="home_view__overview" v-bind:src="overview" alt="">
       <img class="home_view__overview-1" v-bind:src="overviewColor" alt="">
       <div class="home_view__about-us">
