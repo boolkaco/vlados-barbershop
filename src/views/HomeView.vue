@@ -648,7 +648,7 @@ const scrollToContacts = (): void => {
     padding: 14px 20px;
     font-size: 18px;
     font-weight: 400;
-
+    z-index: 1;
       &:hover {
         border: 0.1rem solid $color-orange;
         background-color: $color-orange;

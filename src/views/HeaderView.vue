@@ -12,12 +12,14 @@
         <div @click="scrollToContacts" class="header_view__link-item">{{ $t('navigation.contacts') }}</div>
       </div>
       <div class="header_view__social">
-        <select v-model="selectedLanguage" @change="changeLanguage" class="header_view__social-select">
-          <option value="en">en</option>
-          <option value="cz">cz</option>
-          <option value="ua">ua</option>
-          <option value="ru">ru</option>
-        </select>
+        <div class="header_view__styled-wrp">
+          <select class="header_view__styled-select" v-model="selectedLanguage" @change="changeLanguage">
+            <option value="en">en</option>
+            <option value="cz">cz</option>
+            <option value="ua">ua</option>
+            <option value="ru">ru</option>
+          </select>
+        </div>
         <div class="header_view__social-item">
           <img class="header_view__social-img" @click="redirectToFacebook" v-bind:src="facebook" />
           <img class="header_view__social-img" @click="redirectToWhatsapp" v-bind:src="whatsapp" />
@@ -164,37 +166,79 @@ const scrollToContacts = (): void => {
     margin: 0 21px 0 0;
   }
 
-  .header_view__social-select {
-    border: none;
-    text-transform: uppercase;
-    font-size: 17px;
+  .header_view__styled-wrp {
+    position: relative;
+    width: 39px;
     margin: 0 53px 0 0;
-  }
-
-  .header_view__social-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .header_view__social-img {
-    margin: 0 16px 0 0;
-    transition: all 300ms;
-    filter: grayscale(100%);
-      &:hover {
-        filter: grayscale(0%);
+      &::before {
+        content: "";
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 8px 6px 0 6px;
+        border-color: #7B7B7B transparent transparent transparent;
+        cursor: pointer;
+        pointer-events: none;
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        right: 1px;
+        display: block;
       }
-      &:active {
-        filter: grayscale(100%);
-      }
-
   }
-
-  option {
+  
+  .header_view__styled-select {
+    width: 100%;
+    font-size: 14px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
     border: none;
-  }
+    color: $color-black;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+
+      &::-ms-expand {
+        display: none;
+        }
+
+        &:hover {
+          border-color: #0056b3;
+        }
+      
+    }
+
+    .header_view__styled-select option {
+      padding: 10px;
+      background-color: white;
+      color: #333;
+    }
+
+
+    .header_view__social-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .header_view__social-img {
+      margin: 0 16px 0 0;
+      transition: all 300ms;
+      filter: grayscale(100%);
+        &:hover {
+          filter: grayscale(0%);
+        }
+        &:active {
+          filter: grayscale(100%);
+        }
+  
+    }
+
 }
+
 
 
 </style>

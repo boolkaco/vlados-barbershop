@@ -69,7 +69,7 @@
 }
 .arrow:after {
   position: absolute;
-  top: 9px;;
+  top: 9px;
   left: 11px;
   content: '';
   display: block;
