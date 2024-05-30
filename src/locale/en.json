@@ -2,7 +2,8 @@
   "buttonTitle": "Book Online",
   "navigation": {
     "about": "about us",
-    "services": "services and prises",
+    "services-header": "services and prises",
+    "services-footer": "services & prises",
     "team": "our team",
     "contacts": "contacts"
   },

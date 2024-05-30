@@ -172,7 +172,7 @@
         </div>
         <div class="home_view-map_and_footer-menu">
           <div @click="scrollToAboutUs" class="home_view-map_and_footer-menu_item">{{ $t('navigation.about') }}</div>
-          <div @click="scrollToServises" class="home_view-map_and_footer-menu_item">{{ $t('navigation.services') }}</div>
+          <div @click="scrollToServises" class="home_view-map_and_footer-menu_item">{{ $t('navigation.services-footer') }}</div>
           <div @click="scrollToTeam" class="home_view-map_and_footer-menu_item">{{ $t('navigation.team') }}</div>
           <div @click="scrollToContacts" class="home_view-map_and_footer-menu_item">{{ $t('navigation.contacts') }}</div>
         </div>
@@ -713,12 +713,14 @@ const scrollToContacts = (): void => {
     justify-content: space-around;
     text-transform: uppercase;
     margin: 0 0 43px 0;
+    width: 462px;
+    height: 21px;
   }
 
   .home_view-map_and_footer-menu_item {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 400;
-    margin: 0 17px;
+    margin:0 15px 0 0;
 
       &:hover {
         color: $link-footer-color;

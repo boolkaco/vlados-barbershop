@@ -7,7 +7,7 @@
       </div>
       <div class="header_view__link">
         <div @click="scrollToAboutUs" class="header_view__link-item">{{ $t('navigation.about') }}</div>
-        <div @click="scrollToServises" class="header_view__link-item">{{ $t('navigation.services') }}</div>
+        <div @click="scrollToServises" class="header_view__link-item">{{ $t('navigation.services-header') }}</div>
         <div @click="scrollToTeam" class="header_view__link-item">{{ $t('navigation.team') }}</div>
         <div @click="scrollToContacts" class="header_view__link-item">{{ $t('navigation.contacts') }}</div>
       </div>
@@ -37,7 +37,6 @@ import Logo from '@/assets/logo.svg'
 import logoTitle from '@/assets/icons/vlados-title-icon.svg'
 import { ref, computed } from 'vue';
 import { useI18n  } from 'vue-i18n'
-
 
 interface Option {
   value: string;
@@ -114,6 +113,46 @@ const scrollToContacts = (): void => {
 @import '@/scss/variables.scss';
 
 @media screen and (min-width: 1025px) {
+  .language-switcher {
+  position: relative;
+  width: 200px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 5px;
+}
+
+.selected-language {
+  padding: 10px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 10px;
+  background-color: white;
+  cursor: pointer;
+  color: #007bff;
+}
+
+.dropdown-item:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+
   select {
     &::content {
       padding: 10px;
