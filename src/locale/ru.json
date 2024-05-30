@@ -2,7 +2,7 @@
   "buttonTitle": "Записаться",
   "navigation": {
     "about": "о нас",
-    "services": "услуги и цены",
+    "services-header": "услуги и цены",
     "team": "наша команда",
     "contacts": "Контакты"
   },
