@@ -12,13 +12,16 @@
         <div @click="scrollToContacts" class="header_view__link-item">{{ $t('navigation.contacts') }}</div>
       </div>
       <div class="header_view__social">
-        <div class="header_view__styled-wrp">
+        <!-- <div class="header_view__styled-wrp">
           <select class="header_view__styled-select" v-model="selectedOption" @change="changeLanguage">
             <option v-for="option in options" :key="option.value" :value="option.value">
-              {{ option.value }}
+              <span class="header_view__select-options">
+                {{ option.value }}
+              </span>
             </option>
           </select>
-        </div>
+        </div> -->
+        <langSwitcher />
         <div class="header_view__social-item">
           <img class="header_view__social-img" @click="redirectToFacebook" v-bind:src="facebook" />
           <img class="header_view__social-img" @click="redirectToWhatsapp" v-bind:src="whatsapp" />
@@ -30,35 +33,35 @@
 </template>
 
 <script setup lang="ts">
+import langSwitcher from '../components/langSwitcher.vue'
 import facebook from '@/assets/icons/facebook-hover-icon.svg'
 import instagram from '@/assets/icons/instagram-hover-icon.svg'
 import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
 import Logo from '@/assets/logo.svg'
 import logoTitle from '@/assets/icons/vlados-title-icon.svg'
-import { ref, computed } from 'vue';
-import { useI18n  } from 'vue-i18n'
+// import { ref, computed } from 'vue';
+// import { useI18n  } from 'vue-i18n'
 
-interface Option {
-  value: string;
-  text: string;
-}
+// interface Option {
+//   value: string;
+//   text: string;
+// }
 
-const options = ref<Option[]>([
-  { value: 'en', text: 'en' },
-  { value: 'cz', text: 'cz' },
-  { value: 'ua', text: 'ua' },
-  { value: 'ru', text: 'ru' },
-]);
+// const options = ref<Option[]>([
+//   { value: 'en', text: 'en' },
+//   { value: 'cz', text: 'cz' },
+//   { value: 'ua', text: 'ua' },
+//   { value: 'ru', text: 'ru' },
+// ]);
 
-const selectedOption = ref<string>(options.value[0].value);
-const { locale } = useI18n();
-const selectedLanguage = ref(locale.value);
+// const selectedOption = ref<string>(options.value[0].value);
+// const { locale } = useI18n();
+// const selectedLang = ref(locale.value);
 
-function changeLanguage() {
-  locale.value = (selectedLanguage.value, selectedOption.value);
-}
-    
-  
+// function changeLanguage() {
+//   locale.value = (selectedLang.value, selectedOption.value);
+// }
+
 
 
 function redirectToFacebook() {
@@ -113,52 +116,9 @@ const scrollToContacts = (): void => {
 @import '@/scss/variables.scss';
 
 @media screen and (min-width: 1025px) {
-  .language-switcher {
-  position: relative;
-  width: 200px;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-  user-select: none;
-  border-radius: 5px;
-}
-
-.selected-language {
-  padding: 10px;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  border: 1px solid #007bff;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-.dropdown-item {
-  padding: 10px;
-  background-color: white;
-  cursor: pointer;
-  color: #007bff;
-}
-
-.dropdown-item:hover {
-  background-color: #007bff;
-  color: white;
-}
 
 
-  select {
-    &::content {
-      padding: 10px;
-    }
-  }
-  .header_view {
+ .header_view {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -223,55 +183,57 @@ const scrollToContacts = (): void => {
     margin: 0 21px 0 0;
   }
 
-  .header_view__styled-wrp {
-    position: relative;
-    width: 39px;
-    margin: 0 53px 0 0;
-      &::before {
-        content: "";
-        width: 0px;
-        height: 0px;
-        border-style: solid;
-        border-width: 8px 6px 0 6px;
-        border-color: #7B7B7B transparent transparent transparent;
-        cursor: pointer;
-        pointer-events: none;
-        position: absolute;
-        transform: translateY(-50%);
-        top: 50%;
-        right: 1px;
-        display: block;
-      }
-  }
+
+
+  // .header_view__styled-wrp {
+  //   position: relative;
+  //   width: 39px;
+  //   margin: 0 53px 0 0;
+  //     &::before {
+  //       content: "";
+  //       width: 0px;
+  //       height: 0px;
+  //       border-style: solid;
+  //       border-width: 8px 6px 0 6px;
+  //       border-color: #7B7B7B transparent transparent transparent;
+  //       cursor: pointer;
+  //       pointer-events: none;
+  //       position: absolute;
+  //       transform: translateY(-50%);
+  //       top: 50%;
+  //       right: 1px;
+  //       display: block;
+  //     }
+  // }
   
-  .header_view__styled-select {
-    width: 100%;
-    font-size: 14px;
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    border: none;
-    color: $color-black;
-    background-color: transparent;
-    outline: none;
-    cursor: pointer;
-    text-transform: uppercase;
+  // .header_view__styled-select {
+  //   width: 100%;
+  //   font-size: 14px;
+  //   appearance: none;
+  //   -moz-appearance: none;
+  //   -webkit-appearance: none;
+  //   border: none;
+  //   color: $color-black;
+  //   background-color: transparent;
+  //   outline: none;
+  //   cursor: pointer;
+  //   text-transform: uppercase;
 
-      &::-ms-expand {
-        display: none;
-        }
+  //     &::-ms-expand {
+  //       display: none;
+  //       }
 
-        &:hover {
-          border-color: #0056b3;
-        }
+  //       &:hover {
+  //         border-color: #0056b3;
+  //       }
       
-    }
+  //   }
 
-    .header_view__styled-select option {
-      padding: 10px;
-      background-color: white;
-      color: #333;
-    }
+  //   .header_view__styled-select option {
+  //     padding: 10px;
+  //     background-color: white;
+  //     color: #333;
+  //   }
 
 
     .header_view__social-item {
