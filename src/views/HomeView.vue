@@ -718,7 +718,7 @@ const scrollToContacts = (): void => {
   }
 
   .home_view-map_and_footer-menu_item {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 400;
     margin:0 15px 0 0;
 
