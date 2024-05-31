@@ -33,7 +33,7 @@
   padding: 4px 8px;
   text-align: center;
   text-decoration: none;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  transition: all 0.4s ease;
   width: 100%;
 
   &:disabled {
@@ -44,7 +44,6 @@
     color: #fff;
     background-color: $color-orange;
     border: 1px solid $color-orange;
-    // transform: translateY(-0px);
   }
 
   &:active {

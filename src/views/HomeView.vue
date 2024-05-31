@@ -511,7 +511,7 @@ const scrollToContacts = (): void => {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
   }
 
   .home_view__barber-first_name {
