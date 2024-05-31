@@ -36,23 +36,23 @@
     },
     "thirdHaircutPrice": {
       "title": "Full service - haircut + beard trim + facial skin care",
-      "barberPrice": "1390 Kč",
-      "topBarberPrice": "1590 Kč"
+      "barberPrice": "1290 Kč",
+      "topBarberPrice": "1490 Kč"
     },
     "fourthHaircutPrice": {
       "title": "Children's haircut (6-12 y.o.)",
-      "barberPrice": "390 Kč",
+      "barberPrice": "490 Kč",
       "topBarberPrice":"590 Kč"
     },
     "fifthHaircutPrice": {
       "title": "Clipper cut",
-      "barberPrice": "390 Kč",
+      "barberPrice": "490 Kč",
       "topBarberPrice":"590 Kč"
     },
     "sixthHaircutPrice": {
       "title": "Beard trim",
-      "barberPrice": "390 Kč",
-      "topBarberPrice":"490 Kč"
+      "barberPrice": "490 Kč",
+      "topBarberPrice":"590 Kč"
     },
     "seventhHaircutPrice": {
       "title": "Grooming + beard toning",

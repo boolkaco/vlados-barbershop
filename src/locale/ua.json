@@ -36,23 +36,23 @@
     },
     "thirdHaircutPrice": {
       "title": "Full service - стрижка + стрижка бороди + догляд за шкірою обличчя",
-      "barberPrice": "1390 Kč",
-      "topBarberPrice": "1590 Kč"
+      "barberPrice": "1290 Kč",
+      "topBarberPrice": "1490 Kč"
     },
     "fourthHaircutPrice": {
       "title": "Дитяча стрижка 6-12 років",
-      "barberPrice": "390 Kč",
+      "barberPrice": "490 Kč",
       "topBarberPrice":"590 Kč"
     },
     "fifthHaircutPrice": {
       "title": "Стрижка машинкою",
-      "barberPrice": "390 Kč",
+      "barberPrice": "490 Kč",
       "topBarberPrice":"590 Kč"
     },
     "sixthHaircutPrice": {
       "title": "Стрижка бороди",
-      "barberPrice": "390 Kč",
-      "topBarberPrice":"490 Kč"
+      "barberPrice": "490 Kč",
+      "topBarberPrice":"590 Kč"
     },
     "seventhHaircutPrice": {
       "title": "Стрижка + фарбування бороди",

@@ -36,12 +36,12 @@
     },
     "thirdHaircutPrice": {
       "title": "Full service - barber střih + úprava vousů + barvení vousů",
-      "barberPrice": "1390 Kč",
-      "topBarberPrice": "1590 Kč"
+      "barberPrice": "1290 Kč",
+      "topBarberPrice": "1490 Kč"
     },
     "fourthHaircutPrice": {
       "title": "Chlapecký střih 6-12 let",
-      "barberPrice": "390 Kč",
+      "barberPrice": "490 Kč",
       "topBarberPrice":"590 Kč"
     },
     "fifthHaircutPrice": {
@@ -103,7 +103,7 @@
       "title": "Email",
       "email": "vladosbarbershop{'@'}gmail.com"
     },
-    "ShopParkingText": "Parking spots near the barbershop are always easy to find"
+    "ShopParkingText": "V okolí Barbershopu jsou parkovací místa vždy k dispozici"
   },
   "footerText": "{'@'} ALL RIGHTS RESERVED 2024"
   
