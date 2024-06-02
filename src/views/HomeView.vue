@@ -5,7 +5,16 @@
       <img class="logo" v-bind:src="Logo" alt="">
       <img class="home_view__title" v-bind:src="logoTitle" alt="">
       <p class="home_view__agite-text">{{ $t('mainSection.agiteText') }}</p>
-      <ButtonWs @click="openBook"/>
+      <a 
+        class="btn"
+        :href="urls.openBook" 
+        type="button" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        {{ $t('buttonTitle') }}
+        <div class="arrow"></div>
+      </a>
       <img class="home_view__overview" v-bind:src="overview" alt="">
       <img class="home_view__overview-1" v-bind:src="overviewColor" alt="">
       <div class="home_view__about-us">
@@ -74,12 +83,15 @@
             </tr>
           </tbody>
         </table>
-        <button 
-          class="btn_ot home_view__btn-sp" 
-          @click="openBook"
+        <a 
+          class="btn_ot home_view__btn-sp"
+          :href="urls.openBook" 
+          type="button" 
+          target="_blank" 
+          rel="noopener noreferrer"
         >
         {{ $t('buttonTitle') }}
-        </button>
+        </a>
       </div>
       <div class="home_view__our-team">
         <p class="home_view__our-team__title">
@@ -94,12 +106,15 @@
                 <div class="home_view__barber_position">{{ $t('ourTeam.barbers.firstBarber.barberPosition') }}</div>
               </div>
               <div class="home_view__barber-button">
-                <button 
-                  class="btn_wb home_view__btn-team"
-                  @click="openBook"
+                <a 
+                  class="btn_wb home_view__btn-sp"
+                  :href="urls.openBook" 
+                  type="button" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                 >
-                {{ $t('buttonTitle') }}
-                </button>
+                  {{ $t('buttonTitle') }}
+                </a>
               </div>
             </div>
           </div>
@@ -111,12 +126,15 @@
                 <div class="home_view__barber_position">{{ $t('ourTeam.barbers.topBarber.barberPosition') }}</div>
               </div>
               <div class="home_view__barber-button">
-                <button 
-                  class="btn_wb home_view__btn-team"
-                  @click="openBook"
+                <a 
+                  class="btn_wb home_view__btn-sp"
+                  :href="urls.openBook" 
+                  type="button" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                 >
-                {{ $t('buttonTitle') }}
-                </button>
+                  {{ $t('buttonTitle') }}
+                </a>
               </div>
             </div>
           </div>
@@ -125,12 +143,15 @@
       <div class="home_view__follow-us">
         <div class="home_view__follow-us_title">
           <div class="home_view__follow-us_title-text">{{ $t('FollowUs.title.paragraphOne') }}<br>{{ $t('FollowUs.title.paragraphTwo') }}</div>
-          <button 
-            class="btn_ot home_view__btn-fu" 
-            @click="redirectToInstagram"
+          <a
+            class="btn_ot home_view__btn-fu"
+            :href = urls.redirectToInstagram
+            type="button" 
+            target="_blank" 
+            rel="noopener noreferrer"  
           >
-          {{ $t('FollowUs.buttonTitle') }}
-          </button>
+            {{ $t('FollowUs.buttonTitle') }}
+          </a>
         </div>
         <div class="home_view__follow-us_image-block">
           <img href="#" class="home_view__follow-us_image-item_text" v-bind:src="follow">
@@ -165,17 +186,8 @@
       </div>
       <div class="home_view-map_and_footer">
         <MapGoogle class="home-view__google-map"/>
-        <div class="home_view-map_and_footer-item">
-          <img @click="redirectToFacebook" class="home_view-map_and_footer-icon" v-bind:src="facebook" href="#"/>
-          <img @click="redirectToWhatsapp" class="home_view-map_and_footer-icon" v-bind:src="whatsapp" href="#"/>
-          <img @click="redirectToInstagram" class="home_view-map_and_footer-icon" v-bind:src="instagram" href="#"/>
-        </div>
-        <div class="home_view-map_and_footer-menu">
-          <div @click="scrollToAboutUs" class="home_view-map_and_footer-menu_item">{{ $t('navigation.about') }}</div>
-          <div @click="scrollToServises" class="home_view-map_and_footer-menu_item">{{ $t('navigation.services-footer') }}</div>
-          <div @click="scrollToTeam" class="home_view-map_and_footer-menu_item">{{ $t('navigation.team') }}</div>
-          <div @click="scrollToContacts" class="home_view-map_and_footer-menu_item">{{ $t('navigation.contacts') }}</div>
-        </div>
+        <Social class="home_view-map_and_footer-item"/>
+        <Navigation class="home_view-map_and_footer-menu"/>
         <div class="home_view-map_and_footer-logo">
           <img 
             @click="scrollToTop" 
@@ -197,7 +209,6 @@
 
 <script setup lang="ts">
 import logoTitle from '@/assets/icons/vlados-title-icon.svg'
-import ButtonWs from '@/components/ButtonWs.vue';
 import HeaderView from './HeaderView.vue';
 import Logo from '@/assets/logo.svg';
 import overview from '@/assets/barber-nocolor-img.png';
@@ -206,68 +217,22 @@ import imgAlex from '@/assets/barber-Alex-img.png'
 import imgVlad from '@/assets/barber-Vlad-img.png'
 import follow from '@/assets/follow-rotate-svg.svg'
 import phone from '@/assets/iPhone-img.svg'
-import facebook from '@/assets/icons/facebook-hover-icon.svg'
-import instagram from '@/assets/icons/instagram-hover-icon.svg'
-import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
 import footerLogo from '@/assets/footer-logo.svg'
 import footerArrow from '@/assets/footer-arrow.svg'
 import MapGoogle from '@/components/Map.vue'
+import Social from '@/components/Social.vue'
+import Navigation from '@/components/Navigation.vue'
 
 
+const urls: Record<string, string> = {
+  openBook: 'https://n807969.alteg.io/',
+  redirectToInstagram: 'https://www.instagram.com/vlados_barbershop?igsh=MXRkdjkzcjExbWJ4Mw==',
+};
 
-function openBook() {
-  window.open('https://n807969.alteg.io/', '_blank', 'noopener,noreferrer');
+
+function scrollToTop () {
+  window.scrollTo({top: 0, behavior: 'smooth'});
 }
-
-
-function redirectToFacebook() {
-  window.open('https://www.facebook.com/profile.php?id=61558335386973', '_blank', 'noopener,noreferrer');
-}
-
-function redirectToWhatsapp() {
-  window.open('#', '_blank', 'noopener,noreferrer');
-}
-
-function redirectToInstagram() {
-  window.open('https://www.instagram.com/vlados_barbershop?igsh=MXRkdjkzcjExbWJ4Mw==', '_blank', 'noopener,noreferrer');
-}
-
-
-const scrollToTop = (): void => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-};
-
-const scrollToAboutUs = (): void => {
-  window.scrollTo({
-    top: 1000,
-    behavior: 'smooth',
-  });
-};
-
-const scrollToServises = (): void => {
-  window.scrollTo({
-    top: 1640,
-    behavior: 'smooth',
-  });
-};
-
-const scrollToTeam = (): void => {
-  window.scrollTo({
-    top: 2540,
-    behavior: 'smooth',
-  });
-};
-
-const scrollToContacts = (): void => {
-  window.scrollTo({
-    top: 4000,
-    behavior: 'smooth',
-  });
-};
-
 
 </script>
 
@@ -318,6 +283,30 @@ const scrollToContacts = (): void => {
     width: 447px;
     text-align: center;
   }
+
+
+  .arrow {
+  margin: 0 0 0 6.6px;
+  position: relative;
+  width: 33px;
+  height: 33px;
+  background-color: $button-select-color;
+  border: 2px solid $button-vector-color;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+}
+.arrow:after {
+  position: absolute;
+  top: 9px;
+  left: 11px;
+  content: '';
+  display: block;
+  width: 9.5px;
+  height: 9.5px;
+  border-left: 3px solid $button-vector-color;
+  border-bottom: 3px solid $button-vector-color;
+  transform: rotate(45deg);
+}
 
 
 
@@ -684,16 +673,11 @@ const scrollToContacts = (): void => {
   }
   
   .home_view-map_and_footer-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
     margin: 40px 0 33px 0 ;
   }
 
   .home_view-map_and_footer-icon {
-    transition: all 300ms;
+    transition: all 0.4s;
     margin: 0 8px;
     filter: grayscale(100%);
 
@@ -707,31 +691,15 @@ const scrollToContacts = (): void => {
   }
 
   .home_view-map_and_footer-menu {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    text-transform: uppercase;
     margin: 0 0 43px 0;
-    width: 462px;
-    height: 21px;
+    font-size: 15px;
   }
 
-  .home_view-map_and_footer-menu_item {
-    font-size: 14px;
-    font-weight: 400;
-    margin:0 15px 0 0;
-
-      &:hover {
-        color: $link-footer-color;
-        cursor: pointer;
-      }
-  }
 
   .home_view-map_and_footer-logo-item_arrow {
     position: relative;
     right: 510px;
-    transition: all .5s;
+    transition: all .4s;
       &:hover {
         transform: scale(1.25); 
       }

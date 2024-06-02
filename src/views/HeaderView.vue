@@ -5,111 +5,25 @@
         <img class="header_view__logo-image" v-bind:src="Logo" alt="">
         <img class="header_view__logo-title" v-bind:src="logoTitle" alt="">
       </div>
-      <div class="header_view__link">
-        <div @click="scrollToAboutUs" class="header_view__link-item">{{ $t('navigation.about') }}</div>
-        <div @click="scrollToServises" class="header_view__link-item">{{ $t('navigation.services-header') }}</div>
-        <div @click="scrollToTeam" class="header_view__link-item">{{ $t('navigation.team') }}</div>
-        <div @click="scrollToContacts" class="header_view__link-item">{{ $t('navigation.contacts') }}</div>
-      </div>
+      <Navigation class="header_view__link"/>
       <div class="header_view__social">
-        <!-- <div class="header_view__styled-wrp">
-          <select class="header_view__styled-select" v-model="selectedOption" @change="changeLanguage">
-            <option v-for="option in options" :key="option.value" :value="option.value">
-              <span class="header_view__select-options">
-                {{ option.value }}
-              </span>
-            </option>
-          </select>
-        </div> -->
         <langSwitcher />
-        <div class="header_view__social-item">
-          <img class="header_view__social-img" @click="redirectToFacebook" v-bind:src="facebook" />
-          <img class="header_view__social-img" @click="redirectToWhatsapp" v-bind:src="whatsapp" />
-          <img class="header_view__social-img" @click="redirectToInstagram" v-bind:src="instagram" />
-        </div>
+        <Social />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import langSwitcher from '../components/langSwitcher.vue'
-import facebook from '@/assets/icons/facebook-hover-icon.svg'
-import instagram from '@/assets/icons/instagram-hover-icon.svg'
-import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
+import langSwitcher from '@/components/LangSwitcher.vue'
+import Navigation from '@/components/Navigation.vue'
 import Logo from '@/assets/logo.svg'
 import logoTitle from '@/assets/icons/vlados-title-icon.svg'
-// import { ref, computed } from 'vue';
-// import { useI18n  } from 'vue-i18n'
+import Social from '@/components/Social.vue'
 
-// interface Option {
-//   value: string;
-//   text: string;
-// }
-
-// const options = ref<Option[]>([
-//   { value: 'en', text: 'en' },
-//   { value: 'cz', text: 'cz' },
-//   { value: 'ua', text: 'ua' },
-//   { value: 'ru', text: 'ru' },
-// ]);
-
-// const selectedOption = ref<string>(options.value[0].value);
-// const { locale } = useI18n();
-// const selectedLang = ref(locale.value);
-
-// function changeLanguage() {
-//   locale.value = (selectedLang.value, selectedOption.value);
-// }
-
-
-
-function redirectToFacebook() {
-  window.open('https://www.facebook.com/profile.php?id=61558335386973', '_blank', 'noopener,noreferrer');
+function scrollToTop () {
+  window.scrollTo({top: 0, behavior: 'smooth'});
 }
-
-function redirectToWhatsapp() {
-  window.open('#', '_blank', 'noopener,noreferrer');
-}
-
-function redirectToInstagram() {
-  window.open('https://www.instagram.com/vlados_barbershop?igsh=MXRkdjkzcjExbWJ4Mw==', '_blank', 'noopener,noreferrer');
-}
-
-
-
-
-const scrollToTop = (): void => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-};
-const scrollToAboutUs = (): void => {
-  window.scrollTo({
-    top: 1000,
-    behavior: 'smooth',
-  });
-};
-const scrollToServises = (): void => {
-  window.scrollTo({
-    top: 1640,
-    behavior: 'smooth',
-  });
-};
-const scrollToTeam = (): void => {
-  window.scrollTo({
-    top: 2540,
-    behavior: 'smooth',
-  });
-};
-const scrollToContacts = (): void => {
-  window.scrollTo({
-    top: 4000,
-    behavior: 'smooth',
-  });
-};
-  
 </script>
 
 <style scoped lang="scss">
@@ -152,27 +66,10 @@ const scrollToContacts = (): void => {
   }
 
   .header_view__link {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     max-width: 504px;
-    margin: 0 0 0 145.5px
-  }
-
-  .header_view__link-item {
-    margin: 0 15px;
-    padding: 1px 5x;
-    text-transform: uppercase;
+    margin: 0 0 0 145.5px;
     font-size: 14px;
-    line-height: 16px;
-    
-      &:hover {
-        color: $link-hover-color;
-        cursor: pointer;
-      }
   }
-
 
 
   .header_view__social {
@@ -182,79 +79,9 @@ const scrollToContacts = (): void => {
     align-items: center;
     margin: 0 21px 0 0;
   }
+ 
 
-
-
-  // .header_view__styled-wrp {
-  //   position: relative;
-  //   width: 39px;
-  //   margin: 0 53px 0 0;
-  //     &::before {
-  //       content: "";
-  //       width: 0px;
-  //       height: 0px;
-  //       border-style: solid;
-  //       border-width: 8px 6px 0 6px;
-  //       border-color: #7B7B7B transparent transparent transparent;
-  //       cursor: pointer;
-  //       pointer-events: none;
-  //       position: absolute;
-  //       transform: translateY(-50%);
-  //       top: 50%;
-  //       right: 1px;
-  //       display: block;
-  //     }
-  // }
   
-  // .header_view__styled-select {
-  //   width: 100%;
-  //   font-size: 14px;
-  //   appearance: none;
-  //   -moz-appearance: none;
-  //   -webkit-appearance: none;
-  //   border: none;
-  //   color: $color-black;
-  //   background-color: transparent;
-  //   outline: none;
-  //   cursor: pointer;
-  //   text-transform: uppercase;
-
-  //     &::-ms-expand {
-  //       display: none;
-  //       }
-
-  //       &:hover {
-  //         border-color: #0056b3;
-  //       }
-      
-  //   }
-
-  //   .header_view__styled-select option {
-  //     padding: 10px;
-  //     background-color: white;
-  //     color: #333;
-  //   }
-
-
-    .header_view__social-item {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-  
-    .header_view__social-img {
-      margin: 0 16px 0 0;
-      transition: all 300ms;
-      filter: grayscale(100%);
-        &:hover {
-          filter: grayscale(0%);
-        }
-        &:active {
-          filter: grayscale(100%);
-        }
-  
-    }
 
 }
 

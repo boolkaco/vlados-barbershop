@@ -48,6 +48,49 @@ body {
 }
 
 
+.btn {
+  background-image: none; 
+	background: transparent;
+	background-color: transparent;
+  border: 1px solid $button-border-color;
+  border-radius: 31px;
+  color: $button-text-color;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.9px;
+  margin: 37px 0 46px 0;
+  max-height: 49px;
+  max-width: 150px;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  width: 100%;
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: $color-orange;
+    border: 1px solid $color-orange;
+  }
+
+  &:active {
+
+    box-shadow: none;
+    transform: translateY(0);
+    background-color: $color-white;
+    color: $button-text-color;
+    border: 1px solid $button-border-color;
+  }
+}
+
+
 .btn_wb {
   background-color: $color-white;
   border: 1px solid $color-gray-1;
