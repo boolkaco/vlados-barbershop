@@ -43,8 +43,6 @@ const urls: Record<string, string> = {
   redirectToWhatsapp: '#',
   redirectToInstagram: 'https://www.instagram.com/vlados_barbershop?igsh=MXRkdjkzcjExbWJ4Mw==',
 };
-
-
   
 </script>
 
