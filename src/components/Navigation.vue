@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 
-  const scrollPositions: Record<string, { top: number, behavior: ScrollBehavior }> = {
+const scrollPositions: Record<string, { top: number, behavior: ScrollBehavior }> = {
   scrollToAboutUs: { top: 1000, behavior: 'smooth' },
   scrollToServises: { top: 1640, behavior: 'smooth' },
   scrollToTeam: { top: 2540, behavior: 'smooth' },

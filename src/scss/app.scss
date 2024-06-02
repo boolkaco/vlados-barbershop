@@ -49,6 +49,8 @@ body {
 
 
 .btn {
+  display: flex;
+  justify-content: center;
   background-image: none; 
 	background: transparent;
 	background-color: transparent;
@@ -62,9 +64,8 @@ body {
   font-weight: 500;
   line-height: 16.9px;
   margin: 37px 0 46px 0;
-  max-height: 49px;
+  height: 49px;
   max-width: 150px;
-  padding: 4px 8px;
   text-align: center;
   text-decoration: none;
   transition: all 0.4s ease;
