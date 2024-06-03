@@ -53,24 +53,24 @@ function changeLanguage(language: { code: string; label: string }) {
 <style scoped lang="scss">
 .language-switcher {
   position: relative;
-    width: 39px;
-    margin: 0 53px 0 0;
+  width: 39px;
+  margin: 0 53px 0 0;
 
-      &::before {
-        content: "";
-        width: 0px;
-        height: 0px;
-        border-style: solid;
-        border-width: 8px 6px 0 6px;
-        border-color: #7B7B7B transparent transparent transparent;
-        cursor: pointer;
-        pointer-events: none;
-        position: absolute;
-        transform: translateY(-50%);
-        top: 49%;
-        left: 33px;
-        display: block;
-      }
+    &::before {
+      content: "";
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 8px 6px 0 6px;
+      border-color: #7B7B7B transparent transparent transparent;
+      cursor: pointer;
+      pointer-events: none;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 49%;
+      left: 33px;
+      display: block;
+    }
 }
 
 .selected-language {
