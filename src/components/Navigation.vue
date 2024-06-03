@@ -37,7 +37,7 @@ const scrollTo = (section: keyof typeof scrollPositions) => {
 .navigation__link {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 504px;
     margin: 0 0 0 145.5px;

@@ -65,11 +65,6 @@ function scrollToTop () {
     height: 48px;
   }
 
-  .header_view__link {
-    max-width: 504px;
-    margin: 0 0 0 145.5px;
-    font-size: 14px;
-  }
 
 
   .header_view__social {
