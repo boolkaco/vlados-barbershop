@@ -1,12 +1,12 @@
 <template>
-  <div class="header_view__social-item" >
+  <div class="social-item" >
     <a
       :href="urls.redirectToFacebook"
       target="_blank" 
       rel="noopener noreferrer"
     >
       <img
-        class="header_view__social-img" 
+        class="social-img" 
         :src="facebook"  
       />
     </a>
@@ -16,7 +16,7 @@
       rel="noopener noreferrer" 
     >
       <img 
-        class="header_view__social-img" 
+        class="social-img" 
         :src="whatsapp" 
       />
     </a>
@@ -26,7 +26,7 @@
       rel="noopener noreferrer"
       >
       <img
-        class="header_view__social-img"
+        class="social-img"
         :src="instagram"
       />
     </a>
@@ -49,15 +49,15 @@ const urls: Record<string, string> = {
 <style scoped lang="scss">
 @import '@/scss/variables.scss';
 
-  .header_view__social-item {
+  .social-item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
 
-  .header_view__social-img {
-    margin: 0 16px 0 0;
+  .social-img {
+    margin: 0 8px;
     transition: all 0.4s;
     filter: grayscale(100%);
       &:hover {

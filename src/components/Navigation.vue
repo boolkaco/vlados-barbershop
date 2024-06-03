@@ -44,7 +44,7 @@ const scrollTo = (section: keyof typeof scrollPositions) => {
   }
 
   .navigation__link-item {
-    margin: 0 10px;
+    margin: 0 7.5px;
     text-transform: uppercase;    
       &:hover {
         color: $link-hover-color;

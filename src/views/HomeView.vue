@@ -107,7 +107,7 @@
               </div>
               <div class="home_view__barber-button">
                 <a 
-                  class="btn_wb home_view__btn-sp"
+                  class="btn_wb home_view__btn-wb"
                   :href="urls.openBook" 
                   type="button" 
                   target="_blank" 
@@ -127,7 +127,7 @@
               </div>
               <div class="home_view__barber-button">
                 <a 
-                  class="btn_wb home_view__btn-sp"
+                  class="btn_wb home_view__btn-wb"
                   :href="urls.openBook" 
                   type="button" 
                   target="_blank" 
@@ -281,6 +281,7 @@ function scrollToTop () {
     text-transform: uppercase; 
     color: $text-agite-color;
     width: 447px;
+    height: 70px;
     text-align: center;
   }
 
@@ -388,18 +389,18 @@ function scrollToTop () {
     width: 100%;
     border-top: solid 1px $color-gray-3;
     border-bottom: solid 1px $color-gray-3;
-    margin: 0 0 56px 0;
+    margin: 0 0 57px 0;
   }
 
   .home_view__servise-and-prise__title {
     text-transform: uppercase;
     font-size: 51px;
     font-weight: 300;
-    margin: 60px 0 31px 0;
+    margin: 59px 0 31px 0;
   }
 
   .home_view__servise-and-prise__table {
-    width: 1400px;
+    width: 1160px;
     margin: 0 0 67px 0;
     border-collapse: collapse;
 
@@ -506,6 +507,7 @@ function scrollToTop () {
   .home_view__barber-first_name {
     font-size: 28px;
     font-weight: 400;
+    margin: 0 0 15px 0;
   }
 
   .home_view__barber_position {
@@ -538,7 +540,7 @@ function scrollToTop () {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 109px 0 0;
+    margin: 0 49px 0 0;
   }
 
   .home_view__follow-us_title-text {
@@ -558,12 +560,13 @@ function scrollToTop () {
     background-color: #FFFFFF0A;
     height: 1153px;
     width: 362px;
-    left: 175px;
+    left: 183px;
     display: flex;
     position: relative;
     align-items: center;
     justify-content: end;
     transform: rotate(-26.1deg);
+    padding: 0 8px 0 0;
   }
 
   .home_view__follow-us_image-item_text {
@@ -601,7 +604,7 @@ function scrollToTop () {
     justify-content: center;
     width: 100%;
     object-fit: cover;
-    margin: 0 0 37px 0;
+    margin: 0 0 36px 0;
   }
 
   .home_view__contacts-title {
@@ -615,7 +618,7 @@ function scrollToTop () {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 1400px;
+    width: 1133px;
   }
 
   .home_view__contacts-item {
@@ -697,8 +700,8 @@ function scrollToTop () {
 
 
   .home_view-map_and_footer-logo-item_arrow {
-    position: relative;
-    right: 510px;
+    position: absolute;
+    left: 93px;
     transition: all .4s;
       &:hover {
         transform: scale(1.25); 
@@ -710,13 +713,13 @@ function scrollToTop () {
     flex-direction: row;
     justify-content: center;
     align-items: center;;
-    width: 100%;
+    width: 1400px;
     margin: 0 0 34px 0;
+    position: relative;
   }
 
   .home_view-map_and_footer-logo-item_logo {
-    position: relative;
-    right: 47px;
+    margin:0 10px 0 0 ;
   }
 
   .home_view-map_and_footer-footer {
