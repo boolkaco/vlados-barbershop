@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import langSwitcher from '@/components/LangSwitcher.vue'
+import langSwitcher from '@/components/langSwitcher.vue'
 import Navigation from '@/components/Navigation.vue'
 import Logo from '@/assets/logo.svg'
 import logoTitle from '@/assets/icons/vlados-title-icon.svg'
