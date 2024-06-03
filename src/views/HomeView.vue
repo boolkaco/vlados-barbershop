@@ -617,8 +617,9 @@ function scrollToTop () {
   .home_view__contacts-list {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 1133px;
+    height: 83px;
   }
 
   .home_view__contacts-item {
