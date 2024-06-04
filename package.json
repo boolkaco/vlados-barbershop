@@ -14,6 +14,7 @@
     "generate": "vite-ssg build"
   },
   "dependencies": {
+    "@tomtom-international/web-sdk-maps": "^6.25.0",
     "@types/openlayers": "^4.6.23",
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
