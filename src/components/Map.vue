@@ -34,7 +34,7 @@ onMounted(() => {
     ],
     view: new View({
       center: fromLonLat(markerCoordinates),
-      zoom: 17
+      zoom: 18
     })
   });
 
@@ -45,9 +45,9 @@ onMounted(() => {
 
   marker.setStyle(new Style({
     image: new Icon({
-      src: 'https://openlayers.org/en/v6.5.0/examples/data/icon.png',
+      src: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
       anchor: [0.5, 1],
-      scale: 0.7
+      scale: 1
     })
   }));
 
@@ -60,12 +60,15 @@ onMounted(() => {
   });
 
   map.addLayer(markerLayer);
+  
 });
+
 </script>
 
 <style scoped>
 .map-container {
   height: 504px;
-  width: 100%;
+  width: 1400px;
+  filter: grayscale(100%);
 }
 </style>

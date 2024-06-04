@@ -1,7 +1,7 @@
 <template>
   <div class="header_view">
     <div class="header_view-wrp">
-      <div @click="scrollToTop" class="header_view__logo" type="Button">
+      <div class="header_view__logo">
         <img class="header_view__logo-image" v-bind:src="Logo" alt="">
         <img class="header_view__logo-title" v-bind:src="logoTitle" alt="">
       </div>
@@ -21,9 +21,6 @@ import Logo from '@/assets/logo.svg'
 import logoTitle from '@/assets/icons/vlados-title-icon.svg'
 import Social from '@/components/Social.vue'
 
-function scrollToTop () {
-  window.scrollTo({top: 0, behavior: 'smooth'});
-}
 </script>
 
 <style scoped lang="scss">
@@ -49,7 +46,7 @@ function scrollToTop () {
     align-items: center;
     text-transform: uppercase;
     position: fixed;
-    z-index: 20;
+    z-index: 2;
     background-color: $color-white;
   }
 
@@ -57,7 +54,6 @@ function scrollToTop () {
     display: flex;
     flex-direction: column;
     align-items: center;
-    cursor: pointer;
   }
 
   .header_view__logo-image {

@@ -13,7 +13,7 @@
         rel="noopener noreferrer"
       >
         {{ $t('buttonTitle') }}
-        <div class="arrow"></div>
+        <img class="home_view__select-arrow_img" :src="selectImg">
       </a>
       <img class="home_view__overview" v-bind:src="overview" alt="">
       <img class="home_view__overview-1" v-bind:src="overviewColor" alt="">
@@ -222,6 +222,7 @@ import footerArrow from '@/assets/footer-arrow.svg'
 import MapGoogle from '@/components/Map.vue'
 import Social from '@/components/Social.vue'
 import Navigation from '@/components/Navigation.vue'
+import selectImg from '@/assets/icons/button-select-icon.svg'
 
 
 const urls: Record<string, string> = {
@@ -285,29 +286,14 @@ function scrollToTop () {
     text-align: center;
   }
 
+  .home_view__select-arrow_img {
+    width: 34px;
+    height: 34px;
+    margin: 7px 8.6px 8px 6.6px;
+    border: 1px solid white;
+    border-radius: 34px;
+  }
 
-  .arrow {
-  margin: 0 0 0 6.6px;
-  position: relative;
-  width: 33px;
-  height: 33px;
-  background-color: $button-select-color;
-  border: 2px solid $button-vector-color;
-  border-radius: 50%;
-  transform: rotate(-90deg);
-}
-.arrow:after {
-  position: absolute;
-  top: 9px;
-  left: 11px;
-  content: '';
-  display: block;
-  width: 9.5px;
-  height: 9.5px;
-  border-left: 3px solid $button-vector-color;
-  border-bottom: 3px solid $button-vector-color;
-  transform: rotate(45deg);
-}
 
 
 
@@ -449,7 +435,6 @@ function scrollToTop () {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 1;
   }
 
   .home_view__our-team__title {
@@ -476,15 +461,15 @@ function scrollToTop () {
   }
 
   .home_view__barber-image {
-    transition: all 700ms;
+    transition: all 0.4s;
     width: 571px;
     height: 571px;
     margin: 0 0 39px 0;
+    z-index: 0;
     filter: grayscale(100%);
-
       &:hover {
-        filter: grayscale(0); 
-        transition: all 700ms;
+        filter: grayscale(0);
+        z-index: 10; 
       }
   }
 
@@ -554,6 +539,10 @@ function scrollToTop () {
 
   .home_view__btn-fu {
     width: 135px;
+    &:hover {
+      background-color: $color-orange; 
+      border: 1px solid $color-orange;
+    }
   }
 
   .home_view__follow-us_image-block {
@@ -705,7 +694,7 @@ function scrollToTop () {
     left: 93px;
     transition: all .4s;
       &:hover {
-        transform: scale(1.25); 
+        cursor: pointer;
       }
   }
 

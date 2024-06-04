@@ -41,6 +41,7 @@ const scrollTo = (section: keyof typeof scrollPositions) => {
     align-items: center;
     width: 504px;
     margin: 0 0 0 145.5px;
+    font-size: 14px;
   }
 
   .navigation__link-item {

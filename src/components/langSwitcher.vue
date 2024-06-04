@@ -51,18 +51,19 @@ function changeLanguage(language: { code: string; label: string }) {
 </script>
 
 <style scoped lang="scss">
+@import '@/scss/variables.scss';
 .language-switcher {
   position: relative;
   width: 39px;
   margin: 0 53px 0 0;
-
+  cursor: pointer;
     &::before {
       content: "";
       width: 0px;
       height: 0px;
       border-style: solid;
       border-width: 8px 6px 0 6px;
-      border-color: #7B7B7B transparent transparent transparent;
+      border-color: $color-gray-1 transparent transparent transparent;
       cursor: pointer;
       pointer-events: none;
       position: absolute;
