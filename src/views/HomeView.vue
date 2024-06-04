@@ -253,7 +253,6 @@ function scrollToTop () {
     align-items: center;
     margin: 107px 0 0 0;
     width: 100%;
-    
   }
 
   .logo {
@@ -435,6 +434,8 @@ function scrollToTop () {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    // position: absolute;
+    // top: 675px;
   }
 
   .home_view__our-team__title {
@@ -458,6 +459,7 @@ function scrollToTop () {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
   }
 
   .home_view__barber-image {
@@ -465,11 +467,11 @@ function scrollToTop () {
     width: 571px;
     height: 571px;
     margin: 0 0 39px 0;
-    z-index: 0;
+    z-index: 1;
     filter: grayscale(100%);
       &:hover {
         filter: grayscale(0);
-        z-index: 10; 
+        z-index: 20; 
       }
   }
 
@@ -479,6 +481,7 @@ function scrollToTop () {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    z-index: 1;
   }
 
 
@@ -511,6 +514,7 @@ function scrollToTop () {
 
 
   .home_view__follow-us {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
