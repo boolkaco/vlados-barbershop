@@ -75,9 +75,7 @@ onBeforeUnmount(() => {
     map.setTarget(null);
   }
 });
-onMounted (() => {
-  console.log(import.meta.env)
-})
+
 </script>
 
 <style scoped>
