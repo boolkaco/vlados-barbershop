@@ -2,74 +2,85 @@
   <div ref="mapContainer" class="map-container"></div>
 </template>
 
-<script lang="ts" setup>
-import { ref, onMounted } from 'vue';
+<script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import 'ol/ol.css';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
-import OSM from 'ol/source/OSM';
+import XYZ from 'ol/source/XYZ';
 import { fromLonLat } from 'ol/proj';
-import Feature from 'ol/Feature';
-import Point from 'ol/geom/Point';
-import VectorSource from 'ol/source/Vector';
+import { Feature } from 'ol';
+import { Point } from 'ol/geom';
+import { Style, Icon } from 'ol/style';
 import VectorLayer from 'ol/layer/Vector';
-import Style from 'ol/style/Style';
-import Icon from 'ol/style/Icon';
+import VectorSource from 'ol/source/Vector';
+
+// Координаты для маркера
+const markerCoordinates = [14.39958667755127, 50.06711959838867]; // Долгота и широта, например, Москва
 
 const mapContainer = ref<HTMLDivElement | null>(null);
+let map: Map;
 
-const markerCoordinates = [14.39958667755127, 50.06711959838867];
+const apiKey = import.meta.env.VITE_MAP_API_KEY;
 
 onMounted(() => {
-  if (!mapContainer.value) return;
+  if (mapContainer.value) {
+    map = new Map({
+      target: mapContainer.value,
+      layers: [
+        new TileLayer({
+          source: new XYZ({
+            url: `https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=${apiKey}` ,
+          }),
+        }),
+      ],
+      view: new View({
+        center: fromLonLat(markerCoordinates),
+        zoom: 17,
+      }),
+      controls: [], // Убираем все элементы управления
+    });
 
-  // Создание карты
-  const map = new Map({
-    target: mapContainer.value,
-    layers: [
-      new TileLayer({
-        source: new OSM()
+    // Создаем маркер
+    const marker = new Feature({
+      geometry: new Point(fromLonLat(markerCoordinates)),
+    });
+
+    // Настраиваем стиль маркера
+    marker.setStyle(
+      new Style({
+        image: new Icon({
+          src: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+          scale: 1, // Измените размер иконки, если необходимо
+        }),
       })
-    ],
-    view: new View({
-      center: fromLonLat(markerCoordinates),
+    );
 
-      zoom: 18
-    })
-  });
+    // Добавляем маркер на карту
+    const vectorSource = new VectorSource({
+      features: [marker],
+    });
 
-  // Создание маркера
-  const marker = new Feature({
-    geometry: new Point(fromLonLat(markerCoordinates))
-  });
+    const vectorLayer = new VectorLayer({
+      source: vectorSource,
+    });
 
-  marker.setStyle(new Style({
-    image: new Icon({
-      src: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-      anchor: [0.5, 1],
-      scale: 1
-    })
-  }));
-
-  const vectorSource = new VectorSource({
-    features: [marker]
-  });
-
-  const markerLayer = new VectorLayer({
-    source: vectorSource
-  });
-
-  map.addLayer(markerLayer);
-  
+    map.addLayer(vectorLayer);
+  }
 });
 
+onBeforeUnmount(() => {
+  if (map) {
+    map.setTarget(null);
+  }
+});
 </script>
 
 <style scoped>
 .map-container {
-  height: 504px;
   width: 1400px;
-  filter: grayscale(100%);
+  height: 504px;
+  filter: grayscale(100%); 
 }
 </style>
