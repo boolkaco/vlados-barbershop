@@ -22,7 +22,7 @@ const markerCoordinates = [14.39958667755127, 50.06711959838867];
 const mapContainer = ref<HTMLDivElement | null>(null);
 let map: Map;
 
-const apiKey = import.meta.env.VITE_MAP_API_KEY;
+const apiKey = import.meta.env.VITE_APP_MAP_API_KEY;
 
 onMounted(() => {
   if (mapContainer.value) {
@@ -75,6 +75,9 @@ onBeforeUnmount(() => {
     map.setTarget(null);
   }
 });
+onMounted (() => {
+  console.log(import.meta.env)
+})
 </script>
 
 <style scoped>
