@@ -48,7 +48,6 @@ const urls: Record<string, string> = {
 
 <style scoped lang="scss">
 @import '@/scss/variables.scss';
-
   .social-item {
     display: flex;
     flex-direction: row;

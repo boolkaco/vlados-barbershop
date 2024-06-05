@@ -34,6 +34,7 @@ onMounted(() => {
     ],
     view: new View({
       center: fromLonLat(markerCoordinates),
+
       zoom: 18
     })
   });

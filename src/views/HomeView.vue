@@ -1,5 +1,6 @@
 <template>
   <div class="home_view">
+    <Loader />
     <HeaderView />
     <div class="home_view__wrp">
       <img class="logo" v-bind:src="Logo" alt="">
@@ -223,7 +224,7 @@ import MapGoogle from '@/components/Map.vue'
 import Social from '@/components/Social.vue'
 import Navigation from '@/components/Navigation.vue'
 import selectImg from '@/assets/icons/button-select-icon.svg'
-
+import Loader from '@/components/loader.vue'
 
 const urls: Record<string, string> = {
   openBook: 'https://n807969.alteg.io/',
@@ -235,11 +236,14 @@ function scrollToTop () {
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
+
+
 </script>
 
 <style scoped lang="scss">  
 @import '@/scss/variables.scss';
 @media screen and (min-width: 1025px) {
+
   .home_view {
     display: flex;
     flex-direction: column;

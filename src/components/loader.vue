@@ -9,29 +9,33 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted  } from 'vue';
 import loaderImg from '@/assets/icons/logo-loader-icon.png'
 
 const isLoading = ref(true);
 const progress = ref(0);
 
 onMounted(async () => {
+    document.body.style.overflow = 'hidden';
 
     let width = 0;
     const interval = setInterval(() => {
       if (width < 100) {
         width++;
         progress.value = width;
-
       } else {
         clearInterval(interval);
         setTimeout(() => {
           isLoading.value = false;
+          document.body.style.overflow = '';
         }, 500); 
       }
     }, 15); 
   });
-
+  onUnmounted(() => {
+  document.body.style.overflow = '';
+});
+  
 </script>
 
 <style scoped lang="scss">
