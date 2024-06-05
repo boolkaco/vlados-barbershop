@@ -16,8 +16,8 @@ import { Style, Icon } from 'ol/style';
 import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
 
-// Координаты для маркера
-const markerCoordinates = [14.39958667755127, 50.06711959838867]; // Долгота и широта, например, Москва
+
+const markerCoordinates = [14.39958667755127, 50.06711959838867]; 
 
 const mapContainer = ref<HTMLDivElement | null>(null);
 let map: Map;
