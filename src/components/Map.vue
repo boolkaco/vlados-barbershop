@@ -22,7 +22,7 @@ const markerCoordinates = [14.39958667755127, 50.06711959838867];
 const mapContainer = ref<HTMLDivElement | null>(null);
 let map: Map;
 
-// const apiKey = import.meta.env.VITE_APP_MAP_API_KEY;
+const apiKey = import.meta.env.VITE_APP_MAP_API_KEY;
 
 onMounted(() => {
   if (mapContainer.value) {
@@ -31,7 +31,7 @@ onMounted(() => {
       layers: [
         new TileLayer({
           source: new XYZ({
-            url: `https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=tZlf1fWGAtJUabKHF3iM` ,
+            url: `https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=${apiKey}` ,
           }),
         }),
       ],
