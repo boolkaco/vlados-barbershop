@@ -11,7 +11,7 @@
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "generate": "vite-ssg build"
+    "generate": "cross-env NODE_ENV=production webpack --config vite-ssg build/webpack.config.js"
   },
   "dependencies": {
     "axios": "^1.7.2",
