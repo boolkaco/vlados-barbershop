@@ -70,11 +70,11 @@ onMounted(() => {
   }
 });
 
-onBeforeUnmount(() => {
-  if (map) {
-    map.setTarget(null);
-  }
-});
+// onBeforeUnmount(() => {
+//   if (map) {
+//     map.setTarget(null);
+//   }
+// });
 </script>
 
 <style scoped>
