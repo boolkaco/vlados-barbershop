@@ -1,13 +1,33 @@
 <template>
-  <div class="navigation__link">
-    <div @click="scrollTo('scrollToAboutUs')" class="navigation__link-item">{{ $t('navigation.about') }}</div>
-    <div @click="scrollTo('scrollToServises')" class="navigation__link-item">{{ $t('navigation.services-header') }}</div>
-    <div @click="scrollTo('scrollToTeam')" class="navigation__link-item">{{ $t('navigation.team') }}</div>
-    <div @click="scrollTo('scrollToContacts')" class="navigation__link-item">{{ $t('navigation.contacts') }}</div>
+  <div :class="{'navigation__link': true, 'vertical-layout': isVertical}">
+    <div @click="scrollTo('scrollToAboutUs')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.about') }}</div>
+    <div @click="scrollTo('scrollToServises')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.services-header') }}</div>
+    <div @click="scrollTo('scrollToTeam')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.team') }}</div>
+    <div @click="scrollTo('scrollToContacts')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.contacts') }}</div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { defineProps } from 'vue';
+
+const props = defineProps({
+  isVertical: {
+    type: Boolean,
+    default: false,
+  },
+  linkColor: {
+    type: String,
+    default: '#000',
+  },
+  fontSize: {
+    type: String,
+    default: '14px',
+  },
+});
+
+const root = document.documentElement;
+root.style.setProperty('--link-color', props.linkColor);
+root.style.setProperty('--font-size', props.fontSize);
 
 const scrollPositions: Record<string, { top: number, behavior: ScrollBehavior }> = {
   scrollToAboutUs: { top: 1000, behavior: 'smooth' },
@@ -28,29 +48,39 @@ function scrollToSection(section: keyof typeof scrollPositions) {
 const scrollTo = (section: keyof typeof scrollPositions) => {
   scrollToSection(section);
 };
-  
 </script>
 
 <style scoped lang="scss">
 @import '@/scss/variables.scss';
 
 .navigation__link {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 504px;
-    margin: 0 0 0 145.5px;
-    font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 504px;
+  margin: 0 0 0 145.5px;
+  font-size: var(--font-size);
+  color: var(--link-color);
+
+  &.vertical-layout {
+    flex-direction: column;
+    width: auto;
+    margin: 0;
+  }
+}
+
+.navigation__link-item {
+  margin: 0 7.5px;
+  text-transform: uppercase;
+  &:hover {
+    color: $link-hover-color;
+    cursor: pointer;
   }
 
-  .navigation__link-item {
-    margin: 0 7.5px;
-    text-transform: uppercase;    
-      &:hover {
-        color: $link-hover-color;
-        cursor: pointer;
-      }
+  &.vertical-item {
+    margin: 5px 0 15px;
   }
-
+}
 </style>
+

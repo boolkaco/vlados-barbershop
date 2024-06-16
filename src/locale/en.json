@@ -8,7 +8,8 @@
     "contacts": "contacts"
   },
   "mainSection": {
-    "agiteText": "Professional barber services in Prague"
+    "agiteText": "Professional barber services <br> in Prague",
+    "agiteTextMobile": "Professional barber <br> services in Prague"
   },
   "aboutUs": {
     "title": "About Us",

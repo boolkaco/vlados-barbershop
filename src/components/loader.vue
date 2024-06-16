@@ -1,6 +1,6 @@
 <template>
   <div class="loader-container" v-if="isLoading">
-    <img class="loader__img" :src="loaderImg">
+    <img class="loader__img" :src="Logo">
     <div class="loader-progress-container">
       <div class="loader-progress" ref="loaderProgress" :style="{ width: progress + '%' }"></div>
     </div>
@@ -10,8 +10,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted  } from 'vue';
-import loaderImg from '@/assets/icons/logo-loader-icon.png'
-
+import Logo from '@/assets/logo_with_text.svg';
 const isLoading = ref(true);
 const progress = ref(0);
 

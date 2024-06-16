@@ -8,7 +8,8 @@
     "contacts": "kontakty"
   },
   "mainSection": {
-    "agiteText": "Profesionální barber služby v Praze"
+    "agiteText": "Profesionální barber služby <br> v Praze",
+    "agiteTextMobile": "Profesionální barber <br> služby v Praze"
   },
   "aboutUs": {
     "title": "o nás",

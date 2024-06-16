@@ -3,20 +3,28 @@
     <Loader />
     <HeaderView />
     <div class="home_view__wrp">
-      <img class="home_view__logo" v-bind:src="Logo" alt="">
-      <p class="home_view__agite-text">{{ $t('mainSection.agiteText') }}</p>
-      <a 
-        class="btn"
-        :href="urls.openBook" 
-        type="button" 
-        target="_blank" 
-        rel="noopener noreferrer"
-      >
-        {{ $t('buttonTitle') }}
-        <img class="home_view__select-arrow_img" :src="selectImg">
-      </a>
+      <div class="image-wrp-mobile">
+        <img class="" v-bind:src="overview" alt="">
+      </div>
+      <div class="home_view__preview">
+        <img class="home_view__logo" v-bind:src="Logo" alt="">
+        <p class="home_view__agite-text--desktop" v-html="$t('mainSection.agiteText')"></p>
+        <p class="home_view__agite-text--mobile" v-html="$t('mainSection.agiteTextMobile')"></p>
+        <a
+            class="btn"
+            :href="urls.openBook"
+            type="button"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+          {{ $t('buttonTitle') }}
+          <img class="home_view__select-arrow_img" :src="selectImg">
+        </a>
+      </div>
       <img class="home_view__overview" v-bind:src="overview" alt="">
-      <img class="home_view__overview-1" v-bind:src="overviewColor" alt="">
+<!--      <img class="home_view__overview-1" v-bind:src="overviewColor" alt="">-->
+
+
       <div class="home_view__about-us">
         <p class="home__view_about-us_title">{{ $t('aboutUs.title') }}</p>
         <div class="home_view__about-us_text">
@@ -83,11 +91,11 @@
             </tr>
           </tbody>
         </table>
-        <a 
+        <a
           class="btn_ot home_view__btn-sp"
-          :href="urls.openBook" 
-          type="button" 
-          target="_blank" 
+          :href="urls.openBook"
+          type="button"
+          target="_blank"
           rel="noopener noreferrer"
         >
         {{ $t('buttonTitle') }}
@@ -106,11 +114,11 @@
                 <div class="home_view__barber_position">{{ $t('ourTeam.barbers.firstBarber.barberPosition') }}</div>
               </div>
               <div class="home_view__barber-button">
-                <a 
+                <a
                   class="btn_wb home_view__btn-wb"
-                  :href="urls.openBook" 
-                  type="button" 
-                  target="_blank" 
+                  :href="urls.openBook"
+                  type="button"
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   {{ $t('buttonTitle') }}
@@ -126,11 +134,11 @@
                 <div class="home_view__barber_position">{{ $t('ourTeam.barbers.topBarber.barberPosition') }}</div>
               </div>
               <div class="home_view__barber-button">
-                <a 
+                <a
                   class="btn_wb home_view__btn-wb"
-                  :href="urls.openBook" 
-                  type="button" 
-                  target="_blank" 
+                  :href="urls.openBook"
+                  type="button"
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   {{ $t('buttonTitle') }}
@@ -140,15 +148,16 @@
           </div>
         </div>
       </div>
+
       <div class="home_view__follow-us">
         <div class="home_view__follow-us_title">
           <div class="home_view__follow-us_title-text">{{ $t('FollowUs.title.paragraphOne') }}<br>{{ $t('FollowUs.title.paragraphTwo') }}</div>
           <a
             class="btn_ot home_view__btn-fu"
             :href = urls.redirectToInstagram
-            type="button" 
-            target="_blank" 
-            rel="noopener noreferrer"  
+            type="button"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {{ $t('FollowUs.buttonTitle') }}
           </a>
@@ -156,7 +165,7 @@
         <div class="home_view__follow-us_image-block">
           <img href="#" class="home_view__follow-us_image-item_text" v-bind:src="follow">
         </div>
-        <img class="home_view__follow-us_image-item_phone" v-bind:src="phone"> 
+        <img class="home_view__follow-us_image-item_phone" v-bind:src="phone">
       </div>
       <div class="home_view__contacts">
         <div class="home_view__contacts-title">
@@ -189,13 +198,13 @@
         <Social class="home_view-map_and_footer-item"/>
         <Navigation class="home_view-map_and_footer-menu"/>
         <div class="home_view-map_and_footer-logo">
-          <img 
-            @click="scrollToTop" 
-            class="home_view-map_and_footer-logo-item_arrow" 
+          <img
+            @click="scrollToTop"
+            class="home_view-map_and_footer-logo-item_arrow"
             v-bind:src="footerArrow"
           >
-          <img 
-            class="home_view-map_and_footer-logo-item_logo" 
+          <img
+            class="home_view-map_and_footer-logo-item_logo"
             v-bind:src="footerLogo"
           >
         </div>
@@ -238,507 +247,566 @@ function scrollToTop () {
 
 </script>
 
-<style scoped lang="scss">  
+<style scoped lang="scss">
 @import '@/scss/variables.scss';
-@media screen and (min-width: 1025px) {
 
-  .home_view {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.home_view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    &__logo {
-      width: 278px;
-      margin-bottom: 32px;
-    }
-  }
-
-  .home_view__wrp {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 107px 0 0 0;
-    width: 100%;
-  }
-
-  .logo {
-    width: 175px;
-    height: 160px;
-    margin: 0 60px 0 0;
-  }
-
-  .home_view-title_section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .home_view__title {
+  &__logo {
     width: 278px;
-    height: 60px;
-    margin: 13px 0 32px 0;
-  }
-
-
-  .home_view__agite-text {
-    font-size: 25px;
-    font-weight: 300;
-    text-transform: uppercase; 
-    color: $text-agite-color;
-    width: 447px;
-    height: 70px;
-    text-align: center;
-  }
-
-  .home_view__select-arrow_img {
-    width: 34px;
-    height: 34px;
-    margin: 7px 8.6px 8px 6.6px;
-    border: 1px solid white;
-    border-radius: 34px;
-  }
-
-
-
-
-
-
-
-
-  .home_view__overview {
-    transition: all 500ms;
-    position: absolute;
-    width: 1400px;
-    height: 649px;   
-    top: 566px;
-    &:hover {
-      transition: all 500ms;
-      }
-  }
-
-  .home_view__overview-1 {
-    transition: all 500ms;
-    position: absolute;
-    width: 1400px;
-    height: 649px;   
-    top: 566px;
-    filter: opacity(0);
-    &:hover {
-      filter: opacity(100%);
-      transition: all 500ms;
-      }
-  }
-
-
-
-
-
-
-
-  .home_view__about-us {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 716px 0 31px 0;
-  }
-
-  .home__view_about-us_title {
-    font-size: 51px;
-    font-weight: 300;
-    text-transform: uppercase;
     margin-bottom: 32px;
   }
-
-  .home_view__about-us_text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 700px;
-    padding: 0 20px;
-  }
-
-  .home_view__about-us_text-item {
-    font-size: 18px;
-    line-height: 27px;
-    font-weight: 400;
-    padding-bottom: 30px;
-    text-align: center; 
-    text-indent: 3%;
-  }
-
-
-
-
-
-
-  .home_view__servise-and-prise {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    border-top: solid 1px $color-gray-3;
-    border-bottom: solid 1px $color-gray-3;
-    margin: 0 0 57px 0;
-  }
-
-  .home_view__servise-and-prise__title {
-    text-transform: uppercase;
-    font-size: 51px;
-    font-weight: 300;
-    margin: 59px 0 31px 0;
-  }
-
-  .home_view__servise-and-prise__table {
-    width: 1160px;
-    margin: 0 0 67px 0;
-    border-collapse: collapse;
-
-      th, td {
-        height: 64px;
-        border-bottom: 01px solid $table-border-color;
-      }
-
-      th {
-        font-size: 16px;
-        font-weight: 400;
-        text-transform: uppercase;
-      }
-
-      td {
-        font-size: 16px;
-        font-weight: 600;
-        text-transform: uppercase;
-        color: $prise-color;
-        text-align: right;
-      }
-  }
-
-  .home_view__servise-and-prise__table-thead {
-    border-bottom: 2px solid $table-border-color;
-    text-align: right;
-  }
-
-  .table__thead {
-    text-align: left;
-  }
-
-  .home_view__btn-sp {
-    width: 135px;
-    margin-bottom: 70px;
-  }
-
-
-
-
-
-
-
-  .home_view__our-team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    // position: absolute;
-    // top: 675px;
-  }
-
-  .home_view__our-team__title {
-    text-transform: uppercase;
-    font-size: 51px;
-    font-weight: 300;
-    margin: 0 0 58px 0;
-  }
-
-  .home_view__barber-info {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0 66px 0;
-  }
-
-  .home_view__barber-info_person {
-    margin: 0 10.5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-
-  .home_view__barber-image {
-    transition: all 0.4s;
-    width: 571px;
-    height: 571px;
-    margin: 0 0 39px 0;
-    z-index: 1;
-    filter: grayscale(100%);
-      &:hover {
-        filter: grayscale(0);
-        z-index: 20; 
-      }
-  }
-
-  .home_view__barber-block {
-    width: 571px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1;
-  }
-
-
-  .home_view__barber-name {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-  }
-
-  .home_view__barber-first_name {
-    font-size: 28px;
-    font-weight: 400;
-    margin: 0 0 15px 0;
-  }
-
-  .home_view__barber_position {
-    font-size: 18px;
-    font-weight: 300;
-  }
-
-  .home_view__btn-team {
-    width: 135px;
-  }
-
-
-
-
-
-
-
-  .home_view__follow-us {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: $bg-follow-color;
-    width: 100vw;
-    height: 569px;
-    margin: 0 0 59px 0;
-  }
-
-  .home_view__follow-us_title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 49px 0 0;
-  }
-
-  .home_view__follow-us_title-text {
-    font-size: 42px;
-    font-weight: 400;
-    color: $follow-us-title-color;
-    text-transform: uppercase;
-    text-align: center;
-    margin: 0 0 33px 0;
-  }
-
-  .home_view__btn-fu {
-    width: 135px;
-    &:hover {
-      background-color: $color-orange; 
-      border: 1px solid $color-orange;
-    }
-  }
-
-  .home_view__follow-us_image-block {
-    background-color: #FFFFFF0A;
-    height: 1153px;
-    width: 362px;
-    left: 183px;
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: end;
-    transform: rotate(-26.1deg);
-    padding: 0 8px 0 0;
-  }
-
-  .home_view__follow-us_image-item_text {
-    animation-name: spin;
-    animation-duration: 15000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-
-      @keyframes spin { 
-        from { 
-            transform: rotate(0deg); 
-        } to { 
-            transform: rotate(360deg); 
-        }
-    }
-  }
-
-
-  .home_view__follow-us_image-item_phone {
-    position: relative;
-    top: 78px;
-    right: 180px;
-  }
-
-
-
-
-
-
-
-  .home_view__contacts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    object-fit: cover;
-    margin: 0 0 36px 0;
-  }
-
-  .home_view__contacts-title {
-    text-transform: uppercase;
-    font-size: 51px;
-    font-weight: 300;
-    margin-bottom: 60px;
-  }
-
-  .home_view__contacts-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 1133px;
-    height: 83px;
-  }
-
-  .home_view__contacts-item {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-  }
-
-  .home_view__contacts-table_title {
-    font-size: 16px;
-    font-weight: 500;
-    color: $table-title-color;
-    margin: 0 0 15px 20px;
-  }
-
-  .home_view__contacts-table_value {
-    border: 0.1rem solid $table-border-color;
-    border-radius: 43px;
-    padding: 14px 20px;
-    font-size: 18px;
-    font-weight: 400;
-    z-index: 1;
-      &:hover {
-        border: 0.1rem solid $color-orange;
-        background-color: $color-orange;
-        color: $color-white;
-        cursor: pointer;
-      }
-  }
-
-  .home_view__contacts-text {
-    font-size: 18px;
-    font-weight: 400;
-    margin: 37px 0 0 0;
-    color: $text-contacts-color;
-  }
-
-
-
-
-
-
-
-  .home_view-map_and_footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-
-  .home-view__google-map {
-    width: 1400px;
-    height: 502px;
-  }
-  
-  .home_view-map_and_footer-item {
-    margin: 40px 0 33px 0 ;
-  }
-
-  .home_view-map_and_footer-icon {
-    transition: all 0.4s;
-    margin: 0 8px;
-    filter: grayscale(100%);
-
-      &:hover {
-        filter: grayscale(0%);
-      }
-
-      &:active {
-        filter: grayscale(100%);
-      }
-  }
-
-  .home_view-map_and_footer-menu {
-    margin: 0 0 43px 0;
-    font-size: 15px;
-  }
-
-
-  .home_view-map_and_footer-logo-item_arrow {
-    position: absolute;
-    left: 93px;
-    transition: all .4s;
-      &:hover {
-        cursor: pointer;
-      }
-  }
-
-  .home_view-map_and_footer-logo {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;;
-    width: 1400px;
-    margin: 0 0 34px 0;
-    position: relative;
-  }
-
-  .home_view-map_and_footer-logo-item_logo {
-    margin:0 10px 0 0 ;
-  }
-
-  .home_view-map_and_footer-footer {
-    border-top: 1px solid $footer-border-color;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .home_view-map_and_footer-text {
-    font-size: 16px;
-    font-weight: 400;
-    color: $footer-text-color;
-    margin: 32px 0 104px 0;
-
-  }
-
 }
 
+.home_view__wrp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 107px 0 0 0;
+  width: 100%;
+  position: relative;
+
+  .home_view__preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .image-wrp-mobile {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: $medium-screen) {
+      display: block;
+    }
+  }
+
+  .home_view__agite-text {
+    &--desktop, &--mobile {
+      font-size: 25px;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: $text-agite-color;
+      //width: 447px;
+      //height: 70px;
+      text-align: center;
+    }
+
+    &--mobile {
+      display: none;
+    }
+
+    @media (max-width: $medium-screen) {
+      &--desktop {
+        display: none;
+      }
+
+      &--mobile {
+        display: block;
+      }
+    }
+  }
+
+  @media (max-width: $medium-screen) {
+    margin-top: 200px;
+  }
+}
+
+.home_view__logo {
+  @media (max-width: $medium-screen) {
+    width: 145px;
+  }
+}
+
+.logo {
+  width: 175px;
+  height: 160px;
+  margin: 0 60px 0 0;
+}
+
+.home_view-title_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home_view__title {
+  width: 278px;
+  height: 60px;
+  margin: 13px 0 32px 0;
+}
+
+.home_view__select-arrow_img {
+  width: 34px;
+  height: 34px;
+  margin: 7px 8.6px 8px 6.6px;
+  border: 1px solid white;
+  border-radius: 34px;
+}
+
+.home_view__overview {
+  transition: all 500ms;
+  //position: absolute;
+  width: 1400px;
+  height: 649px;
+  top: 566px;
+
+  &:hover {
+    transition: all 500ms;
+  }
+
+  @media (max-width: $medium-screen) {
+    display: none;
+    //overflow: hidden;
+    //width: 100%;
+    //height: auto;
+    //left: -50%;
+    //top: 0;
+    //z-index: -1;
+  }
+}
+
+.home_view__overview-1 {
+  transition: all 500ms;
+  //position: absolute;
+  width: 1400px;
+  height: 649px;
+  top: 566px;
+  filter: opacity(0);
+  &:hover {
+    filter: opacity(100%);
+    transition: all 500ms;
+  }
+
+  @media (max-width: $medium-screen) {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+.home_view__about-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 56px;
+  //margin: 716px 0 31px 0;
+}
+
+.home__view_about-us_title {
+  font-size: 51px;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.home_view__about-us_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 700px;
+  padding: 0 20px;
+}
+
+.home_view__about-us_text-item {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 400;
+  padding-bottom: 30px;
+  text-align: center;
+  text-indent: 3%;
+}
+
+
+
+
+
+
+.home_view__servise-and-prise {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-top: solid 1px $color-gray-3;
+  border-bottom: solid 1px $color-gray-3;
+  margin: 0 0 57px 0;
+}
+
+.home_view__servise-and-prise__title {
+  text-transform: uppercase;
+  font-size: 51px;
+  font-weight: 300;
+  margin: 59px 0 31px 0;
+}
+
+.home_view__servise-and-prise__table {
+  width: 1160px;
+  margin: 0 0 67px 0;
+  border-collapse: collapse;
+
+  th, td {
+    height: 64px;
+    border-bottom: 01px solid $table-border-color;
+  }
+
+  th {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  td {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $prise-color;
+    text-align: right;
+  }
+}
+
+.home_view__servise-and-prise__table-thead {
+  border-bottom: 2px solid $table-border-color;
+  text-align: right;
+}
+
+.table__thead {
+  text-align: left;
+}
+
+.home_view__btn-sp {
+  width: 135px;
+  margin-bottom: 70px;
+}
+
+
+
+
+
+
+
+.home_view__our-team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // position: absolute;
+  // top: 675px;
+}
+
+.home_view__our-team__title {
+  text-transform: uppercase;
+  font-size: 51px;
+  font-weight: 300;
+  margin: 0 0 58px 0;
+}
+
+.home_view__barber-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 66px 0;
+}
+
+.home_view__barber-info_person {
+  margin: 0 10.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.home_view__barber-image {
+  transition: all 0.4s;
+  width: 571px;
+  height: 571px;
+  margin: 0 0 39px 0;
+  z-index: 1;
+  filter: grayscale(100%);
+  &:hover {
+    filter: grayscale(0);
+    z-index: 20;
+  }
+}
+
+.home_view__barber-block {
+  width: 571px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+
+.home_view__barber-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.home_view__barber-first_name {
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0 0 15px 0;
+}
+
+.home_view__barber_position {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.home_view__btn-team {
+  width: 135px;
+}
+
+
+
+
+
+
+
+.home_view__follow-us {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg-follow-color;
+  width: 100vw;
+  height: 569px;
+  margin: 0 0 59px 0;
+}
+
+.home_view__follow-us_title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 49px 0 0;
+}
+
+.home_view__follow-us_title-text {
+  font-size: 42px;
+  font-weight: 400;
+  color: $follow-us-title-color;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 33px 0;
+}
+
+.home_view__btn-fu {
+  width: 135px;
+  &:hover {
+    background-color: $color-orange;
+    border: 1px solid $color-orange;
+  }
+}
+
+.home_view__follow-us_image-block {
+  background-color: #FFFFFF0A;
+  height: 1153px;
+  width: 362px;
+  left: 183px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: end;
+  transform: rotate(-26.1deg);
+  padding: 0 8px 0 0;
+}
+
+.home_view__follow-us_image-item_text {
+  animation-name: spin;
+  animation-duration: 15000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+      }
+  }
+}
+
+
+.home_view__follow-us_image-item_phone {
+  position: relative;
+  top: 78px;
+  right: 180px;
+}
+
+
+
+
+
+
+
+.home_view__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  object-fit: cover;
+  margin: 0 0 36px 0;
+}
+
+.home_view__contacts-title {
+  text-transform: uppercase;
+  font-size: 51px;
+  font-weight: 300;
+  margin-bottom: 60px;
+}
+
+.home_view__contacts-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1133px;
+  height: 83px;
+}
+
+.home_view__contacts-item {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.home_view__contacts-table_title {
+  font-size: 16px;
+  font-weight: 500;
+  color: $table-title-color;
+  margin: 0 0 15px 20px;
+}
+
+.home_view__contacts-table_value {
+  border: 0.1rem solid $table-border-color;
+  border-radius: 43px;
+  padding: 14px 20px;
+  font-size: 18px;
+  font-weight: 400;
+  z-index: 1;
+  &:hover {
+    border: 0.1rem solid $color-orange;
+    background-color: $color-orange;
+    color: $color-white;
+    cursor: pointer;
+  }
+}
+
+.home_view__contacts-text {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 37px 0 0 0;
+  color: $text-contacts-color;
+}
+
+
+
+
+
+
+
+.home_view-map_and_footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.home-view__google-map {
+  width: 1400px;
+  height: 502px;
+}
+
+.home_view-map_and_footer-item {
+  margin: 40px 0 33px 0 ;
+}
+
+.home_view-map_and_footer-icon {
+  transition: all 0.4s;
+  margin: 0 8px;
+  filter: grayscale(100%);
+
+  &:hover {
+    filter: grayscale(0%);
+  }
+
+  &:active {
+    filter: grayscale(100%);
+  }
+}
+
+.home_view-map_and_footer-menu {
+  margin: 0 0 43px 0;
+  font-size: 15px;
+}
+
+
+.home_view-map_and_footer-logo-item_arrow {
+  position: absolute;
+  left: 93px;
+  transition: all .4s;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.home_view-map_and_footer-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;;
+  width: 1400px;
+  margin: 0 0 34px 0;
+  position: relative;
+}
+
+.home_view-map_and_footer-logo-item_logo {
+  margin:0 10px 0 0 ;
+}
+
+.home_view-map_and_footer-footer {
+  border-top: 1px solid $footer-border-color;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.home_view-map_and_footer-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: $footer-text-color;
+  margin: 32px 0 104px 0;
+
+}
 
 </style>
