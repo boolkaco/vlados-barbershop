@@ -208,7 +208,8 @@
         <div class="home-view-map__contacts-text">
           {{ $t('contacts.ShopParkingText') }}
         </div>
-        <Navigation class="home_view-map_and_footer-menu" :isVertical="true"/>
+        <Navigation class="home_view-map_and_footer-menu--desktop"/>
+        <Navigation class="home_view-map_and_footer-menu--mobile" :isVertical="true"/>
         <div class="home_view-map_and_footer-logo">
           <img
             @click="scrollToTop"
@@ -642,8 +643,10 @@ function scrollToTop () {
   justify-content: center;
   position: relative;
 
-  &:last-of-type {
-    padding-bottom: 52px;
+  @media (max-width: $medium-screen) {
+    &:last-of-type {
+      padding-bottom: 52px;
+    }
   }
 }
 
@@ -993,12 +996,22 @@ function scrollToTop () {
   }
 }
 
-.home_view-map_and_footer-menu {
+.home_view-map_and_footer-menu--desktop {
   margin: 0 0 43px 0;
   font-size: 15px;
 
   @media (max-width: $medium-screen) {
-    margin-bottom: 38px !important;
+    display: none;
+  }
+}
+
+.home_view-map_and_footer-menu--mobile {
+  margin: 0 0 38px 0;
+  font-size: 15px;
+  display: none;
+
+  @media (max-width: $medium-screen) {
+    display: block;
   }
 }
 
