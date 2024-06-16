@@ -3,8 +3,7 @@
     <Loader />
     <HeaderView />
     <div class="home_view__wrp">
-      <img class="logo" v-bind:src="Logo" alt="">
-      <img class="home_view__title" v-bind:src="logoTitle" alt="">
+      <img class="home_view__logo" v-bind:src="Logo" alt="">
       <p class="home_view__agite-text">{{ $t('mainSection.agiteText') }}</p>
       <a 
         class="btn"
@@ -209,9 +208,8 @@
 </template>
 
 <script setup lang="ts">
-import logoTitle from '@/assets/icons/vlados-title-icon.svg'
 import HeaderView from './HeaderView.vue';
-import Logo from '@/assets/logo.svg';
+import Logo from '@/assets/logo_with_text.svg';
 import overview from '@/assets/barber-nocolor-img.png';
 import overviewColor from '@/assets/barber-img.png';
 import imgAlex from '@/assets/barber-Alex-img.png'
@@ -249,6 +247,11 @@ function scrollToTop () {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    &__logo {
+      width: 278px;
+      margin-bottom: 32px;
+    }
   }
 
   .home_view__wrp {

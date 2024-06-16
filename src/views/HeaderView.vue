@@ -3,7 +3,6 @@
     <div class="header_view-wrp">
       <div class="header_view__logo">
         <img class="header_view__logo-image" v-bind:src="Logo" alt="">
-        <img class="header_view__logo-title" v-bind:src="logoTitle" alt="">
       </div>
       <Navigation class="header_view__link"/>
       <div class="header_view__social">
@@ -17,8 +16,7 @@
 <script setup lang="ts">
 import langSwitcher from '@/components/langSwitcher.vue'
 import Navigation from '@/components/Navigation.vue'
-import Logo from '@/assets/logo.svg'
-import logoTitle from '@/assets/icons/vlados-title-icon.svg'
+import Logo from '@/assets/logo_with_text.svg'
 import Social from '@/components/Social.vue'
 
 </script>
@@ -57,8 +55,8 @@ import Social from '@/components/Social.vue'
   }
 
   .header_view__logo-image {
-    width: 52px;
-    height: 48px;
+    width: 97px;
+    height: 70px;
   }
 
 
