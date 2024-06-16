@@ -89,7 +89,7 @@ watch(isMenuVisible, (newValue) => {
 
   @media (max-width: $medium-screen) {
     height: 65px;
-    padding: 12px 34px 0 15px;
+    padding: 12px 15px 0 15px;
   }
 }
 

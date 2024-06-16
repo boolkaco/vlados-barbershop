@@ -21,7 +21,11 @@
       </div>
 
       <div class="menu_component__wrapper">
-        <Navigation :isVertical="true" fontSize="18px" linkColor="#FFF" />
+        <Navigation
+            :isVertical="true"
+            fontSize="18px"
+            linkColor="#FFF"
+        />
       </div>
 
       <div class="menu_component__footer">
@@ -61,7 +65,7 @@ function closeMenu() {
   height: 65px;
   display: flex;
   justify-content: space-between;
-  padding: 12px 34px 0 15px;
+  padding: 12px 15px 0 15px;
   width: 100%;
 
   &-logo {

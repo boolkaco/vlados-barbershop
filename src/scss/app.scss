@@ -6,10 +6,15 @@
   padding: 0;
   margin: 0;
   font-family: Inter, sans-serif;
- 
 }
 
+#app {
+  width: 100%;
+}
 
+html {
+  overflow-x: hidden;
+}
 
 body
 {
@@ -44,16 +49,16 @@ body {
 
 
 .btn {
-  display: flex;
-  justify-content: center;
-  background-image: none; 
+  background-image: none;
 	background: transparent;
 	background-color: transparent;
+  padding: 0 6px 0 18px !important;
   border: 1px solid $button-border-color;
   border-radius: 31px;
   color: $button-text-color;
   cursor: pointer;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   font-size: 14px;
   font-weight: 500;
@@ -82,6 +87,11 @@ body {
     background-color: $color-white;
     color: $button-text-color;
     border: 1px solid $button-border-color;
+  }
+
+  @media (max-width: $medium-screen) {
+    border-color: #fff;
+    color: #fff;
   }
 }
 

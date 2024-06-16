@@ -106,6 +106,5 @@
     },
     "ShopParkingText": "Parking spots near the barbershop are always easy to find"
   },
-  "footerText": "{'@'} ALL RIGHTS RESERVED 2024"
-  
+  "footerText": "{'@'} ALL RIGHTS RESERVED {year}"
 }
