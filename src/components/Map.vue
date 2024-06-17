@@ -17,56 +17,65 @@ import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
 
 
-const markerCoordinates = [14.39958667755127, 50.06711959838867]; 
+const markerCoordinates = [14.39958667755127, 50.06711959838867];
 
 const mapContainer = ref<HTMLDivElement | null>(null);
 let map: Map;
 
+const data = ref<any>(null);
+
 // const apiKey = import.meta.env.VITE_APP_MAP_API_KEY;
 
-onMounted(() => {
-  if (mapContainer.value) {
-    map = new Map({
-      target: mapContainer.value,
-      layers: [
-        new TileLayer({
-          source: new XYZ({
-            url: `https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=tZlf1fWGAtJUabKHF3iM` ,
+onMounted(async () => {
+  try {
+    const response = await fetch('/data.json');
+    if (response.ok) {
+      data.value = await response.json();
+      if (mapContainer.value && data.value != null) {
+        map = new Map({
+          target: mapContainer.value,
+          layers: [
+            new TileLayer({
+              source: new XYZ({
+                url: data.value.map,
+              }),
+            }),
+          ],
+          view: new View({
+            center: fromLonLat(markerCoordinates),
+            zoom: 17,
           }),
-        }),
-      ],
-      view: new View({
-        center: fromLonLat(markerCoordinates),
-        zoom: 17,
-      }),
-      controls: [], // Убираем все элементы управления
-    });
+          controls: [],
+        });
 
-    // Создаем маркер
-    const marker = new Feature({
-      geometry: new Point(fromLonLat(markerCoordinates)),
-    });
+        const marker = new Feature({
+          geometry: new Point(fromLonLat(markerCoordinates)),
+        });
 
-    // Настраиваем стиль маркера
-    marker.setStyle(
-      new Style({
-        image: new Icon({
-          src: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-          scale: 1, // Измените размер иконки, если необходимо
-        }),
-      })
-    );
+        marker.setStyle(
+            new Style({
+              image: new Icon({
+                src: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+                scale: 1,
+              }),
+            })
+        );
 
-    // Добавляем маркер на карту
-    const vectorSource = new VectorSource({
-      features: [marker],
-    });
+        const vectorSource = new VectorSource({
+          features: [marker],
+        });
 
-    const vectorLayer = new VectorLayer({
-      source: vectorSource,
-    });
+        const vectorLayer = new VectorLayer({
+          source: vectorSource,
+        });
 
-    map.addLayer(vectorLayer);
+        map.addLayer(vectorLayer);
+      }
+    } else {
+      console.error('Failed to fetch data.json');
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
   }
 });
 
@@ -81,6 +90,6 @@ onMounted(() => {
 .map-container {
   width: 1400px;
   height: 504px;
-  filter: grayscale(100%); 
+  filter: grayscale(100%);
 }
 </style>

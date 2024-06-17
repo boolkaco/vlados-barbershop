@@ -1,57 +1,94 @@
 <template>
-  <div class="home_view">
-    <Loader />
-    <HeaderView />
-    <div class="home_view__wrp">
-      <div class="image-wrp-mobile">
-        <img class="" v-bind:src="overview" alt="">
-      </div>
-      <div class="home_view__preview">
-        <img class="home_view__logo--desktop" v-bind:src="LogoDecktop" alt="">
-        <img class="home_view__logo--mobile" v-bind:src="LogoMobile" alt="">
-        <p class="home_view__agite-text--desktop" v-html="$t('mainSection.agiteText')"></p>
-        <p class="home_view__agite-text--mobile" v-html="$t('mainSection.agiteTextMobile')"></p>
-        <a
-            class="btn"
-            :href="urls.openBook"
-            type="button"
-            target="_blank"
-            rel="noopener noreferrer"
+  <JsonLoader v-slot="{data}">
+    <div
+        v-if="data"
+        class="home_view"
+    >
+      <Loader />
+      <HeaderView />
+      <div class="home_view__wrp">
+        <div class="image-wrp-mobile">
+          <img
+              :src="overview"
+              alt="img"
+          >
+        </div>
+        <div class="home_view__preview">
+          <img
+              class="home_view__logo--desktop"
+              :src="LogoDecktop"
+              alt="logo-desktop"
+          >
+          <img
+              class="home_view__logo--mobile"
+              v-bind:src="LogoMobile"
+              alt="logo-mobile"
+          >
+          <p
+              class="home_view__agite-text--desktop"
+              v-html="$t('mainSection.agiteText')"
+          />
+          <p
+              class="home_view__agite-text--mobile"
+              v-html="$t('mainSection.agiteTextMobile')"
+          />
+          <a
+              class="btn"
+              :href="data.booking"
+              type="button"
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            {{ $t('buttonTitle') }}
+            <img
+                class="home_view__select-arrow_img"
+                :src="selectImg"
+                alt="arrow"
+            >
+          </a>
+        </div>
+        <img
+            class="home_view__overview"
+            :src="overview"
+            alt="overview"
         >
-          {{ $t('buttonTitle') }}
-          <img class="home_view__select-arrow_img" :src="selectImg">
-        </a>
-      </div>
-      <img class="home_view__overview" v-bind:src="overview" alt="">
-      <img class="home_view__overview-1" v-bind:src="overviewColor" alt="">
+        <img
+            class="home_view__overview-hovered"
+            :src="overviewColor"
+            alt="overview-hovered"
+        >
 
 
-      <div class="home_view__about-us">
-        <p class="home__view_about-us_title">{{ $t('aboutUs.title') }}</p>
-        <img class="home_view__about-us-image" :src="mobileImgDecoration" alt="">
-        <div class="home_view__about-us_text">
+        <div class="home_view__about-us">
+          <p class="home__view_about-us_title">{{ $t('aboutUs.title') }}</p>
+          <img
+              class="home_view__about-us-image"
+              :src="mobileImgDecoration"
+              alt="image-decoration"
+          >
+          <div class="home_view__about-us_text">
           <span class="home_view__about-us_text-item">
             {{ $t('aboutUs.textFirstPart.paragraphOne') }}<br>{{ $t('aboutUs.textFirstPart.paragraphTwo') }}
           </span>
-          <span class="home_view__about-us_text-item">
+            <span class="home_view__about-us_text-item">
             {{ $t('aboutUs.textSecondPart.paragraphOne') }}
           </span>
+          </div>
         </div>
-      </div>
 
-      <div class="home_view__servise-and-prise">
-        <p class="home_view__servise-and-prise__title">
-          {{ $t('servicesAndPrices.title') }}
-        </p>
-        <table class="home_view__servise-and-prise__table">
-          <thead>
+        <div class="home_view__servise-and-prise">
+          <p class="home_view__servise-and-prise__title">
+            {{ $t('servicesAndPrices.title') }}
+          </p>
+          <table class="home_view__servise-and-prise__table">
+            <thead>
             <tr>
               <th class="home_view__servise-and-prise__table-thead"></th>
               <th class="home_view__servise-and-prise__table-thead">{{ $t('servicesAndPrices.barberPricetitle') }}</th>
               <th class="home_view__servise-and-prise__table-thead">{{ $t('servicesAndPrices.topBarberPricetitle') }}</th>
             </tr>
-          </thead>
-          <tbody>
+            </thead>
+            <tbody>
             <tr>
               <th class="table__thead">{{ $t('servicesAndPrices.firstHaircutPrice.title') }}</th>
               <td>{{ $t('servicesAndPrices.firstHaircutPrice.barberPrice') }}</td>
@@ -92,143 +129,152 @@
               <td>{{ $t('servicesAndPrices.eighthHaircutPrice.barberPrice') }}</td>
               <td>{{ $t('servicesAndPrices.eighthHaircutPrice.topBarberPrice') }}</td>
             </tr>
-          </tbody>
-        </table>
-        <a
-          class="btn_ot home_view__btn-sp"
-          :href="urls.openBook"
-          type="button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        {{ $t('buttonTitle') }}
-        </a>
-      </div>
-
-      <div class="home_view__our-team">
-        <p class="home_view__our-team__title">
-          {{ $t('ourTeam.title') }}
-        </p>
-        <div class="home_view__barber-info">
-          <div class="home_view__barber-info_person">
-            <img v-bind:src="imgAlex" class="home_view__barber-image">
-            <div class="home_view__barber-block">
-              <div class="home_view__barber-name">
-                <div class="home_view__barber-first_name">{{ $t('ourTeam.barbers.firstBarber.barberName') }}</div>
-                <div class="home_view__barber_position">{{ $t('ourTeam.barbers.firstBarber.barberPosition') }}</div>
-              </div>
-              <div class="home_view__barber-button">
-                <a
-                  class="btn_wb home_view__btn-wb"
-                  :href="urls.openBook"
-                  type="button"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {{ $t('buttonTitle') }}
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="home_view__barber-info_person">
-            <img v-bind:src="imgVlad" class="home_view__barber-image">
-            <div class="home_view__barber-block">
-              <div class="home_view__barber-name">
-                <div class="home_view__barber-first_name">{{ $t('ourTeam.barbers.topBarber.barberName') }}</div>
-                <div class="home_view__barber_position">{{ $t('ourTeam.barbers.topBarber.barberPosition') }}</div>
-              </div>
-              <div class="home_view__barber-button">
-                <a
-                  class="btn_wb home_view__btn-wb"
-                  :href="urls.openBook"
-                  type="button"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {{ $t('buttonTitle') }}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="home_view__follow-us">
-        <div class="home_view__follow-us_title">
-          <div class="home_view__follow-us_title-text">{{ $t('FollowUs.title.paragraphOne') }}<br>{{ $t('FollowUs.title.paragraphTwo') }}</div>
+            </tbody>
+          </table>
           <a
-            class="btn_ot home_view__btn-fu"
-            :href = urls.redirectToInstagram
-            type="button"
-            target="_blank"
-            rel="noopener noreferrer"
+              class="btn_ot home_view__btn-sp"
+              :href="data.booking"
+              type="button"
+              target="_blank"
+              rel="noopener noreferrer"
           >
-            {{ $t('FollowUs.buttonTitle') }}
+            {{ $t('buttonTitle') }}
           </a>
         </div>
-        <div class="home_view__follow-us_image-block">
-          <img href="#" class="home_view__follow-us_image-item_text" v-bind:src="follow">
-        </div>
-        <img class="home_view__follow-us_image-item_phone" v-bind:src="phone">
-      </div>
 
-      <div class="home_view__contacts">
-        <div class="home_view__contacts-title">
-          {{ $t('contacts.title') }}
-        </div>
-        <div class="home_view__contacts-list">
-          <div class="home_view__contacts-item">
-            <div class="home_view__contacts-table_title">{{ $t('contacts.adress.title') }}</div>
-            <div class="home_view__contacts-table_value">{{ $t('contacts.adress.adress') }}</div>
-          </div>
-          <div class="home_view__contacts-item">
-            <div class="home_view__contacts-table_title">{{ $t('contacts.phone.title') }}</div>
-            <div class="home_view__contacts-table_value">{{ $t('contacts.phone.phone') }}</div>
-          </div>
-          <div class="home_view__contacts-item">
-            <div class="home_view__contacts-table_title">{{ $t('contacts.openingHours.title') }}</div>
-            <div class="home_view__contacts-table_value">{{ $t('contacts.openingHours.hours') }}</div>
-          </div>
-          <div class="home_view__contacts-item">
-            <div class="home_view__contacts-table_title">{{ $t('contacts.email.title') }}</div>
-            <div class="home_view__contacts-table_value" href="#">{{ $t('contacts.email.email') }}</div>
-          </div>
-        </div>
-
-        <Social class="home_view__contacts-map"/>
-
-        <div class="home_view__contacts-text">
-          {{ $t('contacts.ShopParkingText') }}
-        </div>
-      </div>
-
-      <div class="home_view-map_and_footer">
-        <MapGoogle class="home-view__google-map"/>
-        <Social class="home_view-map_and_footer-item"/>
-        <div class="home-view-map__contacts-text">
-          {{ $t('contacts.ShopParkingText') }}
-        </div>
-        <Navigation class="home_view-map_and_footer-menu--desktop"/>
-        <Navigation class="home_view-map_and_footer-menu--mobile" :isVertical="true"/>
-        <div class="home_view-map_and_footer-logo">
-          <img
-            @click="scrollToTop"
-            class="home_view-map_and_footer-logo-item_arrow"
-            v-bind:src="footerArrow"
-          >
-          <img
-            class="home_view-map_and_footer-logo-item_logo"
-            v-bind:src="footerLogo"
-          >
-        </div>
-        <div class="home_view-map_and_footer-footer">
-          <p class="home_view-map_and_footer-text">
-            {{ t('footerText', { year: currentYear }) }}
+        <div class="home_view__our-team">
+          <p class="home_view__our-team__title">
+            {{ $t('ourTeam.title') }}
           </p>
+          <div class="home_view__barber-info">
+            <div class="home_view__barber-info_person">
+              <img src="../assets/barber-Alex-img.png" class="home_view__barber-image">
+              <div class="home_view__barber-block">
+                <div class="home_view__barber-name">
+                  <div class="home_view__barber-first_name">{{ $t('ourTeam.barbers.firstBarber.barberName') }}</div>
+                  <div class="home_view__barber_position">{{ $t('ourTeam.barbers.firstBarber.barberPosition') }}</div>
+                </div>
+                <div class="home_view__barber-button">
+                  <a
+                      class="btn_wb home_view__btn-wb"
+                      :href="data.booking"
+                      type="button"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                  >
+                    {{ $t('buttonTitle') }}
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="home_view__barber-info_person">
+              <img src="../assets/barber-Vlad-img.png" class="home_view__barber-image">
+              <div class="home_view__barber-block">
+                <div class="home_view__barber-name">
+                  <div class="home_view__barber-first_name">{{ $t('ourTeam.barbers.topBarber.barberName') }}</div>
+                  <div class="home_view__barber_position">{{ $t('ourTeam.barbers.topBarber.barberPosition') }}</div>
+                </div>
+                <div class="home_view__barber-button">
+                  <a
+                      class="btn_wb home_view__btn-wb"
+                      :href="data.booking"
+                      type="button"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                  >
+                    {{ $t('buttonTitle') }}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="home_view__follow-us">
+          <div class="home_view__follow-us_title">
+            <div class="home_view__follow-us_title-text">{{ $t('FollowUs.title.paragraphOne') }}<br>{{ $t('FollowUs.title.paragraphTwo') }}</div>
+            <a
+                class="btn_ot home_view__btn-fu"
+                :href="data.instagram"
+                type="button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              {{ $t('FollowUs.buttonTitle') }}
+            </a>
+          </div>
+          <div class="home_view__follow-us_image-block">
+            <img href="#" class="home_view__follow-us_image-item_text" v-bind:src="follow">
+          </div>
+          <img class="home_view__follow-us_image-item_phone" v-bind:src="phone">
+        </div>
+
+        <div class="home_view__contacts">
+          <div class="home_view__contacts-title">
+            {{ $t('contacts.title') }}
+          </div>
+          <div class="home_view__contacts-list">
+            <div class="home_view__contacts-item">
+              <div class="home_view__contacts-table_title">{{ $t('contacts.adress.title') }}</div>
+              <div class="home_view__contacts-table_value">
+                {{data.address}}
+              </div>
+            </div>
+            <div class="home_view__contacts-item">
+              <div class="home_view__contacts-table_title">{{ $t('contacts.phone.title') }}</div>
+              <div class="home_view__contacts-table_value">
+                {{data.phone}}
+              </div>
+            </div>
+            <div class="home_view__contacts-item">
+              <div class="home_view__contacts-table_title">{{ $t('contacts.openingHours.title') }}</div>
+              <div class="home_view__contacts-table_value">
+                {{data.workingDays}} {{data.workingHours}}
+              </div>
+            </div>
+            <div class="home_view__contacts-item">
+              <div class="home_view__contacts-table_title">{{ $t('contacts.email.title') }}</div>
+              <div class="home_view__contacts-table_value" href="#">
+                {{data.email}}
+              </div>
+            </div>
+          </div>
+
+          <Social class="home_view__contacts-map"/>
+
+          <div class="home_view__contacts-text">
+            {{ $t('contacts.ShopParkingText') }}
+          </div>
+        </div>
+
+        <div class="home_view-map_and_footer">
+          <MapGoogle class="home-view__google-map"/>
+          <Social class="home_view-map_and_footer-item"/>
+          <div class="home-view-map__contacts-text">
+            {{ $t('contacts.ShopParkingText') }}
+          </div>
+          <Navigation class="home_view-map_and_footer-menu--desktop"/>
+          <Navigation class="home_view-map_and_footer-menu--mobile" :isVertical="true"/>
+          <div class="home_view-map_and_footer-logo">
+            <img
+                @click="scrollToTop"
+                class="home_view-map_and_footer-logo-item_arrow"
+                v-bind:src="footerArrow"
+            >
+            <img
+                class="home_view-map_and_footer-logo-item_logo"
+                v-bind:src="footerLogo"
+            >
+          </div>
+          <div class="home_view-map_and_footer-footer">
+            <p class="home_view-map_and_footer-text">
+              {{ t('footerText', { year: currentYear }) }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </JsonLoader>
 </template>
 
 <script setup lang="ts">
@@ -237,8 +283,6 @@ import LogoDecktop from '@/assets/logo_with_text.svg';
 import LogoMobile from '@/assets/logo_with_text_white.svg';
 import overview from '@/assets/barber-nocolor-img.png';
 import overviewColor from '@/assets/barber-img.png';
-import imgAlex from '@/assets/barber-Alex-img.png'
-import imgVlad from '@/assets/barber-Vlad-img.png'
 import follow from '@/assets/follow-rotate-svg.svg'
 import phone from '@/assets/iPhone-img.svg'
 import footerLogo from '@/assets/footer-logo.svg'
@@ -250,15 +294,10 @@ import selectImg from '@/assets/icons/button-select-icon.svg'
 import mobileImgDecoration from '@/assets/mobile_decoration.png'
 import Loader from '@/components/loader.vue'
 import { useI18n } from 'vue-i18n';
+import JsonLoader from '@/components/JsonLoader.vue';
 
 const { t } = useI18n();
 const currentYear = new Date().getFullYear();
-
-const urls: Record<string, string> = {
-  openBook: 'https://n807969.alteg.io/',
-  redirectToInstagram: 'https://www.instagram.com/vlados_barbershop?igsh=MXRkdjkzcjExbWJ4Mw==',
-};
-
 
 function scrollToTop () {
   window.scrollTo({top: 0, behavior: 'smooth'});
@@ -425,7 +464,7 @@ function scrollToTop () {
   }
 }
 
-.home_view__overview-1 {
+.home_view__overview-hovered {
   transition: all 500ms;
   position: absolute;
   width: 1400px;

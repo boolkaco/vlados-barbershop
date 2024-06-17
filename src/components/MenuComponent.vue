@@ -1,53 +1,56 @@
 <template>
-  <div class="menu_component">
-    <div class="menu_component__content">
-      <div class="menu_component__header">
-        <img
-            class="menu_component__header-logo"
-            v-bind:src="logo"
-            alt=""
-        >
-        <img
-            class="menu_component__header-text"
-            v-bind:src="textLogo"
-            alt=""
-        >
-        <img
-            class="menu_component__header-close"
-            v-bind:src="closeIcon"
-            alt=""
-            @click="closeMenu"
-        >
-      </div>
-
-      <div class="menu_component__wrapper">
-        <Navigation
-            :isVertical="true"
-            fontSize="18px"
-            linkColor="#FFF"
-        />
-      </div>
-
-      <div class="menu_component__footer">
-        <div class="menu_component__number">
-          +420 774 271 121
+  <JsonLoader v-slot="{data}">
+    <div v-if="data" class="menu_component">
+      <div class="menu_component__content">
+        <div class="menu_component__header">
+          <img
+              class="menu_component__header-logo"
+              v-bind:src="logo"
+              alt=""
+          >
+          <img
+              class="menu_component__header-text"
+              v-bind:src="textLogo"
+              alt=""
+          >
+          <img
+              class="menu_component__header-close"
+              v-bind:src="closeIcon"
+              alt=""
+              @click="closeMenu"
+          >
         </div>
 
-        <div class="menu_component__social">
-          <Social />
+        <div class="menu_component__wrapper">
+          <Navigation
+              :isVertical="true"
+              fontSize="18px"
+              linkColor="#FFF"
+          />
         </div>
 
-        <div class="menu_component__lang-switcher">
-          <langSwitcher :isSingleLineView="true" />
+        <div class="menu_component__footer">
+          <div class="menu_component__number">
+            {{ data.phone }}
+          </div>
+
+          <div class="menu_component__social">
+            <Social/>
+          </div>
+
+          <div class="menu_component__lang-switcher">
+            <langSwitcher :isSingleLineView="true"/>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </JsonLoader>
 </template>
 
 <script setup lang="ts">
-import { defineEmits } from 'vue';
+import {defineEmits} from 'vue';
 const emit = defineEmits(['close']);
+import JsonLoader from '@/components/JsonLoader.vue';
 import logo from '@/assets/logo.svg';
 import textLogo from '@/assets/logoTitleWhite.svg';
 import closeIcon from '@/assets/icons/close.svg';
@@ -137,7 +140,7 @@ function closeMenu() {
 }
 
 .menu_component__menu-list {
-  &>li {
+  & > li {
     list-style: none;
     margin-bottom: 20px;
     font-family: Inter, sans-serif;
