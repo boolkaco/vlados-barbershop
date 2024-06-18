@@ -4,10 +4,15 @@
   "booking": "https://n807969.alteg.io/",
   "facebook": "https://www.facebook.com/profile.php?id=61558335386973",
   "instagram": "https://www.instagram.com/vlados_barbershop?igsh=MXRkdjkzcjExbWJ4Mw==",
-  "whatsapp": "#",
+  "whatsapp": "https://api.whatsapp.com/send?phone=774271121",
   "address": "U Nikolajky 3, Praha 5 Smíchov 150 00",
   "workingHours": "9:00-19:00",
-  "workingDays": "Thu-Sat",
+  "workingDays": {
+    "en": "Thu-Sat",
+    "cz": "Po-Ne",
+    "ua": "Пн-Нд",
+    "ru": "По-Вс"
+  },
   "map": "https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=tZlf1fWGAtJUabKHF3iM",
   "barbers": [
     {

@@ -5,11 +5,15 @@
         class="home_view"
     >
       <Loader />
+      <div
+          id="reservation-widget"
+          class="home_view__reservation-widget"
+      />
       <HeaderView />
       <div class="home_view__wrp">
         <div class="image-wrp-mobile">
           <img
-              :src="overview"
+              :src="mobilePreview"
               alt="img"
           >
         </div>
@@ -47,16 +51,19 @@
             >
           </a>
         </div>
-        <img
-            class="home_view__overview"
-            :src="overview"
-            alt="overview"
-        >
-        <img
-            class="home_view__overview-hovered"
-            :src="overviewColor"
-            alt="overview-hovered"
-        >
+
+        <div class="home_view__overview-wrapper">
+          <img
+              class="home_view__overview"
+              :src="overview"
+              alt="overview"
+          >
+          <img
+              class="home_view__overview-hovered"
+              :src="overviewColor"
+              alt="overview-hovered"
+          >
+        </div>
 
 
         <div class="home_view__about-us">
@@ -148,7 +155,18 @@
           </p>
           <div class="home_view__barber-info">
             <div class="home_view__barber-info_person">
-              <img src="../assets/barber-Alex-img.png" class="home_view__barber-image">
+              <div class="home_view__barber-info_person-img">
+                <img
+                    src="../assets/barber-Alex-nocolor-img.png"
+                    class="home_view__barber-image"
+                    alt="barber1"
+                >
+                <img
+                    src="../assets/barber-Alex-img.png"
+                    class="home_view__barber-image--hovered"
+                    alt="barber-nocolor1"
+                >
+              </div>
               <div class="home_view__barber-block">
                 <div class="home_view__barber-name">
                   <div class="home_view__barber-first_name">{{ $t('ourTeam.barbers.firstBarber.barberName') }}</div>
@@ -168,7 +186,18 @@
               </div>
             </div>
             <div class="home_view__barber-info_person">
-              <img src="../assets/barber-Vlad-img.png" class="home_view__barber-image">
+              <div class="home_view__barber-info_person-img">
+                <img
+                    src="../assets/barber-Vlad-nocolor-img.png"
+                    class="home_view__barber-image"
+                    alt="barber1"
+                >
+                <img
+                    src="../assets/barber-Vlad-img.png"
+                    class="home_view__barber-image--hovered"
+                    alt="barber-nocolor1"
+                >
+              </div>
               <div class="home_view__barber-block">
                 <div class="home_view__barber-name">
                   <div class="home_view__barber-first_name">{{ $t('ourTeam.barbers.topBarber.barberName') }}</div>
@@ -192,7 +221,11 @@
 
         <div class="home_view__follow-us">
           <div class="home_view__follow-us_title">
-            <div class="home_view__follow-us_title-text">{{ $t('FollowUs.title.paragraphOne') }}<br>{{ $t('FollowUs.title.paragraphTwo') }}</div>
+            <div class="home_view__follow-us_title-text">
+              {{ $t('FollowUs.title.paragraphOne') }}
+              <br>
+              {{ $t('FollowUs.title.paragraphTwo') }}
+            </div>
             <a
                 class="btn_ot home_view__btn-fu"
                 :href="data.instagram"
@@ -204,9 +237,17 @@
             </a>
           </div>
           <div class="home_view__follow-us_image-block">
-            <img href="#" class="home_view__follow-us_image-item_text" v-bind:src="follow">
+            <img
+                href="#"
+                class="home_view__follow-us_image-item_text"
+                v-bind:src="follow"
+            >
+            <img
+                class="home_view__follow-us_image-item_phone"
+                v-bind:src="phone"
+            >
+            <div class="home_view__follow-us_image-block-decoration" />
           </div>
-          <img class="home_view__follow-us_image-item_phone" v-bind:src="phone">
         </div>
 
         <div class="home_view__contacts">
@@ -229,7 +270,7 @@
             <div class="home_view__contacts-item">
               <div class="home_view__contacts-table_title">{{ $t('contacts.openingHours.title') }}</div>
               <div class="home_view__contacts-table_value">
-                {{data.workingDays}} {{data.workingHours}}
+                {{data.workingDays[locale]}} {{data.workingHours}}
               </div>
             </div>
             <div class="home_view__contacts-item">
@@ -240,7 +281,7 @@
             </div>
           </div>
 
-          <Social class="home_view__contacts-map"/>
+          <SocialMobile class="home_view__contacts-map"/>
 
           <div class="home_view__contacts-text">
             {{ $t('contacts.ShopParkingText') }}
@@ -254,7 +295,10 @@
             {{ $t('contacts.ShopParkingText') }}
           </div>
           <Navigation class="home_view-map_and_footer-menu--desktop"/>
-          <Navigation class="home_view-map_and_footer-menu--mobile" :isVertical="true"/>
+          <Navigation
+              class="home_view-map_and_footer-menu--mobile"
+              :isVertical="true"
+          />
           <div class="home_view-map_and_footer-logo">
             <img
                 @click="scrollToTop"
@@ -284,7 +328,7 @@ import LogoMobile from '@/assets/logo_with_text_white.svg';
 import overview from '@/assets/barber-nocolor-img.png';
 import overviewColor from '@/assets/barber-img.png';
 import follow from '@/assets/follow-rotate-svg.svg'
-import phone from '@/assets/iPhone-img.svg'
+import phone from '@/assets/phone.png'
 import footerLogo from '@/assets/footer-logo.svg'
 import footerArrow from '@/assets/footer-arrow.svg'
 import MapGoogle from '@/components/Map.vue'
@@ -292,18 +336,26 @@ import Social from '@/components/Social.vue'
 import Navigation from '@/components/Navigation.vue'
 import selectImg from '@/assets/icons/button-select-icon.svg'
 import mobileImgDecoration from '@/assets/mobile_decoration.png'
+import mobilePreview from '@/assets/mobile-preview.jpeg'
 import Loader from '@/components/loader.vue'
 import { useI18n } from 'vue-i18n';
 import JsonLoader from '@/components/JsonLoader.vue';
+import {onMounted} from "vue";
+import SocialMobile from "@/components/SocialMobile.vue";
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 const currentYear = new Date().getFullYear();
 
 function scrollToTop () {
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-
+onMounted(() => {
+  const script = document.createElement('script');
+  script.src = "https://w807969.alteg.io/widgetJS";
+  script.charset = "UTF-8";
+  document.body.appendChild(script);
+});
 
 </script>
 
@@ -356,7 +408,6 @@ function scrollToTop () {
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.62);
       z-index: 1;
     }
 
@@ -448,16 +499,21 @@ function scrollToTop () {
   }
 }
 
-.home_view__overview {
-  transition: all 500ms;
-  //position: absolute;
-  width: 1400px;
-  height: 649px;
-  top: 566px;
+.home_view__overview-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
 
   &:hover {
-    transition: all 500ms;
+    .home_view__overview-hovered {
+      transition: opacity 0.5s ease-in-out;
+      opacity: 1;
+    }
   }
+}
+
+.home_view__overview {
+  width: 100%;
 
   @media (max-width: $medium-screen) {
     display: none;
@@ -465,17 +521,13 @@ function scrollToTop () {
 }
 
 .home_view__overview-hovered {
-  transition: all 500ms;
   position: absolute;
-  width: 1400px;
-  height: 649px;
-  top: 566px;
-  margin-top: 11px;
-  filter: opacity(0);
-  &:hover {
-    filter: opacity(100%);
-    transition: all 500ms;
-  }
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1;
 
   @media (max-width: $medium-screen) {
     display: none;
@@ -689,17 +741,39 @@ function scrollToTop () {
   }
 }
 
+.home_view__barber-info_person-img {
+  position: relative;
+  width: 100%;
+
+  &:hover {
+    .home_view__barber-image--hovered {
+      transition: opacity 0.5s ease-in-out;
+      opacity: 1;
+    }
+  }
+}
 .home_view__barber-image {
   transition: all 0.4s;
-  width: 571px;
-  height: 571px;
+  width: 100%;
   margin: 0 0 39px 0;
   z-index: 1;
-  filter: grayscale(100%);
+
   &:hover {
-    filter: grayscale(0);
     z-index: 20;
   }
+
+  @media (max-width: $medium-screen) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.home_view__barber-image--hovered {
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  opacity: 0;
+  z-index: 11;
+  left: 0;
 
   @media (max-width: $medium-screen) {
     width: 100%;
@@ -750,14 +824,13 @@ function scrollToTop () {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   background-color: $bg-follow-color;
-  width: 100vw;
-  height: 569px;
-  margin: 0 0 59px 0;
+  width: 100%;
+  padding: 70px 0 42px;
 
   @media (max-width: $medium-screen) {
     width: 100%;
-    height: 100vh;
     flex-direction: column;
     margin-bottom: 0;
   }
@@ -801,24 +874,28 @@ function scrollToTop () {
 }
 
 .home_view__follow-us_image-block {
-  background-color: #FFFFFF0A;
-  height: 1153px;
-  width: 362px;
-  left: 183px;
   display: flex;
   position: relative;
   align-items: center;
   justify-content: end;
-  transform: rotate(-26.1deg);
   padding: 0 8px 0 0;
 
+  .home_view__follow-us_image-block-decoration {
+    content: '';
+    position: absolute;
+    background-color: #FFFFFF0A;
+    width: 362px;
+    height: 200%;
+    right: -5px;
+    transform: rotate(-26.1deg);
+
+    @media (max-width: $medium-screen) {
+      background-color: transparent;
+    }
+  }
+
   @media (max-width: $medium-screen) {
-    background-color: transparent;
-    width: 100%;
-    height: auto;
-    left: 0;
     justify-content: center;
-    transform: rotate(0);
     padding: 0 20px;
   }
 }
@@ -844,8 +921,12 @@ function scrollToTop () {
 
 
 .home_view__follow-us_image-item_phone {
-  position: relative;
-  right: 180px;
+  position: absolute;
+  width: 270px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
 
   @media (min-width: $medium-screen) {
     top: 78px;
@@ -856,11 +937,11 @@ function scrollToTop () {
     right: 0;
     left: 0;
     margin: 0 auto;
-    bottom: 0;
+    bottom: -40%;
   }
 
   @media (max-width: $small-screen) {
-    width: 60%;
+    width: 52%;
   }
 }
 
@@ -1050,7 +1131,8 @@ function scrollToTop () {
   display: none;
 
   @media (max-width: $medium-screen) {
-    display: block;
+    display: flex;
+    padding-bottom: 32px;
   }
 }
 

@@ -60,8 +60,8 @@ const scrollTo = (section: keyof typeof scrollPositions) => {
   align-items: center;
   width: 504px;
   margin: 0 0 0 145.5px;
-  font-size: var(--font-size);
-  color: var(--link-color);
+  font-size: var(--font-size) !important;
+  color: var(--link-color) !important;
 
   &.vertical-layout {
     flex-direction: column;

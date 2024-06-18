@@ -13,10 +13,6 @@
             class="social-img--desktop"
             :src="facebook"
         />
-        <img
-            class="social-img--mobile"
-            :src="facebookWhite"
-        />
       </a>
       <a
           :href="data.whatsapp"
@@ -26,10 +22,6 @@
         <img
             class="social-img--desktop"
             :src="whatsapp"
-        />
-        <img
-            class="social-img--mobile"
-            :src="whatsappWhite"
         />
       </a>
       <a
@@ -41,10 +33,6 @@
             class="social-img--desktop"
             :src="instagram"
         />
-        <img
-            class="social-img--mobile"
-            :src="instagramWhite"
-        />
       </a>
     </div>
   </JsonLoader>
@@ -54,9 +42,6 @@
 import facebook from '@/assets/icons/facebook-hover-icon.svg'
 import instagram from '@/assets/icons/instagram-hover-icon.svg'
 import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
-import facebookWhite from '@/assets/icons/facebook-icon.svg'
-import instagramWhite from '@/assets/icons/instagram-icon.svg'
-import whatsappWhite from '@/assets/icons/whatsapp-icon.svg'
 import JsonLoader from '@/components/JsonLoader.vue';
 
 </script>
@@ -72,30 +57,8 @@ import JsonLoader from '@/components/JsonLoader.vue';
 }
 
 .social-img--desktop {
+  width: 42px;
   margin: 0 8px;
   transition: all 0.4s;
-  filter: grayscale(100%);
-
-  @media (max-width: $medium-screen) {
-    display: none;
-  }
-
-  &:hover {
-    filter: grayscale(0%);
-  }
-
-  &:active {
-    filter: grayscale(100%);
-  }
-}
-
-.social-img--mobile {
-  margin: 0 8px;
-  transition: all 0.4s;
-  display: none;
-
-  @media (max-width: $medium-screen) {
-    display: block;
-  }
 }
 </style>
