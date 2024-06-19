@@ -242,7 +242,6 @@
           </div>
           <div class="home_view__follow-us_image-block">
             <img
-                href="#"
                 class="home_view__follow-us_image-item_text"
                 v-bind:src="follow"
             >
@@ -909,6 +908,7 @@ onMounted(() => {
 
     @media (max-width: $medium-screen) {
       background-color: transparent;
+      display: none;
     }
   }
 
