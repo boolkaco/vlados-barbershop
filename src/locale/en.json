@@ -36,7 +36,8 @@
       "topBarberPrice": "1200 Kč"
     },
     "thirdHaircutPrice": {
-      "title": "Full service - haircut + beard trim + facial skin care",
+      "title": "Full service -",
+      "description": "haircut + beard trim + facial skin care",
       "barberPrice": "1290 Kč",
       "topBarberPrice": "1490 Kč"
     },

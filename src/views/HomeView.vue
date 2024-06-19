@@ -65,7 +65,6 @@
           >
         </div>
 
-
         <div class="home_view__about-us">
           <p class="home__view_about-us_title">{{ $t('aboutUs.title') }}</p>
           <img
@@ -107,7 +106,12 @@
               <td>{{ $t('servicesAndPrices.secondHaircutPrice.topBarberPrice') }}</td>
             </tr>
             <tr>
-              <th class="table__thead">{{ $t('servicesAndPrices.thirdHaircutPrice.title') }}</th>
+              <th class="table__thead">
+                {{ $t('servicesAndPrices.thirdHaircutPrice.title') }}
+                <span class="table__thead-price-description">
+                  ({{ $t('servicesAndPrices.thirdHaircutPrice.description') }})
+                </span>
+              </th>
               <td>{{ $t('servicesAndPrices.thirdHaircutPrice.barberPrice') }}</td>
               <td>{{ $t('servicesAndPrices.thirdHaircutPrice.topBarberPrice') }}</td>
             </tr>
@@ -296,8 +300,10 @@
           </div>
           <Navigation class="home_view-map_and_footer-menu--desktop"/>
           <Navigation
-              class="home_view-map_and_footer-menu--mobile"
+              class="home_view-map_and_footer-menu--mobile home_navigation"
               :isVertical="true"
+              fontSize="14px"
+              linkColor="#000"
           />
           <div class="home_view-map_and_footer-logo">
             <img
@@ -344,6 +350,7 @@ import {onMounted} from "vue";
 import SocialMobile from "@/components/SocialMobile.vue";
 
 const { t, locale } = useI18n();
+console.log(locale.value);
 const currentYear = new Date().getFullYear();
 
 function scrollToTop () {
@@ -668,6 +675,7 @@ onMounted(() => {
 .home_view__servise-and-prise__table-thead {
   border-bottom: 2px solid $table-border-color;
   text-align: right;
+  min-width: 90px;
 
   @media (max-width: $medium-screen) {
     font-size: 12px !important;
@@ -677,6 +685,16 @@ onMounted(() => {
 .table__thead {
   text-align: left;
   padding-right: 8px;
+}
+
+.table__thead-price-description {
+  font-size: 16px;
+
+  @media (max-width: $medium-screen) {
+    color: #9F9F9F;
+    font-size: 12px;
+    text-transform: lowercase;
+  }
 }
 
 .home_view__btn-sp {
@@ -952,7 +970,6 @@ onMounted(() => {
   justify-content: center;
   width: 100%;
   object-fit: cover;
-  margin: 0 0 36px 0;
   background-color: #fff;
   padding-top: 50px;
 
@@ -1183,6 +1200,11 @@ onMounted(() => {
     display: flex;
     align-items: center;
   }
+}
+
+.home_navigation {
+  color: #000 !important;
+  font-size: 14px !important;
 }
 
 </style>
