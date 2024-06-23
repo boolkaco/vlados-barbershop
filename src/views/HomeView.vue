@@ -73,9 +73,9 @@
               alt="image-decoration"
           >
           <div class="home_view__about-us_text">
-          <span class="home_view__about-us_text-item">
-            {{ $t('aboutUs.textFirstPart.paragraphOne') }}<br>{{ $t('aboutUs.textFirstPart.paragraphTwo') }}
-          </span>
+            <span class="home_view__about-us_text-item">
+              {{ $t('aboutUs.textFirstPart.paragraphOne') }}<br>{{ $t('aboutUs.textFirstPart.paragraphTwo') }}
+            </span>
             <span class="home_view__about-us_text-item">
             {{ $t('aboutUs.textSecondPart.paragraphOne') }}
           </span>
@@ -597,7 +597,7 @@ onMounted(() => {
   text-indent: 3%;
 
   @media (max-width: $medium-screen) {
-    text-align: justify;
+    text-align: left;
     text-indent: 0;
   }
 }
