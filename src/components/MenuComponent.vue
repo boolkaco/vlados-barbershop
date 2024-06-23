@@ -96,7 +96,7 @@ function closeMenu() {
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: flex-end;
-  z-index: 1000;
+  z-index: 100000;
 }
 
 .menu_component__content {
