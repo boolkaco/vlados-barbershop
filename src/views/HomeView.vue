@@ -6,7 +6,7 @@
     >
       <Loader />
       <div
-          id="reservation-widget"
+          id="reservation_widget"
           class="home_view__reservation-widget"
       />
       <HeaderView />
@@ -1071,6 +1071,7 @@ onMounted(() => {
   font-size: 18px;
   font-weight: 400;
   margin: 37px 0 0 0;
+  padding-bottom: 36px;
   color: $text-contacts-color;
 
   @media (max-width: $medium-screen) {

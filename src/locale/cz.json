@@ -36,7 +36,8 @@
       "topBarberPrice": "1200 Kč"
     },
     "thirdHaircutPrice": {
-      "title": "Full service - barber střih + úprava vousů + péče o pleť",
+      "title": "Full service -",
+      "description": "barber střih + úprava vousů + péče o pleť",
       "barberPrice": "1290 Kč",
       "topBarberPrice": "1490 Kč"
     },

@@ -36,7 +36,8 @@
       "topBarberPrice": "1200 Kč"
     },
     "thirdHaircutPrice": {
-      "title": "Full service - стрижка + оформление бороды + уход за кожей лица",
+      "title": "Full service -",
+      "description": "стрижка + оформление бороды + уход за кожей лица",
       "barberPrice": "1290 Kč",
       "topBarberPrice": "1490 Kč"
     },

@@ -8,10 +8,10 @@
   "address": "U Nikolajky 3, Praha 5 Smíchov 150 00",
   "workingHours": "9:00-19:00",
   "workingDays": {
-    "en": "Thu-Sat",
+    "en": "Mon-Sun",
     "cz": "Po-Ne",
     "ua": "Пн-Нд",
-    "ru": "По-Вс"
+    "ru": "Пн-Вс"
   },
   "map": "https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=tZlf1fWGAtJUabKHF3iM",
   "barbers": [
