@@ -20,7 +20,7 @@
         <div class="home_view__preview">
           <img
               class="home_view__logo--desktop"
-              :src="LogoDecktop"
+              :src="LogoDesktop"
               alt="logo-desktop"
           >
           <img
@@ -312,7 +312,7 @@
             >
             <img
                 class="home_view-map_and_footer-logo-item_logo"
-                v-bind:src="footerLogo"
+                v-bind:src="LogoDesktop"
             >
           </div>
           <div class="home_view-map_and_footer-footer">
@@ -328,13 +328,12 @@
 
 <script setup lang="ts">
 import HeaderView from './HeaderView.vue';
-import LogoDecktop from '@/assets/logo_with_text.svg';
+import LogoDesktop from '@/assets/logo_with_text.svg';
 import LogoMobile from '@/assets/logo_with_text_white.svg';
 import overview from '@/assets/barber-nocolor-img.png';
 import overviewColor from '@/assets/barber-img.png';
 import follow from '@/assets/follow-rotate-svg.svg'
 import phone from '@/assets/phone.png'
-import footerLogo from '@/assets/footer-logo.svg'
 import footerArrow from '@/assets/footer-arrow.svg'
 import MapGoogle from '@/components/Map.vue'
 import Social from '@/components/Social.vue'
@@ -1179,7 +1178,8 @@ onMounted(() => {
 }
 
 .home_view-map_and_footer-logo-item_logo {
-  margin:0 10px 0 0 ;
+  width: 127px;
+  margin:0 10px 0 0;
 }
 
 .home_view-map_and_footer-footer {
