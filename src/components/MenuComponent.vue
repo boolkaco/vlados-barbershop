@@ -3,30 +3,13 @@
     <div v-if="data" class="menu_component">
       <div class="menu_component__content">
         <div class="menu_component__header">
-          <img
-              class="menu_component__header-logo"
-              v-bind:src="logo"
-              alt=""
-          >
-          <img
-              class="menu_component__header-text"
-              v-bind:src="textLogo"
-              alt=""
-          >
-          <img
-              class="menu_component__header-close"
-              v-bind:src="closeIcon"
-              alt=""
-              @click="closeMenu"
-          >
+          <img class="menu_component__header-logo" :src="logo" alt="">
+          <img class="menu_component__header-text" :src="textLogo" alt="">
+          <img class="menu_component__header-close" :src="closeIcon" alt="" @click="closeMenu">
         </div>
 
         <div class="menu_component__wrapper">
-          <Navigation
-              :isVertical="true"
-              fontSize="18px"
-              linkColor="#FFF"
-          />
+          <Navigation :isVertical="true" fontSize="18px" linkColor="#FFF" @closeMenu="closeMenu" />
         </div>
 
         <div class="menu_component__footer">
@@ -48,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-import {defineEmits} from 'vue';
+import { defineEmits } from 'vue';
 const emit = defineEmits(['close']);
 import JsonLoader from '@/components/JsonLoader.vue';
 import logo from '@/assets/logo.svg';
@@ -62,6 +45,7 @@ function closeMenu() {
   emit('close');
 }
 </script>
+
 
 <style scoped lang="scss">
 .menu_component__header {

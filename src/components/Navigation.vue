@@ -1,14 +1,14 @@
 <template>
   <div :class="{'navigation__link': true, 'vertical-layout': isVertical}">
-    <div @click="scrollTo('scrollToAboutUs')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.about') }}</div>
-    <div @click="scrollTo('scrollToServises')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.services-header') }}</div>
-    <div @click="scrollTo('scrollToTeam')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.team') }}</div>
-    <div @click="scrollTo('scrollToContacts')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.contacts') }}</div>
+    <div @click="handleClick('scrollToAboutUs')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.about') }}</div>
+    <div @click="handleClick('scrollToServises')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.services-header') }}</div>
+    <div @click="handleClick('scrollToTeam')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.team') }}</div>
+    <div @click="handleClick('scrollToContacts')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.contacts') }}</div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { defineProps, defineEmits } from 'vue';
 
 const props = defineProps({
   isVertical: {
@@ -24,6 +24,8 @@ const props = defineProps({
     default: '14px',
   },
 });
+
+const emit = defineEmits(['closeMenu']);
 
 const root = document.documentElement;
 root.style.setProperty('--link-color', props.linkColor);
@@ -45,8 +47,9 @@ function scrollToSection(section: keyof typeof scrollPositions) {
   }
 }
 
-const scrollTo = (section: keyof typeof scrollPositions) => {
+const handleClick = (section: keyof typeof scrollPositions) => {
   scrollToSection(section);
+  emit('closeMenu');
 };
 </script>
 
