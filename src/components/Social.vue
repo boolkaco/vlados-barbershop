@@ -55,7 +55,7 @@ import whatsapp from '@/assets/icons/whatsapp-hover-icon.svg'
 import facebookWhite from '@/assets/icons/facebook-icon.svg'
 import instagramWhite from '@/assets/icons/instagram-icon.svg'
 import whatsappWhite from '@/assets/icons/whatsapp-icon.svg'
-import {defineProps} from "vue/dist/vue";
+import { defineProps } from 'vue';
 
 const props = defineProps({
   data: {
