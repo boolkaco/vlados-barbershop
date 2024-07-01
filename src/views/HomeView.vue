@@ -9,7 +9,7 @@
           id="reservation_widget"
           class="home_view__reservation-widget"
       />
-      <HeaderView />
+      <HeaderView :data="data"/>
       <div class="home_view__wrp">
         <div class="image-wrp-mobile">
           <img
@@ -108,6 +108,7 @@
             <tr class="home_view__servise-and-prise__table-row">
               <th class="table__thead">
                 {{ $t('servicesAndPrices.thirdHaircutPrice.title') }}
+                <br>
                 <span class="table__thead-price-description">
                   ({{ $t('servicesAndPrices.thirdHaircutPrice.description') }})
                 </span>
@@ -118,6 +119,7 @@
             <tr class="home_view__servise-and-prise__table-row">
               <th class="table__thead">
                 {{ $t('servicesAndPrices.fourthHaircutPrice.title') }}
+                <br>
                 <span class="table__thead-price-description">
                   ({{ $t('servicesAndPrices.fourthHaircutPrice.description') }})
                 </span>
@@ -298,7 +300,7 @@
 
         <div class="home_view-map_and_footer">
           <MapGoogle class="home-view__google-map"/>
-          <Social class="home_view-map_and_footer-item"/>
+          <Social class="home_view-map_and_footer-item" :data="data"/>
           <div class="home-view-map__contacts-text">
             {{ $t('contacts.ShopParkingText') }}
           </div>
@@ -645,9 +647,15 @@ onMounted(() => {
 
   th, td {
     height: 64px;
+
+    @media (max-width: $medium-screen) {
+      padding: 16px 0;
+      height: auto;
+    }
   }
 
   .home_view__servise-and-prise__table-row {
+    padding: 16px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.07) !important;
   }
 

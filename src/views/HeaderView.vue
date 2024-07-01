@@ -9,7 +9,7 @@
       <Navigation class="header_view__link"/>
       <div class="header_view__social">
         <langSwitcher />
-        <Social />
+        <Social :data="data"/>
       </div>
       <div class="header_view__menu-icon-wrp" @click="toggleMenu">
         <img v-bind:src="MenuIcon" alt="menu" class="header_view__menu-icon">
@@ -29,6 +29,14 @@ import TextLogo from '@/assets/logoTitleBlack.svg';
 import MenuIcon from '@/assets/icons/menu.svg';
 import Social from '@/components/Social.vue';
 import MenuComponent from '@/components/MenuComponent.vue';
+import {defineProps} from "vue/dist/vue";
+
+const props = defineProps({
+  data: {
+    type: Object,
+    default: () => {},
+  },
+});
 
 const isMenuVisible = ref(false);
 
