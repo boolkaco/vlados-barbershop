@@ -5,7 +5,9 @@
         <div class="menu_component__header">
           <img class="menu_component__header-logo" :src="logo" alt="">
           <img class="menu_component__header-text" :src="textLogo" alt="">
-          <img class="menu_component__header-close" :src="closeIcon" alt="" @click="closeMenu">
+          <div class="menu_component__header-close-wrp">
+            <img class="menu_component__header-close" :src="closeIcon" alt="" @click="closeMenu">
+          </div>
         </div>
 
         <div class="menu_component__wrapper">
@@ -48,6 +50,12 @@ function closeMenu() {
 
 
 <style scoped lang="scss">
+.menu_component__header-close-wrp {
+  width: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .menu_component__header {
   height: 65px;
   display: flex;
@@ -65,7 +73,6 @@ function closeMenu() {
   }
 
   &-close {
-    margin-left: 6px;
     width: 18px;
     cursor: pointer;
   }
