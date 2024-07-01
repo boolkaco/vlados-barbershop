@@ -55,10 +55,12 @@ watch(isMenuVisible, (newValue) => {
 }
 
 .header_view__menu-icon-wrp {
+  width: 40px;
   display: none;
 
   @media (max-width: $medium-screen) {
-    display: block;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .header_view__menu-icon {

@@ -1,9 +1,9 @@
 <template>
   <div :class="{'navigation__link': true, 'vertical-layout': isVertical}">
-    <div @click="handleClick('scrollToAboutUs')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.about') }}</div>
-    <div @click="handleClick('scrollToServises')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.services-header') }}</div>
-    <div @click="handleClick('scrollToTeam')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.team') }}</div>
-    <div @click="handleClick('scrollToContacts')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.contacts') }}</div>
+    <div @click="handleClick('about_us_anker')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.about') }}</div>
+    <div @click="handleClick('price_anker')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.services-header') }}</div>
+    <div @click="handleClick('our_team_anker')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.team') }}</div>
+    <div @click="handleClick('contacts_anker')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.contacts') }}</div>
   </div>
 </template>
 
@@ -31,25 +31,24 @@ const root = document.documentElement;
 root.style.setProperty('--link-color', props.linkColor);
 root.style.setProperty('--font-size', props.fontSize);
 
-const scrollPositions: Record<string, { top: number, behavior: ScrollBehavior }> = {
-  scrollToAboutUs: { top: 1000, behavior: 'smooth' },
-  scrollToServises: { top: 1640, behavior: 'smooth' },
-  scrollToTeam: { top: 2540, behavior: 'smooth' },
-  scrollToContacts: { top: 4000, behavior: 'smooth' },
-};
+const handleClick = (id: string) => {
+  const element = document.getElementById(id);
+  let offset = 50;
+  if (id === 'about_us_anker' && window.innerWidth > 600) {
+    offset = 100;
+  }
+  if (element) {
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - offset;
 
-function scrollToSection(section: keyof typeof scrollPositions) {
-  const position = scrollPositions[section];
-  if (position) {
-    window.scrollTo(position);
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+    emit('closeMenu');
   } else {
     console.error('Invalid section');
   }
-}
-
-const handleClick = (section: keyof typeof scrollPositions) => {
-  scrollToSection(section);
-  emit('closeMenu');
 };
 </script>
 

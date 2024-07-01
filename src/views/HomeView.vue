@@ -65,7 +65,7 @@
           >
         </div>
 
-        <div class="home_view__about-us">
+        <div class="home_view__about-us" id="about_us_anker">
           <p class="home__view_about-us_title">{{ $t('aboutUs.title') }}</p>
           <img
               class="home_view__about-us-image"
@@ -82,30 +82,30 @@
           </div>
         </div>
 
-        <div class="home_view__servise-and-prise">
+        <div class="home_view__servise-and-prise" id="price_anker">
           <p class="home_view__servise-and-prise__title">
             {{ $t('servicesAndPrices.title') }}
           </p>
           <table class="home_view__servise-and-prise__table">
             <thead>
-            <tr>
+            <tr class="home_view__servise-and-prise__table-header-row">
               <th class="home_view__servise-and-prise__table-thead"></th>
               <th class="home_view__servise-and-prise__table-thead">{{ $t('servicesAndPrices.barberPricetitle') }}</th>
               <th class="home_view__servise-and-prise__table-thead">{{ $t('servicesAndPrices.topBarberPricetitle') }}</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
+            <tr class="home_view__servise-and-prise__table-row">
               <th class="table__thead">{{ $t('servicesAndPrices.firstHaircutPrice.title') }}</th>
               <td>{{ $t('servicesAndPrices.firstHaircutPrice.barberPrice') }}</td>
               <td>{{ $t('servicesAndPrices.firstHaircutPrice.topBarberPrice') }}</td>
             </tr>
-            <tr>
+            <tr class="home_view__servise-and-prise__table-row">
               <th class="table__thead">{{ $t('servicesAndPrices.secondHaircutPrice.title') }}</th>
               <td>{{ $t('servicesAndPrices.secondHaircutPrice.barberPrice') }}</td>
               <td>{{ $t('servicesAndPrices.secondHaircutPrice.topBarberPrice') }}</td>
             </tr>
-            <tr>
+            <tr class="home_view__servise-and-prise__table-row">
               <th class="table__thead">
                 {{ $t('servicesAndPrices.thirdHaircutPrice.title') }}
                 <span class="table__thead-price-description">
@@ -115,27 +115,27 @@
               <td>{{ $t('servicesAndPrices.thirdHaircutPrice.barberPrice') }}</td>
               <td>{{ $t('servicesAndPrices.thirdHaircutPrice.topBarberPrice') }}</td>
             </tr>
-            <tr>
+            <tr class="home_view__servise-and-prise__table-row">
               <th class="table__thead">{{ $t('servicesAndPrices.fourthHaircutPrice.title') }}</th>
               <td>{{ $t('servicesAndPrices.fourthHaircutPrice.barberPrice') }}</td>
               <td>{{ $t('servicesAndPrices.fourthHaircutPrice.topBarberPrice') }}</td>
             </tr>
-            <tr>
+            <tr class="home_view__servise-and-prise__table-row">
               <th class="table__thead">{{ $t('servicesAndPrices.fifthHaircutPrice.title') }}</th>
               <td>{{ $t('servicesAndPrices.fifthHaircutPrice.barberPrice') }}</td>
               <td>{{ $t('servicesAndPrices.fifthHaircutPrice.topBarberPrice') }}</td>
             </tr>
-            <tr>
+            <tr class="home_view__servise-and-prise__table-row">
               <th class="table__thead">{{ $t('servicesAndPrices.sixthHaircutPrice.title') }}</th>
               <td>{{ $t('servicesAndPrices.sixthHaircutPrice.barberPrice') }}</td>
               <td>{{ $t('servicesAndPrices.sixthHaircutPrice.topBarberPrice') }}</td>
             </tr>
-            <tr>
+            <tr class="home_view__servise-and-prise__table-row">
               <th class="table__thead">{{ $t('servicesAndPrices.seventhHaircutPrice.title') }}</th>
               <td>{{ $t('servicesAndPrices.seventhHaircutPrice.barberPrice') }}</td>
               <td>{{ $t('servicesAndPrices.seventhHaircutPrice.topBarberPrice') }}</td>
             </tr>
-            <tr>
+            <tr class="home_view__servise-and-prise__table-row">
               <th class="table__thead">{{ $t('servicesAndPrices.eighthHaircutPrice.title') }}</th>
               <td>{{ $t('servicesAndPrices.eighthHaircutPrice.barberPrice') }}</td>
               <td>{{ $t('servicesAndPrices.eighthHaircutPrice.topBarberPrice') }}</td>
@@ -153,7 +153,7 @@
           </a>
         </div>
 
-        <div class="home_view__our-team">
+        <div class="home_view__our-team" id="our_team_anker">
           <p class="home_view__our-team__title">
             {{ $t('ourTeam.title') }}
           </p>
@@ -253,7 +253,7 @@
           </div>
         </div>
 
-        <div class="home_view__contacts">
+        <div class="home_view__contacts" id="contacts_anker">
           <div class="home_view__contacts-title">
             {{ $t('contacts.title') }}
           </div>
@@ -591,7 +591,7 @@ onMounted(() => {
   font-size: 18px;
   line-height: 27px;
   font-weight: 400;
-  padding-bottom: 30px;
+  padding-bottom: 52px;
   text-align: center;
   text-indent: 3%;
 
@@ -640,7 +640,10 @@ onMounted(() => {
 
   th, td {
     height: 64px;
-    border-bottom: 01px solid $table-border-color;
+  }
+
+  .home_view__servise-and-prise__table-row {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.07) !important;
   }
 
   th {
@@ -671,7 +674,7 @@ onMounted(() => {
 }
 
 .home_view__servise-and-prise__table-thead {
-  border-bottom: 2px solid $table-border-color;
+  border-bottom: 1px solid $table-border-color;
   text-align: right;
   min-width: 90px;
 
