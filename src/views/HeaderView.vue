@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { ref, watch, defineProps } from 'vue';
 import langSwitcher from '@/components/langSwitcher.vue';
 import Navigation from '@/components/Navigation.vue';
 import LogoWithText from '@/assets/logo_with_text.svg';
@@ -29,7 +29,6 @@ import TextLogo from '@/assets/logoTitleBlack.svg';
 import MenuIcon from '@/assets/icons/menu.svg';
 import Social from '@/components/Social.vue';
 import MenuComponent from '@/components/MenuComponent.vue';
-import {defineProps} from "vue/dist/vue";
 
 const props = defineProps({
   data: {
