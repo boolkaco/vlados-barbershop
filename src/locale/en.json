@@ -42,7 +42,8 @@
       "topBarberPrice": "1490 Kč"
     },
     "fourthHaircutPrice": {
-      "title": "Children's haircut (6-12 y.o.)",
+      "title": "Children's haircut ",
+      "description": "6-12 y.o.",
       "barberPrice": "490 Kč",
       "topBarberPrice":"590 Kč"
     },

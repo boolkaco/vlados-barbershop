@@ -42,7 +42,8 @@
       "topBarberPrice": "1490 Kč"
     },
     "fourthHaircutPrice": {
-      "title": "Дитяча стрижка 6-12 років",
+      "title": "Дитяча стрижка ",
+      "description": "6-12 років",
       "barberPrice": "490 Kč",
       "topBarberPrice":"590 Kč"
     },

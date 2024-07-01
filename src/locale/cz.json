@@ -42,7 +42,8 @@
       "topBarberPrice": "1490 Kč"
     },
     "fourthHaircutPrice": {
-      "title": "Chlapecký střih 6-12 let",
+      "title": "Chlapecký střih ",
+      "description": "6-12 let",
       "barberPrice": "490 Kč",
       "topBarberPrice":"590 Kč"
     },
