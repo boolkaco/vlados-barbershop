@@ -18,7 +18,7 @@
           </div>
 
           <div class="menu_component__social">
-            <Social/>
+            <Social :data="data"/>
           </div>
 
           <div class="menu_component__lang-switcher">

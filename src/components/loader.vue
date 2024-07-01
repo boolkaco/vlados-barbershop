@@ -29,7 +29,7 @@ onMounted(async () => {
           document.body.style.overflow = '';
         }, 500); 
       }
-    }, 15); 
+    }, 12);
   });
   onUnmounted(() => {
   document.body.style.overflow = '';
