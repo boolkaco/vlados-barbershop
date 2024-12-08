@@ -27,6 +27,7 @@
 <script setup lang="ts">
 import { ref, computed, defineProps } from 'vue';
 import { useI18n } from 'vue-i18n';
+import {useRoute, useRouter} from "vue-router";
 
 const props = defineProps({
   isSingleLineView: {
@@ -35,6 +36,8 @@ const props = defineProps({
   },
 });
 
+const router = useRouter();
+const route = useRoute();
 const { locale } = useI18n();
 
 const languages = [
@@ -48,7 +51,7 @@ const currentLanguage = ref(languages.find(lang => lang.code === locale.value) |
 const dropdownOpen = ref(false);
 
 const availableLanguages = computed(() => {
-  return languages.filter(language => language.label !== currentLanguage.value.label);
+  return languages.filter(language => language.code !== currentLanguage.value.code);
 });
 
 function openDropdown() {
@@ -62,6 +65,11 @@ function closeDropdown() {
 function changeLanguage(language: { code: string; label: string }) {
   currentLanguage.value = language;
   locale.value = language.code;
+
+  router.push({
+    path: `/${language.code}${route.fullPath.replace(/^\/(en|cz|ru|ua)/, '') || '/'}`,
+  });
+
   dropdownOpen.value = false;
 }
 </script>
