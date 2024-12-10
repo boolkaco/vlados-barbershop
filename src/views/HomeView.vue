@@ -65,7 +65,7 @@
           >
         </div>
 
-        <div class="home_view__about-us" id="about_us_anker">
+        <div class="home_view__about-us" :id="constants.anchors.ABOUT_US">
           <p class="home__view_about-us_title">{{ $t('aboutUs.title') }}</p>
           <img
               class="home_view__about-us-image"
@@ -82,7 +82,7 @@
           </div>
         </div>
 
-        <div class="home_view__servise-and-prise" id="price_anker">
+        <div class="home_view__servise-and-prise" :id="constants.anchors.PRICE">
           <p class="home_view__servise-and-prise__title">
             {{ $t('servicesAndPrices.title') }}
           </p>
@@ -160,7 +160,7 @@
           </a>
         </div>
 
-        <div class="home_view__our-team" id="our_team_anker">
+        <div class="home_view__our-team" :id="constants.anchors.OUR_TEAM">
           <p class="home_view__our-team__title">
             {{ $t('ourTeam.title') }}
           </p>
@@ -260,7 +260,7 @@
           </div>
         </div>
 
-        <div class="home_view__contacts" id="contacts_anker">
+        <div class="home_view__contacts" :id="constants.anchors.CONTACTS">
           <div class="home_view__contacts-title">
             {{ $t('contacts.title') }}
           </div>
@@ -351,8 +351,14 @@ import mobilePreview from '@/assets/mobile-preview.jpeg'
 import Loader from '@/components/loader.vue'
 import { useI18n } from 'vue-i18n';
 import JsonLoader from '@/components/JsonLoader.vue';
-import {onMounted} from "vue";
+import {nextTick, onMounted, ref, watch} from "vue";
 import SocialMobile from "@/components/SocialMobile.vue";
+import {constants} from "../../const";
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+const isDataLoaded = ref(false);
+
 
 const { t, locale } = useI18n();
 console.log(locale.value);
@@ -361,6 +367,33 @@ const currentYear = new Date().getFullYear();
 function scrollToTop () {
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
+
+watch(isDataLoaded, async (loaded) => {
+  if (loaded && route.hash) {
+    await nextTick(); // Ждём завершения рендера
+    scrollToHash(route.hash);
+  }
+});
+
+function scrollToHash(hash: string) {
+  const element = document.querySelector(hash);
+  if (element) {
+    const offset = window.innerWidth > 600 || id === constants.anchors.ABOUT_US ? 100 : 50;
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
+  }
+}
+
+onMounted(() => {
+  setTimeout(() => {
+    isDataLoaded.value = true;
+  }, 2000);
+});
 
 onMounted(() => {
   const script = document.createElement('script');

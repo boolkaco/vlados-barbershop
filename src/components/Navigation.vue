@@ -1,14 +1,16 @@
 <template>
   <div :class="{'navigation__link': true, 'vertical-layout': isVertical}">
-    <div @click="handleClick('about_us_anker')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.about') }}</div>
-    <div @click="handleClick('price_anker')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.services-header') }}</div>
-    <div @click="handleClick('our_team_anker')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.team') }}</div>
-    <div @click="handleClick('contacts_anker')" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.contacts') }}</div>
+    <div @click="handleClick(constants.anchors.ABOUT_US)" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.about') }}</div>
+    <div @click="handleClick(constants.anchors.PRICE)" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.services-header') }}</div>
+    <div @click="handleClick(constants.anchors.OUR_TEAM)" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.team') }}</div>
+    <div @click="handleClick(constants.anchors.CONTACTS)" :class="['navigation__link-item', { 'vertical-item': isVertical }]">{{ $t('navigation.contacts') }}</div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue';
+import { useRouter } from 'vue-router';
+import {constants} from "../../const";
 
 const props = defineProps({
   isVertical: {
@@ -31,20 +33,24 @@ const root = document.documentElement;
 root.style.setProperty('--link-color', props.linkColor);
 root.style.setProperty('--font-size', props.fontSize);
 
+
+const router = useRouter();
+
 const handleClick = (id: string) => {
   const element = document.getElementById(id);
-  let offset = 50;
-  if (id === 'about_us_anker' && window.innerWidth > 600) {
-    offset = 100;
-  }
+  const offset = window.innerWidth > 600 && id === constants.anchors.ABOUT_US ? 100 : 50;
+
   if (element) {
     const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
     const offsetPosition = elementPosition - offset;
 
+    router.push({ hash: `#${id}` });
+
     window.scrollTo({
       top: offsetPosition,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
+
     emit('closeMenu');
   } else {
     console.error('Invalid section');
