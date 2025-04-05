@@ -164,70 +164,7 @@
           <p class="home_view__our-team__title">
             {{ $t('ourTeam.title') }}
           </p>
-          <div class="home_view__barber-info">
-            <div class="home_view__barber-info_person">
-              <div class="home_view__barber-info_person-img">
-                <img
-                    src="../assets/barber-Alex-nocolor-img.png"
-                    class="home_view__barber-image"
-                    alt="barber1"
-                >
-                <img
-                    src="../assets/barber-Alex-img.png"
-                    class="home_view__barber-image--hovered"
-                    alt="barber-nocolor1"
-                >
-              </div>
-              <div class="home_view__barber-block">
-                <div class="home_view__barber-name">
-                  <div class="home_view__barber-first_name">{{ $t('ourTeam.barbers.firstBarber.barberName') }}</div>
-                  <div class="home_view__barber_position">{{ $t('ourTeam.barbers.firstBarber.barberPosition') }}</div>
-                </div>
-                <div class="home_view__barber-button">
-                  <a
-                      class="btn_wb home_view__btn-wb"
-                      :href="data.booking"
-                      type="button"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                  >
-                    {{ $t('buttonTitle') }}
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="home_view__barber-info_person">
-              <div class="home_view__barber-info_person-img">
-                <img
-                    src="../assets/barber-Vlad-nocolor-img.png"
-                    class="home_view__barber-image"
-                    alt="barber1"
-                >
-                <img
-                    src="../assets/barber-Vlad-img.png"
-                    class="home_view__barber-image--hovered"
-                    alt="barber-nocolor1"
-                >
-              </div>
-              <div class="home_view__barber-block">
-                <div class="home_view__barber-name">
-                  <div class="home_view__barber-first_name">{{ $t('ourTeam.barbers.topBarber.barberName') }}</div>
-                  <div class="home_view__barber_position">{{ $t('ourTeam.barbers.topBarber.barberPosition') }}</div>
-                </div>
-                <div class="home_view__barber-button">
-                  <a
-                      class="btn_wb home_view__btn-wb"
-                      :href="data.booking"
-                      type="button"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                  >
-                    {{ $t('buttonTitle') }}
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <OurTeam :data="data" />
         </div>
 
         <div class="home_view__follow-us">
@@ -345,6 +282,7 @@ import footerArrow from '@/assets/footer-arrow.svg'
 import MapGoogle from '@/components/Map.vue'
 import Social from '@/components/Social.vue'
 import Navigation from '@/components/Navigation.vue'
+import OurTeam from '@/components/OurTeam.vue'
 import selectImg from '@/assets/icons/button-select-icon.svg'
 import mobileImgDecoration from '@/assets/mobile_decoration.png'
 import mobilePreview from '@/assets/mobile-preview.jpeg'
@@ -777,106 +715,6 @@ onMounted(() => {
   @media (max-width: $medium-screen) {
     font-size: 34px;
   }
-}
-
-.home_view__barber-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 0 0 66px 0;
-
-  @media (max-width: $medium-screen) {
-    flex-direction: column-reverse;
-  }
-}
-
-.home_view__barber-info_person {
-  margin: 0 10.5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-
-  @media (max-width: $medium-screen) {
-    &:last-of-type {
-      padding-bottom: 52px;
-    }
-  }
-}
-
-.home_view__barber-info_person-img {
-  position: relative;
-  width: 100%;
-
-  &:hover {
-    .home_view__barber-image--hovered {
-      transition: opacity 0.5s ease-in-out;
-      opacity: 1;
-    }
-  }
-}
-.home_view__barber-image {
-  transition: all 0.4s;
-  width: 100%;
-  margin: 0 0 39px 0;
-  z-index: 1;
-
-  &:hover {
-    z-index: 20;
-  }
-
-  @media (max-width: $medium-screen) {
-    width: 100%;
-    height: auto;
-  }
-}
-
-.home_view__barber-image--hovered {
-  transition: opacity 0.5s ease-in-out;
-  position: absolute;
-  opacity: 0;
-  z-index: 11;
-  left: 0;
-
-  @media (max-width: $medium-screen) {
-    width: 100%;
-    height: auto;
-  }
-}
-
-.home_view__barber-block {
-  width: 571px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 1;
-
-  @media (max-width: $medium-screen) {
-    width: 100%;
-    height: auto;
-  }
-}
-
-
-.home_view__barber-name {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-}
-
-.home_view__barber-first_name {
-  font-size: 28px;
-  font-weight: 400;
-  margin: 0 0 15px 0;
-}
-
-.home_view__barber_position {
-  font-size: 18px;
-  font-weight: 300;
 }
 
 .home_view__btn-team {

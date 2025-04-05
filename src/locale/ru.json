@@ -78,6 +78,14 @@
       "firstBarber": {
         "barberName": "Алекс",
         "barberPosition": "Барбер"
+      },
+      "secondBarber": {
+        "barberName": "Мария",
+        "barberPosition": "Барбер"
+      },
+      "thirdBarber": {
+        "barberName": "Сергей",
+        "barberPosition": "Барбер"
       }
     }
   },
