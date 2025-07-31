@@ -128,11 +128,6 @@
               <td>{{ $t('servicesAndPrices.fourthHaircutPrice.topBarberPrice') }}</td>
             </tr>
             <tr class="home_view__servise-and-prise__table-row">
-              <th class="table__thead">{{ $t('servicesAndPrices.fifthHaircutPrice.title') }}</th>
-              <td>{{ $t('servicesAndPrices.fifthHaircutPrice.barberPrice') }}</td>
-              <td>{{ $t('servicesAndPrices.fifthHaircutPrice.topBarberPrice') }}</td>
-            </tr>
-            <tr class="home_view__servise-and-prise__table-row">
               <th class="table__thead">{{ $t('servicesAndPrices.sixthHaircutPrice.title') }}</th>
               <td>{{ $t('servicesAndPrices.sixthHaircutPrice.barberPrice') }}</td>
               <td>{{ $t('servicesAndPrices.sixthHaircutPrice.topBarberPrice') }}</td>

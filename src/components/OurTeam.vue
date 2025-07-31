@@ -3,20 +3,20 @@
     <div class="home_view__barber-info_person">
       <div class="home_view__barber-info_person-img">
         <img
-            src="../assets/barber-Alex-nocolor-img.jpg"
+            src="../assets/barber-Vlad-nocolor-img.png"
             class="home_view__barber-image"
             alt="barber1"
         >
         <img
-            src="../assets/barber-Alex-img.jpg"
+            src="../assets/barber-Vlad-nocolor-img.png"
             class="home_view__barber-image--hovered"
             alt="barber-nocolor1"
         >
       </div>
       <div class="home_view__barber-block">
         <div class="home_view__barber-name">
-          <div class="home_view__barber-first_name">{{ $t('ourTeam.barbers.firstBarber.barberName') }}</div>
-          <div class="home_view__barber_position">{{ $t('ourTeam.barbers.firstBarber.barberPosition') }}</div>
+          <div class="home_view__barber-first_name">{{ $t('ourTeam.barbers.topBarber.barberName') }}</div>
+          <div class="home_view__barber_position">{{ $t('ourTeam.barbers.topBarber.barberPosition') }}</div>
         </div>
         <div class="home_view__barber-button">
           <a
@@ -34,20 +34,20 @@
     <div class="home_view__barber-info_person">
       <div class="home_view__barber-info_person-img">
         <img
-            src="../assets/barber-Vlad-nocolor-img.png"
+            src="../assets/barber-Alex-nocolor-img.jpg"
             class="home_view__barber-image"
             alt="barber1"
         >
         <img
-            src="../assets/barber-Vlad-nocolor-img.png"
+            src="../assets/barber-Alex-img.jpg"
             class="home_view__barber-image--hovered"
             alt="barber-nocolor1"
         >
       </div>
       <div class="home_view__barber-block">
         <div class="home_view__barber-name">
-          <div class="home_view__barber-first_name">{{ $t('ourTeam.barbers.topBarber.barberName') }}</div>
-          <div class="home_view__barber_position">{{ $t('ourTeam.barbers.topBarber.barberPosition') }}</div>
+          <div class="home_view__barber-first_name">{{ $t('ourTeam.barbers.firstBarber.barberName') }}</div>
+          <div class="home_view__barber_position">{{ $t('ourTeam.barbers.firstBarber.barberPosition') }}</div>
         </div>
         <div class="home_view__barber-button">
           <a

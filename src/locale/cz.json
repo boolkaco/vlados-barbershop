@@ -27,7 +27,7 @@
     "topBarberPricetitle": "top-barber",
     "firstHaircutPrice": {
       "title": "Barber střih",
-      "barberPrice": "650 Kč",
+      "barberPrice": "690 Kč",
       "topBarberPrice":"850 Kč"
     },
     "secondHaircutPrice": {
@@ -39,13 +39,13 @@
       "title": "Full service ",
       "description": "barber střih + úprava vousů + péče o pleť",
       "barberPrice": "1290 Kč",
-      "topBarberPrice": "1490 Kč"
+      "topBarberPrice": "1400 Kč"
     },
     "fourthHaircutPrice": {
       "title": "Chlapecký střih ",
       "description": "6-12 let",
-      "barberPrice": "490 Kč",
-      "topBarberPrice":"590 Kč"
+      "barberPrice": "590 Kč",
+      "topBarberPrice":"700 Kč"
     },
     "fifthHaircutPrice": {
       "title": "Střih strojkem",
@@ -55,12 +55,12 @@
     "sixthHaircutPrice": {
       "title": "Úprava vousů",
       "barberPrice": "490 Kč",
-      "topBarberPrice":"590 Kč"
+      "topBarberPrice":"600 Kč"
     },
     "seventhHaircutPrice": {
-      "title": "Úprava vousu +barvení vousů",
-      "barberPrice": "890 Kč",
-      "topBarberPrice":"990 Kč"
+      "title": "Barvení vousů",
+      "barberPrice": "400 Kč",
+      "topBarberPrice":"400 Kč"
     },
     "eighthHaircutPrice": {
       "title": "Odstranění chloupků voskem",
@@ -73,7 +73,7 @@
     "barbers": {
       "topBarber": {
         "barberName": "Vlad",
-        "barberPosition": "Top-barber"
+        "barberPosition": "Zakladatel"
       },
       "firstBarber": {
         "barberName": "Alex",

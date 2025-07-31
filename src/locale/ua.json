@@ -27,7 +27,7 @@
     "topBarberPricetitle": "Топ барбер",
     "firstHaircutPrice": {
       "title": "Класична стрижка",
-      "barberPrice": "650 Kč",
+      "barberPrice": "690 Kč",
       "topBarberPrice":"850 Kč"
     },
     "secondHaircutPrice": {
@@ -39,13 +39,13 @@
       "title": "Full service ",
       "description": "стрижка + стрижка бороди + догляд за шкірою обличчя",
       "barberPrice": "1290 Kč",
-      "topBarberPrice": "1490 Kč"
+      "topBarberPrice": "1400 Kč"
     },
     "fourthHaircutPrice": {
       "title": "Дитяча стрижка ",
       "description": "6-12 років",
-      "barberPrice": "490 Kč",
-      "topBarberPrice":"590 Kč"
+      "barberPrice": "590 Kč",
+      "topBarberPrice": "700 Kč"
     },
     "fifthHaircutPrice": {
       "title": "Стрижка машинкою",
@@ -55,12 +55,12 @@
     "sixthHaircutPrice": {
       "title": "Стрижка бороди",
       "barberPrice": "490 Kč",
-      "topBarberPrice":"590 Kč"
+      "topBarberPrice": "600 Kč"
     },
     "seventhHaircutPrice": {
-      "title": "Стрижка + фарбування бороди",
-      "barberPrice": "890 Kč",
-      "topBarberPrice":"990 Kč"
+      "title": "Фарбування бороди",
+      "barberPrice": "400 Kč",
+      "topBarberPrice":"400 Kč"
     },
     "eighthHaircutPrice": {
       "title": "Видалення волосся воском",
@@ -73,7 +73,7 @@
     "barbers": {
       "topBarber": {
         "barberName": "Влад",
-        "barberPosition": "Топ барбер"
+        "barberPosition": "Засновник"
       },
       "firstBarber": {
         "barberName": "Алекс",
