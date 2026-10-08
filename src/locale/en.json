@@ -86,6 +86,10 @@
       "thirdBarber": {
         "barberName": "Sergej",
         "barberPosition": "Barber"
+      },
+      "fourthBarber": {
+        "barberName": "Dima",
+        "barberPosition": "Barber"
       }
     }
   },

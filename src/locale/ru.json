@@ -86,6 +86,10 @@
       "thirdBarber": {
         "barberName": "Сергей",
         "barberPosition": "Барбер"
+      },
+      "fourthBarber": {
+        "barberName": "Дмитрий",
+        "barberPosition": "Барбер"
       }
     }
   },
@@ -116,6 +120,6 @@
     },
     "ShopParkingText": "Рядом с барбершопом всегда есть свободные парковочные места."
   },
-  "footerText": "{'@'} ВСЕ ПРАВА ЗАЩИЩЕНЫ 2024"
+  "footerText": "{'@'} ВСЕ ПРАВА ЗАЩИЩЕНЫ {year}"
   
 }

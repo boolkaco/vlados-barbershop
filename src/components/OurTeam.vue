@@ -124,6 +124,37 @@
         </div>
       </div>
     </div>
+    <div class="home_view__barber-info_person">
+      <div class="home_view__barber-info_person-img">
+        <img
+            src="../assets/barber-Dima-img.jpg"
+            class="home_view__barber-image"
+            alt="barber5"
+        >
+        <img
+            src="../assets/barber-Dima-img.jpg"
+            class="home_view__barber-image--hovered"
+            alt="barber-nocolor5"
+        >
+      </div>
+      <div class="home_view__barber-block">
+        <div class="home_view__barber-name">
+          <div class="home_view__barber-first_name">{{ $t('ourTeam.barbers.fourthBarber.barberName') }}</div>
+          <div class="home_view__barber_position">{{ $t('ourTeam.barbers.fourthBarber.barberPosition') }}</div>
+        </div>
+        <div class="home_view__barber-button">
+          <a
+              class="btn_wb home_view__btn-wb"
+              :href="data.booking"
+              type="button"
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            {{ $t('buttonTitle') }}
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -154,6 +185,11 @@ const props = defineProps({
   align-items: start;
   margin: 0 0 66px 0;
   width: 100%;
+
+  > .home_view__barber-info_person:last-child:not(:nth-child(even)) {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
 }
 
 @media (max-width: $medium-screen) {
